@@ -18,8 +18,6 @@ const useStyles = makeStyles(style);
 export default function HeaderSection(props) {
     const classes = useStyles();
     const { noParallax, ...rest } = props;
-    console.log(props.noParallax);
-    console.log(noParallax === false);
     const useParallax = noParallax === undefined ? <Parallax filter responsive image={heroImg1}>
         <MainLogo/>
     </Parallax> : <div/>;
@@ -31,7 +29,7 @@ export default function HeaderSection(props) {
                 rightLinks={<HeaderLinks />}
                 fixed
                 logoType="nav_logo_lg"
-                changeColorOnScroll={ noParallax === false ? {
+                changeColorOnScroll={ noParallax === undefined ? {
                     height: 200,
                     color: "white",
                     logoType: "nav_logo_sm"

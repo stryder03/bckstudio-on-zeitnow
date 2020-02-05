@@ -46,7 +46,7 @@ const card = {
 
 const primaryColor = "#416e80";
 const secondaryColor= "#B8D8DA";
-const primaryFontColor = "#222";
+const primaryFontColor = "#444";
 const warningColor = "#ff9800";
 const dangerColor = "#f44336";
 const successColor = "#4caf50";
