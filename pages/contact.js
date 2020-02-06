@@ -54,7 +54,9 @@ const useStyles = makeStyles(style);
 export default function ContactPage(props) {
     const classes = useStyles();
     const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = data => { console.log(data.valueOf()) };
+    const onSubmit = data => {
+        alert(JSON.stringify(data));
+    };
 
     const {} = props;
 
