@@ -60,12 +60,6 @@ export default function ScheduleDialog(props) {
     const handleToggle = () => {
         setOpen(!open);
     };
-    const handleShowEvents = () => {
-       setScheduler(<AcuityScheduler category={"Seasonal%20Events"}/>);
-    };
-    const handleShowClasses = () => {
-        setScheduler(<AcuityScheduler category={"Classes"}/>);
-    };
     return (
         <div className={classes.listItem}>
             <CustomButtons
@@ -89,24 +83,6 @@ export default function ScheduleDialog(props) {
                 </DialogTitle>
                 <DialogContent>
                     <GridContainer align={"center"}>
-                        <GridItem xs={12} sm={12} md={6}>
-                            <CustomButtons
-                                aria-label={"show schedule of classes"}
-                                className={classNames(classes.bookButton)}
-                                onClick={handleShowClasses}
-                            >
-                                Book Classes
-                            </CustomButtons>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={6}>
-                            <CustomButtons
-                                aria-label={"show schedule of events"}
-                                className={classNames(classes.bookButton)}
-                                onClick={handleShowEvents}
-                            >
-                                Book Events
-                            </CustomButtons>
-                        </GridItem>
                         <GridItem xs={12}>
                             {scheduler}
                         </GridItem>

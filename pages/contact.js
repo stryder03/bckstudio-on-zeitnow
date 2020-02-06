@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import GridItem from "../components/Grid/GridItem";
 import Button from "../components/CustomButtons/Button";
 import GridContainer from "../components/Grid/GridContainer";
+import ContactForm from "../components/ContactForm/ContactForm";
 
 const style = theme => ({
     brandFont,
@@ -28,18 +29,6 @@ const style = theme => ({
         marginTop: "2.5rem",
         paddingBottom: "2.5rem"
     },
-    form: {
-        maxWidth: "100%",
-
-    },
-    textField: {
-        marginRight: "1rem",
-    },
-    textArea: {
-        margin:"auto",
-        textAlign: "center",
-        marginTop: "2rem",
-    },
     phone: {
         fontSize: "2.5rem",
         color: "#333",
@@ -53,11 +42,6 @@ const useStyles = makeStyles(style);
 
 export default function ContactPage(props) {
     const classes = useStyles();
-    const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = data => {
-        alert(JSON.stringify(data));
-    };
-
     const {} = props;
 
     return (
@@ -71,19 +55,7 @@ export default function ContactPage(props) {
                 </MainContent>
                 <GridContainer alignItems={"flex-start"} className={classes.container} justify={"space-evenly"}>
                     <GridItem xs={12} sm={12} md={4}>
-                        <div className={classes.form}>
-                            <Typography variant={"h3"} color={"primary"} align={"center"}>
-                                Email
-                            </Typography>
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <TextField id={"firstName"} name={"firstName"} margin={"normal"} fullWidth label={"First Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register}/>
-                                <TextField id={"lastName"} name={"lastName"} margin={"normal"} fullWidth label={"Last Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register}/>
-                                <TextField id={"email"} label={"Email"} name={"email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register}/>
-                                <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} placeholder="How can we help?" variant={"outlined"} color={'primary'} inputRef={register}/>
-                                <br/>
-                                <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classes.textArea} type={"submit"}>Send Message</Button>
-                            </form>
-                        </div>
+                        <ContactForm formTitle={"Email"}/>
                     </GridItem>
                     <GridItem xs={12} sm={12} md={4}>
                         <Typography variant={"h3"} color={"primary"}>
