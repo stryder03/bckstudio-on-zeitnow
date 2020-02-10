@@ -1,6 +1,8 @@
 {
-  "build.env": {
-    "MAPS_KEY":"@maps-apikey"
+  "build": {
+    "env": {
+      "MAPS_KEY": "@maps-apikey"
+    }
   },
   "env": {
     "MAILGUN_KEY": "@mailgun-apikey",

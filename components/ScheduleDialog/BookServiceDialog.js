@@ -52,7 +52,6 @@ export default function BookServiceDialog(props) {
     const classes = useStyles();
     const { buttonText, apptType} = props;
     const [open, setOpen] = React.useState(false);
-    const [scheduler, setScheduler] = React.useState(<AcuityScheduler apptType={apptType}/>);
     const handleClose = () => {
         setOpen(false);
     };
@@ -83,7 +82,7 @@ export default function BookServiceDialog(props) {
                 <DialogContent>
                     <GridContainer align={"center"}>
                         <GridItem xs={12}>
-                            {scheduler}
+                            <AcuityScheduler apptType={apptType}/>
                         </GridItem>
                     </GridContainer>
                 </DialogContent>
