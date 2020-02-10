@@ -13,6 +13,7 @@ import HeroImg from "../HeroImage/HeroImg";
 import heroImg2 from "../../assets/img/bck/darkened_wheel@1x.jpg";
 import SocialMediaInfo from "../../pages-sections/Page-Sections/SocialMediaInfo";
 import BusinessInfo from "../BusinessInfo/BusinessInfo";
+import Link from "next/link";
 
 
 const useStyles = makeStyles(styles);
@@ -39,28 +40,31 @@ export default function Footer(props) {
               <div className={classes.left}>
                 <List className={classes.list}>
                   <ListItem className={classes.inlineBlock}>
+                    <Link href={"/memberships"}>
                     <a
-                      href="/memberships"
                       className={classes.block}
                     >
                       Memberships
                     </a>
+                    </Link>
                   </ListItem>
                   <ListItem className={classes.inlineBlock}>
+                    <Link href={"/classes-encounters"} passHref>
                     <a
-                      href="/clay-encounters"
                       className={classes.block}
                     >
-                      Classes
+                      Classes & Encounters
                     </a>
+                    </Link>
                   </ListItem>
                   <ListItem className={classes.inlineBlock}>
+                    <Link href={"/studios"} passHref>
                     <a
-                      href="/studio-artists"
                       className={classes.block}
                     >
-                      Studio Artists
+                      Studio Rentals
                     </a>
+                    </Link>
                   </ListItem>
                 </List>
               </div>

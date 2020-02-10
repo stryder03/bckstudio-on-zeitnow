@@ -15,9 +15,8 @@ import AcuityScheduler from "../../pages-sections/Page-Sections/AcuityScheduler"
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 
-const style = theme => ({
-    ...styles.navLink,
-    ...styles.listItem,
+const useStyles = makeStyles(theme => ({
+    ...styles,
     ...container,
     dialog: {
         zIndex: theme.zIndex.drawer + 1
@@ -34,47 +33,46 @@ const style = theme => ({
         marginTop: "0",
         [theme.breakpoints.down("md")]: {
             marginTop: "auto"
-        }
+        },
     },
     title:{
         flex: 1,
-        fontWeight: "700"
+        fontWeight: "700",
+        textAlign: "center",
     },
     dialogButton: {
         position: "absolute",
+    },
+    buttonText:{
+        margin:"auto"
     }
-});
-const useStyles = makeStyles(style);
+}));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Fade ref={ref} {...props} />;
 });
 
-export default function ScheduleDialog(props) {
+export default function BookServiceDialog(props) {
     const classes = useStyles();
+    const { buttonText, apptType} = props;
     const [open, setOpen] = React.useState(false);
-    const [scheduler, setScheduler] = React.useState(<AcuityScheduler category={""}/>);
     const handleClose = () => {
         setOpen(false);
     };
     const handleToggle = () => {
         setOpen(!open);
     };
-    const handleShowEvents = () => {
-       setScheduler(<AcuityScheduler category={"Seasonal%20Events"}/>);
-    };
-    const handleShowClasses = () => {
-        setScheduler(<AcuityScheduler category={"Classes"}/>);
-    };
     return (
-        <div className={classes.listItem}>
+        <div>
             <CustomButtons
-                aria-label={"book now"}
+                aria-label={"book service"}
                 className={classNames(classes.navLink,classes.bookButton)}
                 id={"book-header"}
                 onClick={handleToggle}
             >
-                Book Now
+                <div className={classes.buttonText}>
+                    {buttonText}
+                </div>
             </CustomButtons>
             <Dialog fullScreen open={open} onBackdropClick={handleClose} TransitionComponent={Transition}>
                 <DialogTitle className={classes.appBar}>
@@ -89,31 +87,12 @@ export default function ScheduleDialog(props) {
                 </DialogTitle>
                 <DialogContent>
                     <GridContainer align={"center"}>
-                        <GridItem xs={12} sm={12} md={6}>
-                            <CustomButtons
-                                aria-label={"show schedule of classes"}
-                                className={classNames(classes.bookButton)}
-                                onClick={handleShowClasses}
-                            >
-                                Book Classes
-                            </CustomButtons>
-                        </GridItem>
-                        <GridItem xs={12} sm={12} md={6}>
-                            <CustomButtons
-                                aria-label={"show schedule of events"}
-                                className={classNames(classes.bookButton)}
-                                onClick={handleShowEvents}
-                            >
-                                Book Events
-                            </CustomButtons>
-                        </GridItem>
                         <GridItem xs={12}>
-                            {scheduler}
+                            <AcuityScheduler apptType={apptType}/>
                         </GridItem>
                     </GridContainer>
                 </DialogContent>
             </Dialog>
         </div>
     )
-
 }

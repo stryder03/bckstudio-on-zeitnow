@@ -14,6 +14,5 @@ const homePageStyle = {
   },
   imagesStyle,
   mainElement,
-  ,
 };
 export default homePageStyle;

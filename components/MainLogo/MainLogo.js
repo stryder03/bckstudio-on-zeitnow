@@ -5,7 +5,7 @@ import GridItem from "../Grid/GridItem";
 import kilnLogo from "../../assets/img/bck/svg/bckHorizontalLogo.svg";
 import React from "react";
 import classNames from "classnames";
-import ScheduleDialog from "../ScheduleDialog/ScheduleDialog";
+import BookServiceDialog from "../ScheduleDialog/BookServiceDialog";
 
 
 const style = {
@@ -28,7 +28,7 @@ export default function MainLogo(props) {
                         <img src={kilnLogo} alt={"Kiln Logo"} height={"197px"}/>
                     </Hidden>
                     <Hidden mdUp implementation={"js"}>
-                        <ScheduleDialog className={classNames(classes.heroButton)} mobile={"true"}/>
+                        <BookServiceDialog className={classNames(classes.heroButton)} buttonText={"Book Now"}/>
                     </Hidden>
                 </GridItem>
             </GridContainer>

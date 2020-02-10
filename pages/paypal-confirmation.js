@@ -3,7 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Head from "next/head";
 import {clp_exclaim, container, playBrand, title} from "../assets/jss/nextjs-material-kit";
 import Layout from "../pages-sections/Page-Sections/Layout";
-import MainContent from "../components/MainContent/MainContent";
+import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import Typography from "@material-ui/core/Typography";
 
 const style = theme => ({
@@ -13,7 +13,8 @@ const style = theme => ({
     container: {
         ...container,
         marginTop: "2rem",
-        minHeight: "10rem"
+        minHeight: "30rem",
+
     }
 });
 const useStyles = makeStyles(style);
@@ -28,10 +29,10 @@ export default function ConfirmationPage(props) {
                 <title>Confirmation • Bozeman Community Kiln</title>
             </Head>
             <div>
-                <Layout noParallax={true}>
-                    <MainContent>
+                <Layout>
+                    <BrandedHeader>
                         THANK <span className={classes.playBrand}>YOU</span><span className={classes.clp_exclaim}>!</span>
-                    </MainContent>
+                    </BrandedHeader>
                     <div className={classes.container}>
                         <Typography variant={"h5"} align={"center"} justify={"center"} className={classes.title}>
                             Your membership is being processed.

@@ -22,7 +22,7 @@ import {
     title
 } from "../assets/jss/nextjs-material-kit";
 import Layout from "../pages-sections/Page-Sections/Layout";
-import MainContent from "../components/MainContent/MainContent";
+import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 
 const style = theme => ({
     subHeaderBar: {
@@ -107,11 +107,11 @@ export default function StudiosPage(props) {
                 </Head>
                 <Layout>
                     <div>
-                        <MainContent>
+                        <BrandedHeader>
                             <Typography variant={"h1"} align={"center"} className={classes.brandFont}>
                                 WELCOMING <span className={classes.playBrand}>STUDIO ARTISTS</span>
                             </Typography>
-                        </MainContent>
+                        </BrandedHeader>
                                 <GridContainer>
                                     <GridItem xs={12} sm={12} md={3}>
                                         <Typography variant={"h5"} align={"center"}

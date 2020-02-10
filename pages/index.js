@@ -11,7 +11,7 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 // Styles
 import imagesStyle from "../assets/jss/nextjs-material-kit/imagesStyles";
 import {container} from "../assets/jss/nextjs-material-kit";
-import MainContent from "../components/MainContent/MainContent";
+import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 
 
 const style = theme => ({
@@ -39,9 +39,9 @@ export default function homePage(props) {
                 <title>HOME • Bozeman Community Kiln</title>
             </Head>
             <Layout>
-                <MainContent>
+                <BrandedHeader>
                     <CLPSection/>
-                </MainContent>
+                </BrandedHeader>
                 <AboutSection/>
             </Layout>
         </div>
