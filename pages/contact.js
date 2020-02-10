@@ -49,7 +49,9 @@ export default function ContactPage(props) {
             </Head>
             <Layout>
                 <BrandedHeader>
-                    Reach Out to Us
+                    <Typography variant={"h1"} align={"center"} className={classNames(classes.brandFont)} gutterBottom>
+                        Reach Out to Us
+                    </Typography>
                 </BrandedHeader>
                 <GridContainer alignItems={"flex-start"} className={classes.container} justify={"space-evenly"}>
                     <GridItem xs={12} sm={12} md={4}>

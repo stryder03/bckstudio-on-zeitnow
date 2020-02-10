@@ -3,6 +3,7 @@ import HeaderSection from "./HeaderSection";
 import Footer from "../../components/Footer/Footer";
 import classNames from "classnames";
 import {makeStyles} from "@material-ui/core/styles";
+import {Hidden} from "@material-ui/core";
 
 const style = theme => ({
     mainElement: {
@@ -18,6 +19,9 @@ const style = theme => ({
     noParallaxMargin: {
         margin: "15rem 5rem 2.5rem",
     },
+    small: {
+        margin: "-3.75rem 0rem 0rem",
+    }
 });
 
 const useStyles = makeStyles(style);
@@ -29,9 +33,16 @@ export default function Layout(props) {
     return (
         <div>
             <HeaderSection/>
-            <div className={classNames(classes.mainElement, classes.parallaxMargin)} id={"mainElement"}>
-                {props.children}
-            </div>
+            <Hidden smDown>
+                <div className={classNames(classes.mainElement, classes.parallaxMargin)} id={"mainElement"}>
+                    {props.children}
+                </div>
+            </Hidden>
+            <Hidden mdUp>
+                <div className={classNames(classes.mainElement, classes.small)} id={"mainElement"}>
+                    {props.children}
+                </div>
+            </Hidden>
             <Footer/>
         </div>
     )

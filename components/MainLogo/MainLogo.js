@@ -28,7 +28,7 @@ export default function MainLogo(props) {
                         <img src={kilnLogo} alt={"Kiln Logo"} height={"197px"}/>
                     </Hidden>
                     <Hidden mdUp implementation={"js"}>
-                        <BookServiceDialog className={classNames(classes.heroButton)} mobile={"true"}/>
+                        <BookServiceDialog className={classNames(classes.heroButton)} buttonText={"Book Now"}/>
                     </Hidden>
                 </GridItem>
             </GridContainer>

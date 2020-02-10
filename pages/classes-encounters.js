@@ -23,6 +23,7 @@ import vCone from "../assets/img/bck/svg/bckVerticalCones.svg";
 import hCone from "../assets/img/bck/svg/bckHorizonalCones.svg";
 import BookServiceDialog from "../components/ScheduleDialog/BookServiceDialog";
 import Link from "@material-ui/core/Link";
+import {red} from "@material-ui/core/colors";
 
 const style = theme => ({
     h1Container: {
@@ -150,6 +151,18 @@ const style = theme => ({
     iframeWrapper: {
         margin: "2.5rem"
     },
+    strike: {
+        marginTop: "1rem",
+        color: "#f00",
+        textDecoration:"line-through"
+    },
+    strikeText: {
+      color: "#333"
+    },
+    smallButton: {
+        margin: "auto"
+
+    },
     mainElement,
     brandFont
 });
@@ -219,12 +232,21 @@ export default function (props) {
                                 Designed for students aged 8-17
                             </Typography></li>
                         </ul>
-                        <div className={classes.bookButton}>
-                            <BookServiceDialog apptType={"10494352"} buttonText={"Join Clay Kids"}/>
-                        </div>
+                        <Hidden smDown>
+                            <div className={classes.bookButton}>
+                                <BookServiceDialog apptType={"10494352"} buttonText={"Join Clay Kids"}/>
+                            </div>
+                        </Hidden>
                     </GridItem>
                 </GridContainer>
-                <div className={classes.raisedDivider}/>
+                <Hidden mdUp>
+                    <div className={classNames(classes.smallButton)}>
+                        <BookServiceDialog apptType={"10494352"} buttonText={"Join Clay Kids"}/>
+                    </div>
+                </Hidden>
+                <Hidden smDown>
+                    <div className={classes.raisedDivider}/>
+                </Hidden>
                 <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
                     Adult Classes
                 </Typography>
@@ -234,12 +256,11 @@ export default function (props) {
                                     className={classNames(classes.classHeaders)}>
                             Beginner Wheel Class
                         </Typography>
-                        {/*TODO: Match price with price list*/}
                         <Typography variant={"subtitle1"} align={"center"} component={"p"} className={classes.classSubHeaders}>
                             With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>
                             Class: Tuesdays 6:30pm-9:30pm<br/>
                             Open Studio: Thursdays 7:00pm-10:00pm<br/>
-                            Pricing starts at $45 / per class
+                            Pricing starts at $55 / per class
                         </Typography>
                     </GridItem>
                     <Hidden smDown>
@@ -269,23 +290,34 @@ export default function (props) {
                             </Typography>
                         </div>
                         <ol className={classes.priceList}>
-                            {/*TODO: Adjust prices so deals are deals*/}
                             <li><Typography variant={"body1"} >
-                                Intro Class: $45
+                                Intro Class: $55
+                                <span className={classes.strike}>
+                                    <span className={classes.strikeText}>(incl glazing and firing)</span>
+                                </span>
                             </Typography></li>
                             <li><Typography variant={"body1"} >
-                                3 Class bundle: $180 (incl glazing and firing)
+                                3 Class bundle: $165 (incl glazing and firing)
                             </Typography></li>
                             <li><Typography variant={"body1"} >
                                 6 Class bundle: $300 (incl glazing and firing)
                             </Typography></li>
                         </ol>
-                        <div className={classes.bookButton}>
-                            <BookServiceDialog apptType={"10782608"} buttonText={"Book Megan's Wheel Class"}/>
-                        </div>
+                        <Hidden smDown>
+                            <div className={classes.bookButton}>
+                                <BookServiceDialog apptType={"10782608"} buttonText={"Book Megan's Wheel Class"}/>
+                            </div>
+                        </Hidden>
                     </GridItem>
                 </GridContainer>
-                <div className={classes.raisedDivider}/>
+                <Hidden mdUp>
+                    <div className={classNames(classes.smallButton)}>
+                        <BookServiceDialog apptType={"10782608"} buttonText={"Book Megan's Wheel Class"}/>
+                    </div>
+                </Hidden>
+                <Hidden smDown>
+                    <div className={classes.raisedDivider}/>
+                </Hidden>
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={3}>
                         <Typography variant={"h5"} align={"center"}
@@ -296,8 +328,7 @@ export default function (props) {
                             With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>
                             Class: Thursdays 7:00pm-10:00pm<br/>
                             Open Studio: Tuesdays 6:30pm-9:30pm<br/>
-                            {/*TODO: Match price to price list*/}
-                            Pricing starts at $50 / per class
+                            Pricing starts at $55 / per class
                         </Typography>
                     </GridItem>
                     <Hidden smDown>
@@ -328,23 +359,30 @@ export default function (props) {
                             </Typography>
                         </div>
                         <ol className={classes.priceList}>
-                            {/*TODO: Adjust prices so deals are deals*/}
                             <li><Typography variant={"body1"} >
-                                Intro  Mug Class: $50 (incl glazing and firing)
-                            </Typography></li>
-                            <li><Typography variant={"body1"} >
-                                3 Class bundle: $180 (incl glazing and firing)
+                                Intro  Mug Class: $55 (incl glazing and firing)
                             </Typography></li>
                             <li><Typography variant={"body1"} >
                                 6 Class bundle: $300 (incl glazing and firing)
                             </Typography></li>
                         </ol>
-                        <div className={classes.bookButton}>
-                            <BookServiceDialog apptType={"10906689"} buttonText={"Book Megan's Hand Building Class"}/>
-                        </div>
+                        <Hidden smDown>
+                            <div className={classes.bookButton}>
+                                <BookServiceDialog apptType={"10906689"} buttonText={"Book Megan's Hand Building Class"}/>
+                            </div>
+                        </Hidden>
                     </GridItem>
                 </GridContainer>
-                <div className={classes.raisedDivider}  id={"encounters"}/>
+                <div id={"encounters"}>
+                    <Hidden mdUp>
+                        <div className={classNames(classes.smallButton)}>
+                            <BookServiceDialog apptType={"10782608"} buttonText={"Book Megan's Hand Building Class"}/>
+                        </div>
+                    </Hidden>
+                    <Hidden smDown>
+                        <div className={classes.raisedDivider}/>
+                    </Hidden>
+                </div>
                 <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
                     Encounters
                 </Typography>

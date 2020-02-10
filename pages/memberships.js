@@ -136,7 +136,9 @@ export default function MembershipPage(props) {
             <div>
                 <Layout>
                     <BrandedHeader>
-                        CREATE.
+                        <Typography variant={"h1"} align={"center"} className={classNames(classes.brandFont)} gutterBottom>
+                            CREATE.
+                        </Typography>
                     </BrandedHeader>
                     <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
                         Individual Memberships

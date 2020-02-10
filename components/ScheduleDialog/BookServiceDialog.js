@@ -33,14 +33,18 @@ const useStyles = makeStyles(theme => ({
         marginTop: "0",
         [theme.breakpoints.down("md")]: {
             marginTop: "auto"
-        }
+        },
     },
     title:{
         flex: 1,
-        fontWeight: "700"
+        fontWeight: "700",
+        textAlign: "center",
     },
     dialogButton: {
         position: "absolute",
+    },
+    buttonText:{
+        margin:"auto"
     }
 }));
 
@@ -59,14 +63,16 @@ export default function BookServiceDialog(props) {
         setOpen(!open);
     };
     return (
-        <div className={classes.listItem}>
+        <div>
             <CustomButtons
                 aria-label={"book service"}
                 className={classNames(classes.navLink,classes.bookButton)}
                 id={"book-header"}
                 onClick={handleToggle}
             >
-                {buttonText}
+                <div className={classes.buttonText}>
+                    {buttonText}
+                </div>
             </CustomButtons>
             <Dialog fullScreen open={open} onBackdropClick={handleClose} TransitionComponent={Transition}>
                 <DialogTitle className={classes.appBar}>

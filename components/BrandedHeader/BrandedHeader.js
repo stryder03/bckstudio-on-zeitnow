@@ -16,7 +16,8 @@ const style = theme => ({
             marginRight: "auto",
         },
         backgroundColor: theme.palette.secondary.main,
-        position: "relative"
+        position: "relative",
+        textAlign: "center"
     },
     brandFont
 
@@ -27,9 +28,7 @@ export default function BrandedHeader(props) {
     const classes = useStyles();
     return (
         <div className={classNames(classes.mainContentRaised)}>
-            <Typography variant={"h1"} align={"center"} className={classes.brandFont}>
-                {props.children}
-            </Typography>
+            {props.children}
         </div>
     )
 };
