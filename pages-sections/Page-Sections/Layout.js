@@ -24,18 +24,11 @@ const useStyles = makeStyles(style);
 
 export default function Layout(props) {
     const classes = useStyles();
-    const {noParallax} = props;
-
-    React.useEffect(() => {
-        if (noParallax) {
-            document.getElementById("mainElement").classList.remove(classes.parallaxMargin);
-            document.getElementById("mainElement").classList.add(classes.noParallaxMargin);
-        }
-    });
+    const {} = props;
 
     return (
         <div>
-            <HeaderSection noParallax={noParallax}/>
+            <HeaderSection/>
             <div className={classNames(classes.mainElement, classes.parallaxMargin)} id={"mainElement"}>
                 {props.children}
             </div>

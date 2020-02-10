@@ -14,7 +14,7 @@ import Button from "../CustomButtons/Button.js";
 
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
 import {primaryColor} from "../../assets/jss/nextjs-material-kit";
-import ScheduleDialog from "../ScheduleDialog/ScheduleDialog";
+import BookServiceDialog from "../ScheduleDialog/BookServiceDialog";
 
 const style = theme => ({
     ...styles,
@@ -57,10 +57,10 @@ export default function HeaderLinks(props) {
       </ListItem>
         <ListItem className={classes.listItem} color={primaryColor}>
             <Button
-                href="/clay-encounters"
+                href="/classes-encounters"
                 color="transparent"
                 className={classes.navLink}
-            >Clay Encounters
+            >Classes & Encounters
             </Button>
         </ListItem>
         <ListItem className={classes.listItem} color={primaryColor}>
@@ -81,7 +81,7 @@ export default function HeaderLinks(props) {
         </ListItem>
         <ListItem className={classes.listItem}>
             <Hidden smDown>
-                <ScheduleDialog className={classNames(classes.navLink)} />
+                <BookServiceDialog buttonText={"Book Now"} className={classNames(classes.navLink)}/>
             </Hidden>
         </ListItem>
     </List>

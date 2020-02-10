@@ -15,9 +15,8 @@ import AcuityScheduler from "../../pages-sections/Page-Sections/AcuityScheduler"
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 
-const style = theme => ({
-    ...styles.navLink,
-    ...styles.listItem,
+const useStyles = makeStyles(theme => ({
+    ...styles,
     ...container,
     dialog: {
         zIndex: theme.zIndex.drawer + 1
@@ -43,17 +42,17 @@ const style = theme => ({
     dialogButton: {
         position: "absolute",
     }
-});
-const useStyles = makeStyles(style);
+}));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Fade ref={ref} {...props} />;
 });
 
-export default function ScheduleDialog(props) {
+export default function BookServiceDialog(props) {
     const classes = useStyles();
+    const { buttonText, apptType} = props;
     const [open, setOpen] = React.useState(false);
-    const [scheduler, setScheduler] = React.useState(<AcuityScheduler category={""}/>);
+    const [scheduler, setScheduler] = React.useState(<AcuityScheduler apptType={apptType}/>);
     const handleClose = () => {
         setOpen(false);
     };
@@ -63,12 +62,12 @@ export default function ScheduleDialog(props) {
     return (
         <div className={classes.listItem}>
             <CustomButtons
-                aria-label={"book now"}
+                aria-label={"book service"}
                 className={classNames(classes.navLink,classes.bookButton)}
                 id={"book-header"}
                 onClick={handleToggle}
             >
-                Book Now
+                {buttonText}
             </CustomButtons>
             <Dialog fullScreen open={open} onBackdropClick={handleClose} TransitionComponent={Transition}>
                 <DialogTitle className={classes.appBar}>
@@ -91,5 +90,4 @@ export default function ScheduleDialog(props) {
             </Dialog>
         </div>
     )
-
 }

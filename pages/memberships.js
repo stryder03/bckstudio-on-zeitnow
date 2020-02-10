@@ -10,7 +10,7 @@ import Head from "next/head";
 import Pricing from "../components/Pricing/Pricing";
 import Layout from "../pages-sections/Page-Sections/Layout";
 import {brandFont, clp_exclaim, dividerBar, mainElement, playBrand, title,} from "../assets/jss/nextjs-material-kit";
-import MainContent from "../components/MainContent/MainContent";
+import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 
 const style = theme => ({
     whiteContainer:{
@@ -39,6 +39,10 @@ const style = theme => ({
         ...dividerBar,
         ...mainElement,
         marginTop: "0"
+    },
+    categoryHeaders: {
+        color: theme.palette.primary.main,
+        marginTop: "2.5rem"
     },
     mainElement,
     title,
@@ -131,15 +135,18 @@ export default function MembershipPage(props) {
                 </Head>
             <div>
                 <Layout>
-                    <MainContent>
+                    <BrandedHeader>
                         CREATE.
-                    </MainContent>
+                    </BrandedHeader>
+                    <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
+                        Individual Memberships
+                    </Typography>
                     <Pricing tiers={memberTiers}/>
                     <div className={classNames(classes.main_content, classes.mainContentRaised)}>
                     <div className={classes.headerContainer}>
-                            <Typography variant={"h1"} align={"center"} className={classes.brandFont}>
-                                CREATE. for Families
-                            </Typography>
+                        <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
+                            Family Membership
+                        </Typography>
                         </div>
                     </div>
                     <Pricing tiers={familyTier} />

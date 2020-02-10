@@ -3,6 +3,7 @@ import Button from "../CustomButtons/Button";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {useForm} from "react-hook-form";
+import submitForm from "../../Scripts/submitForm";
 
 const useStyles = makeStyles(theme => ({
     form: {
@@ -22,7 +23,19 @@ export default function ContactForm(props) {
     const classes = useStyles();
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
-        alert(JSON.stringify(data));
+        const didSubmit = submitForm(data).then((result) =>{
+            return result
+        }).catch(err => {
+            console.error(err);
+            return false
+        });
+
+        if (!didSubmit){
+            alert("Failed to send")
+        }
+        else{
+            alert("Message Submitted")
+        }
     };
 
     const { } = props;

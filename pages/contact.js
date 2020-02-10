@@ -9,10 +9,8 @@ import {TextareaAutosize, TextField, Typography} from "@material-ui/core";
 import Head from "next/head";
 import Layout from "../pages-sections/Page-Sections/Layout";
 import {brandFont, clp_exclaim, dividerBar, mainElement, playBrand, title, container} from "../assets/jss/nextjs-material-kit";
-import MainContent from "../components/MainContent/MainContent";
-import { useForm } from "react-hook-form";
+import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import GridItem from "../components/Grid/GridItem";
-import Button from "../components/CustomButtons/Button";
 import GridContainer from "../components/Grid/GridContainer";
 import ContactForm from "../components/ContactForm/ContactForm";
 
@@ -43,16 +41,16 @@ const useStyles = makeStyles(style);
 export default function ContactPage(props) {
     const classes = useStyles();
     const {} = props;
-
+    const gKey = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJrb7LA0RJRVMRLThXYkgPKbk&key=" + process.env.MAPS_KEY;
     return (
         <div>
             <Head>
                 <title>CONTACT US • Bozeman Community Kiln</title>
             </Head>
             <Layout>
-                <MainContent>
+                <BrandedHeader>
                     Reach Out to Us
-                </MainContent>
+                </BrandedHeader>
                 <GridContainer alignItems={"flex-start"} className={classes.container} justify={"space-evenly"}>
                     <GridItem xs={12} sm={12} md={4}>
                         <ContactForm formTitle={"Email"}/>
@@ -62,7 +60,7 @@ export default function ContactPage(props) {
                             Visit
                         </Typography>
                         <iframe width="450" height="450" frameBorder="0" style={{border:0}}
-                                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJrb7LA0RJRVMRLThXYkgPKbk&key=AIzaSyAKH01Pc_8dn9Dn_2vfr6p_NsHKbEYlW6I"
+                                src={gKey}
                                 allowFullScreen/>
                     </GridItem>
                     <GridItem xs={12}>

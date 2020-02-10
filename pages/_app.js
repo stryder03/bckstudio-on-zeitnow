@@ -7,6 +7,7 @@ import "../assets/scss/nextjs-material-kit.scss?v=1.0.0";
 import {ThemeProvider} from "@material-ui/styles";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
+import {ParallaxProvider} from "react-scroll-parallax/cjs";
 
 Router.events.on("routeChangeStart", url => {
     console.log(`Loading: ${url}`);
@@ -38,7 +39,9 @@ export default class MyApp extends App {
               <link href="https://fonts.googleapis.com/css?family=Asap:600,700|Lato|Merriweather+Sans:800&display=swap" rel="stylesheet"/>
           </Head>
         <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
+            <ParallaxProvider>
+                <Component {...pageProps} />
+            </ParallaxProvider>
         </ThemeProvider>
       </React.Fragment>
     );

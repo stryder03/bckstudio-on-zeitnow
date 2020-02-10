@@ -36,7 +36,10 @@ const useStyles = makeStyles(theme => ({
     },
     priceButton: {
         fontWeight: 'bold',
-        '&hover': {
+    },
+    featuredPriceButton: {
+        fontWeight: 'bold',
+        '&:hover': {
             color: "#ffffff"
         }
     },
@@ -88,7 +91,7 @@ export default function Pricing(props) {
                                             variant={tier.buttonVariant}
                                             color="primary"
                                             href={"https://www.paypal.com/cgi-bin/webscr&cmd=_s-xclick&hosted_button_id="+tier.inputValue}
-                                            className={classes.priceButton}>
+                                            className={tier.buttonVariant === 'contained' ? classes.featuredPriceButton : classes.priceButton}>
                                             {tier.buttonText}
                                     </Button>
                                 </CardActions>
