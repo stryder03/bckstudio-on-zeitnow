@@ -257,7 +257,9 @@ export default function (props) {
                             Beginner Wheel Class
                         </Typography>
                         <Typography variant={"subtitle1"} align={"center"} component={"p"} className={classes.classSubHeaders}>
-                            With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>
+                            {/*TODO: Add Bio*/}
+                            {/*With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>*/}
+                            With: Megan Sprenger<br/>
                             Class: Tuesdays 6:30pm-9:30pm<br/>
                             Open Studio: Thursdays 7:00pm-10:00pm<br/>
                             Pricing starts at $55 / per class
@@ -325,7 +327,9 @@ export default function (props) {
                             Beginner Hand Building Class
                         </Typography>
                         <Typography variant={"subtitle1"} align={"center"} component={"p"} className={classes.classSubHeaders}>
-                            With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>
+                            {/*TODO: Add Bio*/}
+                            {/*With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>*/}
+                            With: Megan Sprenger<br/>
                             Class: Thursdays 7:00pm-10:00pm<br/>
                             Open Studio: Tuesdays 6:30pm-9:30pm<br/>
                             Pricing starts at $55 / per class
@@ -373,16 +377,12 @@ export default function (props) {
                         </Hidden>
                     </GridItem>
                 </GridContainer>
-                <div id={"encounters"}>
                     <Hidden mdUp>
                         <div className={classNames(classes.smallButton)}>
                             <BookServiceDialog apptType={"10782608"} buttonText={"Book Megan's Hand Building Class"}/>
                         </div>
                     </Hidden>
-                    <Hidden smDown>
-                        <div className={classes.raisedDivider}/>
-                    </Hidden>
-                </div>
+                <div className={classes.raisedDivider} id={"encounters"} />
                 <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
                     Encounters
                 </Typography>
