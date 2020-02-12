@@ -33,9 +33,7 @@ export default class MyApp extends App {
     return (
       <React.Fragment>
           <Head>
-              {/*TODO: Add SEO components to title, update by page*/}
               <title>Bozeman Community Kiln • BCKstudio.com</title>
-              {/*TODO: Add meta tags*/}
               <link href="https://fonts.googleapis.com/css?family=Asap:600,700|Lato|Merriweather+Sans:800&display=swap" rel="stylesheet"/>
           </Head>
         <ThemeProvider theme={theme}>

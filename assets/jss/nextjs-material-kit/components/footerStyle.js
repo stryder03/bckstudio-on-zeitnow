@@ -20,7 +20,7 @@ const footerStyle = {
   right: {
     padding: "15px 0",
     margin: "0",
-    [theme.breakpoints.up("md")]:{
+    [theme.breakpoints.up("md")]: {
       float: "right!important",
     },
 

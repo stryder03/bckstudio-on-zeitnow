@@ -4,11 +4,9 @@ import Head from "next/head";
 import {makeStyles} from "@material-ui/core/styles";
 import {Hidden, Typography} from "@material-ui/core";
 import classNames from "classnames";
-// Sections for this page
-
-
 import {
-    brandFont, dividerBar,
+    brandFont,
+    dividerBar,
     mainElement,
     playBrand,
     primaryFontColor,
@@ -21,16 +19,16 @@ import GridContainer from "../components/Grid/GridContainer";
 import GridItem from "../components/Grid/GridItem";
 import vCone from "../assets/img/bck/svg/bckVerticalCones.svg";
 import hCone from "../assets/img/bck/svg/bckHorizonalCones.svg";
-import BookServiceDialog from "../components/ScheduleDialog/BookServiceDialog";
-import Link from "@material-ui/core/Link";
-import {red} from "@material-ui/core/colors";
+import BookServiceDialog from "../components/BookServiceDialog/BookServiceDialog";
+import BioDialogMS from "../components/BioDialog/BioDialogMS";
+// Sections for this page
 
 const style = theme => ({
     h1Container: {
         backgroundColor: theme.palette.secondary.main,
         padding: "2.5rem",
     },
-    textBody:{
+    textBody: {
         maxWidth: "50vw",
         margin: "auto",
         paddingBottom: "2.5rem"
@@ -154,21 +152,24 @@ const style = theme => ({
     strike: {
         marginTop: "1rem",
         color: "#f00",
-        textDecoration:"line-through"
+        textDecoration: "line-through"
     },
     strikeText: {
-      color: "#333"
+        color: "#333"
     },
     smallButton: {
         margin: "auto"
 
+    },
+    bio: {
+        marginLeft: "2rem"
     },
     mainElement,
     brandFont
 });
 const useStyles = makeStyles(style);
 
-export default function (props) {
+export default function ClassesEncounters(props) {
     const classes = useStyles();
     const {} = props;
     return (
@@ -185,7 +186,7 @@ export default function (props) {
                         <Typography variant={"body1"} component={"p"} align={"center"}>
                             Thank you for being interested in our Classes and Encounters! We want to make ceramics,
                             pottery and clay an affordable, entertaining past time for everyone. Here is a quick
-                            guide to help understand how our system works: Memberships keep us open and allow our
+                            guide to help you understand how our system works: Memberships keep us open and allow our
                             members to have access to the studio and equipment. Classes, on the other hand, directly
                             support local, working artists! During regular open studio hours, Ashleah and Heather
                             are available to meet the individualized needs of members. For more advanced ceramicists
@@ -256,10 +257,9 @@ export default function (props) {
                                     className={classNames(classes.classHeaders)}>
                             Beginner Wheel Class
                         </Typography>
-                        <Typography variant={"subtitle1"} align={"center"} component={"p"} className={classes.classSubHeaders}>
-                            {/*TODO: Add Bio*/}
-                            {/*With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>*/}
-                            With: Megan Sprenger<br/>
+                        <Typography variant={"subtitle1"} align={"center"} component={"p"}
+                                    className={classes.classSubHeaders}>
+                            With: <br/><BioDialogMS/><br/>
                             Class: Tuesdays 6:30pm-9:30pm<br/>
                             Open Studio: Thursdays 7:00pm-10:00pm<br/>
                             Pricing starts at $55 / per class
@@ -326,10 +326,9 @@ export default function (props) {
                                     className={classNames(classes.classHeaders)}>
                             Beginner Hand Building Class
                         </Typography>
-                        <Typography variant={"subtitle1"} align={"center"} component={"p"} className={classes.classSubHeaders}>
-                            {/*TODO: Add Bio*/}
-                            {/*With: <a href={"/#"} className={classes.links}>Megan Sprenger</a> <br/>*/}
-                            With: Megan Sprenger<br/>
+                        <Typography variant={"subtitle1"} align={"center"} component={"p"}
+                                    className={classes.classSubHeaders}>
+                            With: <br/><BioDialogMS/><br/>
                             Class: Thursdays 7:00pm-10:00pm<br/>
                             Open Studio: Tuesdays 6:30pm-9:30pm<br/>
                             Pricing starts at $55 / per class
@@ -372,28 +371,32 @@ export default function (props) {
                         </ol>
                         <Hidden smDown>
                             <div className={classes.bookButton}>
-                                <BookServiceDialog apptType={"10906689"} buttonText={"Book Megan's Hand Building Class"}/>
+                                <BookServiceDialog apptType={"10906689"}
+                                                   buttonText={"Book Megan's Hand Building Class"}/>
                             </div>
                         </Hidden>
                     </GridItem>
                 </GridContainer>
-                    <Hidden mdUp>
-                        <div className={classNames(classes.smallButton)}>
-                            <BookServiceDialog apptType={"10782608"} buttonText={"Book Megan's Hand Building Class"}/>
-                        </div>
-                    </Hidden>
-                <div className={classes.raisedDivider} id={"encounters"} />
-                <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
+                <Hidden mdUp>
+                    <div className={classNames(classes.smallButton)}>
+                        <BookServiceDialog apptType={"10782608"} buttonText={"Book Megan's Hand Building Class"}/>
+                    </div>
+                </Hidden>
+                <div className={classes.raisedDivider}/>
+                <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders} id={"play"}
+                            name={"play"}>
                     Encounters
                 </Typography>
                 <Typography variant={"body1"} align={"center"} className={classes.textBody}>
                     Encounters are fun-centric events designed to bring our community together for a few hours and
-                    create something that can be taken home and enjoyed. We add new encounters weekly, so check back often!
+                    create something that can be taken home and enjoyed. We add new encounters weekly, so check back
+                    often!
                 </Typography>
-                <iframe src="https://app.acuityscheduling.com/schedule.php?owner=17880488&owner=17880488&appointmentType=category:Encounters"
-                        width="100%"
-                        height="800"
-                        frameBorder="0"/>
+                <iframe
+                    src="https://app.acuityscheduling.com/schedule.php?owner=17880488&owner=17880488&appointmentType=category:Encounters"
+                    width="100%"
+                    height="800"
+                    frameBorder="0"/>
             </Layout>
         </div>
     );

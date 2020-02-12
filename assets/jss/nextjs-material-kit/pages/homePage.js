@@ -1,4 +1,4 @@
-import { container, mainElement} from "assets/jss/nextjs-material-kit.js";
+import {container, mainElement} from "assets/jss/nextjs-material-kit.js";
 import imagesStyle from "assets/jss/nextjs-material-kit/imagesStyles.js";
 
 const homePageStyle = {

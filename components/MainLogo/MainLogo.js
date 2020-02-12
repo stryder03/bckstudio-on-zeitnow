@@ -5,7 +5,7 @@ import GridItem from "../Grid/GridItem";
 import kilnLogo from "../../assets/img/bck/svg/bckHorizontalLogo.svg";
 import React from "react";
 import classNames from "classnames";
-import BookServiceDialog from "../ScheduleDialog/BookServiceDialog";
+import BookServiceDialog from "../BookServiceDialog/BookServiceDialog";
 
 
 const style = {
@@ -25,7 +25,7 @@ export default function MainLogo(props) {
             <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                     <Hidden smDown implementation={"js"}>
-                        <img src={kilnLogo} alt={"Kiln Logo"} height={"197px"}/>
+                        <img src={kilnLogo} alt={"Bozeman Community Kiln"} height={"197px"}/>
                     </Hidden>
                     <Hidden mdUp implementation={"js"}>
                         <BookServiceDialog className={classNames(classes.heroButton)} buttonText={"Book Now"}/>

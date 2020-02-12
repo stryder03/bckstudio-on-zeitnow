@@ -12,7 +12,7 @@ import ale from "../../assets/img/faces/ale_01.jpeg";
 import hbh from "../../assets/img/faces/hbh_01.jpeg";
 import hCones from "../../assets/img/bck/svg/bckHorizonalCones.svg";
 import Typography from "@material-ui/core/Typography";
-import {card, cardTitle, title} from "../../assets/jss/nextjs-material-kit";
+import {cardTitle, title} from "../../assets/jss/nextjs-material-kit";
 import imagesStyle from "../../assets/jss/nextjs-material-kit/imagesStyles";
 import {ExpansionPanel, ExpansionPanelDetails} from "@material-ui/core";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
@@ -118,19 +118,23 @@ export default function AboutSection() {
               <CardBody>
                 <ExpansionPanel>
                   <ExpansionPanelSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
+                      expandIcon={<ExpandMoreIcon/>}
+                      aria-controls="ashleah-elias-bio-content"
+                      id="ashleah-elias-bio-header"
                   >
                     <h4 className={classNames(classes.cardTitle)}>Learn about Ashleah</h4>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
                     <Typography variant={"body1"} align={"right"}>
-                      Ashleah moved to Bozeman in 2014 with her family after her husband of 13 years was medically retired
-                      from the USMC. Drawn to the area for its supportive veteran community and Montana State University,
+                      Ashleah moved to Bozeman in 2014 with her family after her husband of 13 years was medically
+                      retired
+                      from the USMC. Drawn to the area for its supportive veteran community and Montana State
+                      University,
                       Ashleah has discovered a passion for other military families and the greater Bozeman community.
-                      Prior to moving here, Ashleah spent 10 years working as a nurse and, before returning to university,
-                      she spent half a year managing a busy rural health clinic in California. Her experience as a nurse has
+                      Prior to moving here, Ashleah spent 10 years working as a nurse and, before returning to
+                      university,
+                      she spent half a year managing a busy rural health clinic in California. Her experience as a nurse
+                      has
                       given her strong skills in communication and teaching, which she has since put to use teaching private
                       ceramics lessons in her own home studio. Ashleah has been privileged to demonstrate pottery-teaching
                       techniques at MSU and spent time in the summer of 2018 teaching ceramics for MSU’s Peaks and Potential
@@ -160,19 +164,23 @@ export default function AboutSection() {
               <CardBody>
                 <ExpansionPanel>
                   <ExpansionPanelSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
+                      expandIcon={<ExpandMoreIcon/>}
+                      aria-controls="heather-hodapp-bio-content"
+                      id="heather-hodapp-bio-header"
                   >
                     <h4 className={classNames(classes.cardTitle)}>Learn about Heather</h4>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
-                <Typography variant={"body1"} align={"left"}>
-                  Attracted by the veteran community in Bozeman as well as her military family connections with Ashleah,
-                  Heather and her family moved to Bozeman in 2017. For seven years prior to that move, Heather supported
-                  her husband’s military career as stay at home mother for their 3 boys. Upon her husband’s medical
-                  retirement, Heather rejoined the work force seeking challenge and achievement in the unfamiliar field
-                  of retail, as a seasonal part-time employee. Her outstanding strengths in organization, communication,
+                    <Typography variant={"body1"} align={"left"}>
+                      Attracted by the veteran community in Bozeman as well as her military family connections with
+                      Ashleah,
+                      Heather and her family moved to Bozeman in 2017. For seven years prior to that move, Heather
+                      supported
+                      her husband’s military career as stay at home mother for their 3 boys. Upon her husband’s medical
+                      retirement, Heather rejoined the work force seeking challenge and achievement in the unfamiliar
+                      field
+                      of retail, as a seasonal part-time employee. Her outstanding strengths in organization,
+                      communication,
                   and leadership, as well as her natural talent for merchandising, led to Heather being promoted from a
                   seasonal part-time employee to the General Manager in only one year. During her time as General Manager
                   Heather organized the complicated execution of a pop-up Halloween City through to its completion at the

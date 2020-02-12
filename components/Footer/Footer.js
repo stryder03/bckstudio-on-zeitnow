@@ -25,24 +25,21 @@ export default function Footer(props) {
     [classes.footer]: true,
     [classes.footerWhiteFont]: whiteFont
   });
-  const aClasses = classNames({
-    [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
-  });
+
   return (
       <div>
         <HeroImg image={heroImg2}>
           <SocialMediaInfo/>
         </HeroImg>
         <BusinessInfo/>
-        <footer className={footerClasses}>
-            <div className={classes.container}>
-              <div className={classes.left}>
-                <List className={classes.list}>
-                  <ListItem className={classes.inlineBlock}>
-                    <Link href={"/memberships"}>
+        <footer className={footerClasses} role={"contentinfo"}>
+          <div className={classes.container}>
+            <div className={classes.left}>
+              <List className={classes.list}>
+                <ListItem className={classes.inlineBlock}>
+                  <Link href={"/memberships"}>
                     <a
-                      className={classes.block}
+                        className={classes.block}
                     >
                       Memberships
                     </a>

@@ -14,7 +14,7 @@ const socialMediaStyle = {
         display: "inline-block",
         position: "relative",
         color: "#FFFFFF",
-        fontWeight:"bold",
+        fontWeight: "bold",
         fontFamily: 'Asap, sans-serif',
         textShadow: "2px 2px 4px #000000",
         [theme.breakpoints.up('md')]: {

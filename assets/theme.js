@@ -24,13 +24,13 @@ const themeBase = createMuiTheme({
         },
     },
     typography: {
-        fontFamily: ['Lato','Helvetica','Arial','Lucida','sans-serif'].join(','),
+        fontFamily: ['Lato', 'Helvetica', 'Arial', 'Lucida', 'sans-serif'].join(','),
         h1: {
             fontFamily: ['Asap', 'sans-serif'].join(','),
             fontWeight: "700",
             color: "#333"
         },
-        h2:{
+        h2: {
             fontFamily: ['Asap', 'sans-serif'].join(','),
             fontWeight: "700",
             color: "#333"
@@ -62,10 +62,10 @@ const theme = responsiveFontSizes(themeBase);
 theme.typography.h1 = {
     fontSize: "3rem",
     [theme.breakpoints.up('md')]: {
-    fontSize: '3rem',
+        fontSize: '3rem',
     },
     [theme.breakpoints.down('xs')]: {
-    fontSize: '2rem',
-},
+        fontSize: '2rem',
+    },
 };
 export default theme;

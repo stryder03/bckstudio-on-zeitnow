@@ -38,7 +38,8 @@ export default function ConfirmationPage(props) {
                             Your membership is being processed.
                         </Typography>
                         <Typography variant={"body1"} align={"center"} justify={"center"}>
-                            You will receive an email shortly with the agreement documents to sign electronically. Also, there will be a link to schedule your Orientation session.
+                            You will receive an email shortly with the agreement documents to sign electronically.
+                            Also, there will be a link to schedule your Orientation session.
                         </Typography>
                         <Typography variant={"h6"} align={"center"} justify={"center"} className={classes.title}>
                             Welcome to the Bozeman Community Kiln Community!

@@ -3,7 +3,7 @@ import theme from "../theme";
 const drawerWidth = 260;
 
 const transition = {
-  transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
+    transition: "all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
 };
 const containerFluid = {
   paddingRight: "0.938em",
@@ -45,7 +45,7 @@ const card = {
 };
 
 const primaryColor = "#416e80";
-const secondaryColor= "#B8D8DA";
+const secondaryColor = "#B8D8DA";
 const primaryFontColor = "#444";
 const warningColor = "#ff9800";
 const dangerColor = "#f44336";
@@ -154,7 +154,7 @@ const title = {
   marginTop: "2rem",
   textDecoration: "none",
   color: theme.palette.primary.main,
-  fontWeight:"bold",
+  fontWeight: "bold",
   fontFamily: 'Asap, sans-serif'
 };
 
@@ -187,7 +187,7 @@ const playBrand = {
 };
 
 const dividerBar = {
-  backgroundColor:theme.palette.secondary.main,
+  backgroundColor: theme.palette.secondary.main,
   height: "2vh"
 };
 
