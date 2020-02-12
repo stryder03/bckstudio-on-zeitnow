@@ -31,7 +31,9 @@ export default function ConfirmationPage(props) {
             <div>
                 <Layout>
                     <BrandedHeader>
-                        THANK <span className={classes.playBrand}>YOU</span><span className={classes.clp_exclaim}>!</span>
+                        <Typography variant={"h1"}>
+                            THANK<span className={classes.playBrand}>YOU</span><span className={classes.clp_exclaim}>!</span>
+                        </Typography>
                     </BrandedHeader>
                     <div className={classes.container}>
                         <Typography variant={"h5"} align={"center"} justify={"center"} className={classes.title}>
