@@ -20,10 +20,10 @@ const businessInfoStyle = {
         textAlign: "center!important"
     },
     verticalCones: {
-        height:"10rem"
+        height: "10rem"
     },
     inline: {
-      display: "inline"
+        display: "inline"
     },
 };
 

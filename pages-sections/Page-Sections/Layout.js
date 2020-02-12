@@ -28,21 +28,23 @@ const useStyles = makeStyles(style);
 
 export default function Layout(props) {
     const classes = useStyles();
-    const {} = props;
+    const {wrapH1} = props;
 
     return (
         <div>
-            <HeaderSection/>
-            <Hidden smDown>
-                <div className={classNames(classes.mainElement, classes.parallaxMargin)} id={"mainElement"}>
-                    {props.children}
-                </div>
-            </Hidden>
-            <Hidden mdUp>
-                <div className={classNames(classes.mainElement, classes.small)} id={"mainElement"}>
-                    {props.children}
-                </div>
-            </Hidden>
+            <HeaderSection wrapH1={wrapH1}/>
+            <main role="main">
+                <Hidden smDown>
+                    <div className={classNames(classes.mainElement, classes.parallaxMargin)} id={"mainElement"}>
+                        {props.children}
+                    </div>
+                </Hidden>
+                <Hidden mdUp>
+                    <div className={classNames(classes.mainElement, classes.small)} id={"mainElement"}>
+                        {props.children}
+                    </div>
+                </Hidden>
+            </main>
             <Footer/>
         </div>
     )

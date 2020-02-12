@@ -41,7 +41,6 @@ const clpStyle = {
     color: primaryFontColor
   },
   mainElement,
-  ,
   brandFont
 };
 

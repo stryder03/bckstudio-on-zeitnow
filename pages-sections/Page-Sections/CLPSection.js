@@ -24,6 +24,9 @@ const style = theme => ({
   gridContainer: {
     padding: "2.5rem 0"
   },
+  upper: {
+    textTransform: "uppercase"
+  },
   brandFont,
   playBrand
 });
@@ -37,38 +40,39 @@ export default function CLPSection(props) {
         </GridContainer>
         <GridContainer alignItems={"flex-start"} className={classes.gridContainer}>
           <GridItem xs={12} sm={12} md={3}>
-            <Typography variant={"h3"} className={classes.brandFont}>CREATE.</Typography>
-            <Typography variant={"h6"} >Memberships</Typography>
+            <Typography variant={"h3"} component={"h2"} className={classes.brandFont}>CREATE.</Typography>
+            <Typography variant={"h6"} component={"h3"} className={classes.upper}>Memberships</Typography>
             <Typography variant={"body1"} align={"center"} justify={"center"}>
               Join our clay family!
               Different levels of studio access to meet your needs.
             </Typography>
             <Link href={"/memberships"}>
               <CustomButtons className={classes.clpButton}>
-              Come Create
+                Come Create
               </CustomButtons>
-              </Link>
+            </Link>
           </GridItem>
           <GridItem xs={12} sm={12} md={3}>
-            <Typography variant={"h3"} className={classes.brandFont}>LEARN.</Typography>
-            <Typography variant={"h6"} >Clay Classes</Typography>
+            <Typography variant={"h3"} component={"h2"} className={classes.brandFont}>LEARN.</Typography>
+            <Typography variant={"h6"} component={"h3"} className={classes.upper}>Clay Classes</Typography>
             <Typography variant={"body1"} align={"center"} justify={"center"}>
               Not sure if diving into membership is for you? Try a class and support local artists!
             </Typography>
             <Link href={"/classes-encounters"} passHref>
               <CustomButtons className={classes.clpButton} variantType={"outlined"}>
-              Come Learn
+                Come Learn
               </CustomButtons>
-              </Link>
+            </Link>
           </GridItem>
           <GridItem xs={12} sm={12} md={3}>
-            <Typography variant={"h3"} className={classes.brandFont}><span className={classes.playBrand}>PLAY</span><span
+            <Typography variant={"h3"} component={"h2"} className={classes.brandFont}><span
+                className={classes.playBrand}>PLAY</span><span
                 className={classNames(classes.playBrand, classes.clp_exclaim)}>!</span></Typography>
-            <Typography variant={"h6"} >Clay Encounters</Typography>
+            <Typography variant={"h6"} component={"h3"} className={classes.upper}>Clay Encounters</Typography>
             <Typography variant={"body1"} align={"center"} justify={"center"}>
               Join us for a clay encounter. We have a variety to choose from every month!
             </Typography>
-            <Link href={"/classes-encounters#encounters"} passHref>
+            <Link href={"/classes-encounters#play"} passHref>
               <CustomButtons className={classes.clpButton}>
                 Come Play
               </CustomButtons>

@@ -1,25 +1,42 @@
 import React from "react";
 import Document, {Head, Main, NextScript} from "next/document";
 import {ServerStyleSheets} from "@material-ui/styles";
-import favIcon from "../assets/img/favIcon.png"
+import favicon from "../assets/img/favicon.png"
 import theme from "../assets/theme";
-
+import {GA_TRACKING_ID} from '../Scripts/gtag'
 
 export default class MyDocument extends Document {
   render() {
     return (
       <html lang="en">
-        <Head>
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      <Head>
+          <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
-          <link rel="shortcut icon" href={favIcon} />
+          <script
+              dangerouslySetInnerHTML={{
+                  __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+              }}
+          />
+          <title>Bozeman Community Kiln • BCKstudio.com</title>
+          <meta httpEquiv="Content-Type" content="text/html" charSet="utf-8"/>
+          <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          <link rel="shortcut icon" type="image/x-icon" href={favicon}/>
           <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href={require("../assets/img/apple-icon.png")}
+              rel="apple-touch-icon"
+              sizes="76x76"
+              href={require("../assets/img/apple-icon.png")}
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
         </Head>

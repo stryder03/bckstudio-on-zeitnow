@@ -62,7 +62,7 @@ export default function MembershipPage(props) {
         {
             title: 'Casual Pass',
             price: '120',
-            description: ['10 studio sessions included', 'Good for 3 months', 'Use for your OR a guest', '15lb of Clay', 'Studio Glazes','Kiln Firings', 'Community Shelf Space'],
+            description: ['10 studio sessions included', 'Good for 3 months', 'Use for yourself OR a guest', '15lb of Clay', 'Studio Glazes', 'Kiln Firings', 'Community Shelf Space'],
             buttonText: 'Buy a Pass',
             buttonVariant: 'outlined',
             inputValue: "FKFE3BSB82ZSS",
@@ -112,6 +112,7 @@ export default function MembershipPage(props) {
         title: 'Family',
         price: '350',
         description: [
+            '2 Adult Memberships for  Artists aged 15+',
             'Full Access during Business Hours',
             '25lb Clay',
             'Studio Glazes',
@@ -121,7 +122,7 @@ export default function MembershipPage(props) {
             'Early Registration for Classes and Special Events',
             'Opportunity to display work in our Gallery',
             '3 vouchers for Clay Kids',
-            '*Must include 2 members over age of 15'
+
         ],
         buttonText: 'Buy Family',
         buttonVariant: 'contained',

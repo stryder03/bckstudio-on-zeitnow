@@ -1,6 +1,3 @@
-const studiosPageStyle = {
-
-
-};
+const studiosPageStyle = {};
 
 export default studiosPageStyle;

@@ -14,7 +14,8 @@ import Button from "../CustomButtons/Button.js";
 
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
 import {primaryColor} from "../../assets/jss/nextjs-material-kit";
-import BookServiceDialog from "../ScheduleDialog/BookServiceDialog";
+import BookServiceDialog from "../BookServiceDialog/BookServiceDialog";
+import Link from "next/link";
 
 const style = theme => ({
     ...styles,
@@ -36,55 +37,60 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
 
   return (
-      <div>
-    <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-          <Button
-              href={"/home"}
-              color="transparent"
-              className={classes.navLink}
-              >
-              <HomeOutlinedIcon className={classes.icons}/> Home
-          </Button>
-      </ListItem>
-      <ListItem className={classes.listItem} color={primaryColor}>
-        <Button
-          href="/memberships"
-          color="transparent"
-          className={classes.navLink}
-        >Memberships
-        </Button>
-      </ListItem>
-        <ListItem className={classes.listItem} color={primaryColor}>
-            <Button
-                href="/classes-encounters"
-                color="transparent"
-                className={classes.navLink}
-            >Classes & Encounters
-            </Button>
-        </ListItem>
-        <ListItem className={classes.listItem} color={primaryColor}>
-            <Button
-                href="/studios"
-                color="transparent"
-                className={classes.navLink}
-            >Studio Rentals
-            </Button>
-        </ListItem>
-        <ListItem className={classes.listItem} color={primaryColor}>
-            <Button
-                href="/contact"
-                color="transparent"
-                className={classes.navLink}
-            >Contact
-            </Button>
-        </ListItem>
-        <ListItem className={classes.listItem}>
-            <Hidden smDown>
-                <BookServiceDialog buttonText={"Book Now"} className={classNames(classes.navLink)}/>
-            </Hidden>
-        </ListItem>
-    </List>
-      </div>
+      <nav role="navigation">
+          <List className={classes.list}>
+              <ListItem className={classes.listItem}>
+                  <Link href={"/"} passHref>
+                      <Button
+                          color="transparent"
+                          className={classes.navLink}
+                      >
+                          <HomeOutlinedIcon className={classes.icons}/> Home
+                      </Button>
+                  </Link>
+              </ListItem>
+              <ListItem className={classes.listItem} color={primaryColor}>
+                  <Link href={"/memberships"} passHref>
+                      <Button
+                          color="transparent"
+                          className={classes.navLink}
+                      >Memberships
+                      </Button>
+                  </Link>
+              </ListItem>
+              <ListItem className={classes.listItem} color={primaryColor}>
+                  <Link href={"/classes-encounters"} passHref>
+                      <Button
+                          color="transparent"
+                          className={classes.navLink}
+                      >Classes & Encounters
+                      </Button>
+                  </Link>
+              </ListItem>
+              <ListItem className={classes.listItem} color={primaryColor}>
+                  <Link href={"/studios"} passHref>
+                      <Button
+                          color="transparent"
+                          className={classes.navLink}
+                      >Studio Rentals
+                      </Button>
+                  </Link>
+              </ListItem>
+              <ListItem className={classes.listItem} color={primaryColor}>
+                  <Link href={"/contact"} passHref>
+                      <Button
+                          color="transparent"
+                          className={classes.navLink}
+                      >Contact
+                      </Button>
+                  </Link>
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                  <Hidden smDown>
+                      <BookServiceDialog buttonText={"Book Now"} className={classNames(classes.navLink)}/>
+                  </Hidden>
+              </ListItem>
+          </List>
+      </nav>
   );
 }
