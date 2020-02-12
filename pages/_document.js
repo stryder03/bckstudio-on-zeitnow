@@ -26,7 +26,6 @@ export default class MyDocument extends Document {
           `,
               }}
           />
-          <title>Bozeman Community Kiln • BCKstudio.com</title>
           <meta httpEquiv="Content-Type" content="text/html" charSet="utf-8"/>
           <meta
               name="viewport"

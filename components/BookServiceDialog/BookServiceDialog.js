@@ -44,7 +44,10 @@ const useStyles = makeStyles(theme => ({
         position: "absolute",
     },
     buttonText:{
-        margin:"auto"
+        margin:"auto",
+    },
+    navText: {
+        fontWeight: "700"
     }
 }));
 
@@ -71,7 +74,7 @@ export default function BookServiceDialog(props) {
                 onClick={handleToggle}
             >
                 <div className={classes.buttonText}>
-                    {buttonText}
+                    <Typography variant={"body1"} className={classes.navText}>{buttonText}</Typography>
                 </div>
             </CustomButtons>
             <Dialog fullScreen open={open} onBackdropClick={handleClose} TransitionComponent={Transition}>

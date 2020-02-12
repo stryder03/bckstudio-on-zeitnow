@@ -13,9 +13,10 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import Button from "../CustomButtons/Button.js";
 
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
-import {primaryColor} from "../../assets/jss/nextjs-material-kit";
+import {primaryColor, title} from "../../assets/jss/nextjs-material-kit";
 import BookServiceDialog from "../BookServiceDialog/BookServiceDialog";
 import Link from "next/link";
+import Typography from "@material-ui/core/Typography";
 
 const style = theme => ({
     ...styles,
@@ -28,6 +29,10 @@ const style = theme => ({
         zIndex: theme.zIndex.drawer + 1,
         color: '#fff',
     },
+    navText: {
+        fontWeight:"700"
+    },
+
 });
 
 
@@ -45,7 +50,7 @@ export default function HeaderLinks(props) {
                           color="transparent"
                           className={classes.navLink}
                       >
-                          <HomeOutlinedIcon className={classes.icons}/> Home
+                          <HomeOutlinedIcon className={classes.icons}/> <Typography variant={"body1"} className={classes.navText}>Home</Typography>
                       </Button>
                   </Link>
               </ListItem>
@@ -54,7 +59,7 @@ export default function HeaderLinks(props) {
                       <Button
                           color="transparent"
                           className={classes.navLink}
-                      >Memberships
+                      ><Typography variant={"body1"} className={classes.navText}>Memberships</Typography>
                       </Button>
                   </Link>
               </ListItem>
@@ -63,7 +68,7 @@ export default function HeaderLinks(props) {
                       <Button
                           color="transparent"
                           className={classes.navLink}
-                      >Classes & Encounters
+                      ><Typography variant={"body1"} className={classes.navText}>Classes & Encounters</Typography>
                       </Button>
                   </Link>
               </ListItem>
@@ -72,7 +77,7 @@ export default function HeaderLinks(props) {
                       <Button
                           color="transparent"
                           className={classes.navLink}
-                      >Studio Rentals
+                      ><Typography variant={"body1"} className={classes.navText}>Studio Rentals</Typography>
                       </Button>
                   </Link>
               </ListItem>
@@ -81,7 +86,7 @@ export default function HeaderLinks(props) {
                       <Button
                           color="transparent"
                           className={classes.navLink}
-                      >Contact
+                      ><Typography variant={"body1"} className={classes.navText}>Contact</Typography>
                       </Button>
                   </Link>
               </ListItem>
