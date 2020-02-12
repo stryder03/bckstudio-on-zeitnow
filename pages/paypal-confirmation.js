@@ -1,10 +1,11 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import Head from "next/head";
-import {clp_exclaim, container, playBrand, title} from "../assets/jss/nextjs-material-kit";
+import {brandFont, clp_exclaim, container, playBrand, title} from "../assets/jss/nextjs-material-kit";
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import Typography from "@material-ui/core/Typography";
+import classNames from "classnames";
 
 const style = theme => ({
     clp_exclaim,
@@ -15,7 +16,8 @@ const style = theme => ({
         marginTop: "2rem",
         minHeight: "30rem",
 
-    }
+    },
+    brandFont,
 });
 const useStyles = makeStyles(style);
 
@@ -31,8 +33,8 @@ export default function ConfirmationPage(props) {
             <div>
                 <Layout>
                     <BrandedHeader>
-                        <Typography variant={"h1"}>
-                            THANK<span className={classes.playBrand}>YOU</span><span className={classes.clp_exclaim}>!</span>
+                        <Typography variant={"h1"} className={classNames(classes.brandFont)} gutterBottom>
+                            THANK<span className={classes.playBrand}> YOU</span><span className={classes.clp_exclaim}>!</span>
                         </Typography>
                     </BrandedHeader>
                     <div className={classes.container}>
