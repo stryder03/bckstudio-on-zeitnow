@@ -73,7 +73,6 @@ export default function ContactForm(props) {
             submitSuccess = await submitForm(data)
         }
         catch(err){
-            console.error(err);
             return false
         }
         if (submitSuccess){
