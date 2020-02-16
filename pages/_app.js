@@ -10,7 +10,6 @@ import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 
 Router.events.on("routeChangeStart", url => {
-    console.log(`Loading: ${url}`);
     document.body.classList.add("body-page-transition");
     ReactDOM.render(
         <PageChange path={url} />,

@@ -18,6 +18,8 @@ import {Close} from "@material-ui/icons";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle"
+import classNames from 'classnames';
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 const useStyles = makeStyles(theme => ({
@@ -29,9 +31,8 @@ const useStyles = makeStyles(theme => ({
         marginRight: "1rem",
     },
     textArea: {
-        margin:"auto",
-        textAlign: "center",
         marginTop: "2rem",
+        marginLeft: "0"
     },
     dialog: {
         zIndex: theme.zIndex.drawer + 1
@@ -53,7 +54,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function ContactForm(props) {
 
     const classes = useStyles();
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, reset, watch, errors } = useForm();
+    const [buttonDisabled, setButtonDisabled] = React.useState(true);
     const [open, setOpen] = React.useState(false);
     const [displayDialog, setDialog] = React.useState(<CircularProgress color={"primary"}/>);
     const handleClose = () => {
@@ -76,12 +78,19 @@ export default function ContactForm(props) {
             return false
         }
         if (submitSuccess){
-            handleDialog(<Typography variant={"h6"} color={"primary"}>Thanks for reaching out, we will get in touch with you soon</Typography> )
+            handleDialog(<Typography variant={"h6"} color={"primary"}>Thanks for reaching out, we will get in touch with you soon</Typography> );
+            reset();
         }
         else {
-            handleDialog(<Typography variant={"h6"} color={"primary"}>Something went wrong, we were notified about the error, but please try calling or sending a message on Facebook</Typography>)
+            handleDialog(<Typography variant={"h6"} color={"primary"}>Something went wrong, we were notified about the error, but please try calling or sending a message on Facebook</Typography>);
+            reset();
         }
+
     };
+    const allowSubmit = () => {
+        setButtonDisabled(false)
+    };
+
     const { } = props;
     const formTitle = props.formTitle === undefined ? "Contact US" : props.formTitle;
 
@@ -96,7 +105,9 @@ export default function ContactForm(props) {
                 <TextField id={"email"} label={"Email"} name={"email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register}/>
                 <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} placeholder="How can we help?" variant={"outlined"} color={'primary'} inputRef={register}/>
                 <br/>
-                <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classes.textArea} type={"submit"}>Send Message</Button>
+                <ReCAPTCHA sitekey={"6LcKbdkUAAAAAAI9vInOSkXuRV93iuncCdv13wVd"} onChange={allowSubmit}/>
+                <br/>
+                <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classNames(classes.textArea)} type={"submit"} disabled={buttonDisabled}>Send Message</Button>
             </form>
             <div className={classes.listItem}>
                 <Dialog open={open} onBackdropClick={handleClose} TransitionComponent={Transition} aria-label={"Sending Contact Form"}>

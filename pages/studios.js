@@ -104,6 +104,9 @@ export default function StudiosPage(props) {
             <div>
                 <Head>
                     <title>Studio Rentals • Bozeman Community Kiln</title>
+                    {/*TODO: Add meta description*/}
+                    {/*<meta name="description"*/}
+                    {/*      content=""/>*/}
                 </Head>
                 <Layout>
                     <div>

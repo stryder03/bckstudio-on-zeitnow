@@ -133,6 +133,9 @@ export default function MembershipPage(props) {
         <div>
                 <Head>
                     <title>Memberships • Bozeman Community Kiln</title>
+                    {/*TODO: Add meta description*/}
+                    {/*<meta name="description"*/}
+                    {/*      content=""/>*/}
                 </Head>
             <div>
                 <Layout>

@@ -176,6 +176,9 @@ export default function ClassesEncounters(props) {
         <div>
             <Head>
                 <title>Clay Classes & Encounters • Bozeman Community Kiln</title>
+                {/*TODO: Add meta description*/}
+                {/*<meta name="description"*/}
+                {/*      content=""/>*/}
             </Head>
             <Layout>
                 <BrandedHeader>
