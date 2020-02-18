@@ -169,6 +169,7 @@ const style = theme => ({
 });
 const useStyles = makeStyles(style);
 
+//TODO: Abstract classes out into a json template like the price list
 export default function ClassesEncounters(props) {
     const classes = useStyles();
     const {} = props;
@@ -246,6 +247,54 @@ export default function ClassesEncounters(props) {
                 <Hidden mdUp>
                     <div className={classNames(classes.smallButton)}>
                         <BookServiceDialog apptType={"10494352"} buttonText={"Join Clay Kids"}/>
+                    </div>
+                </Hidden>
+                <Hidden smDown>
+                    <div className={classes.raisedDivider}/>
+                </Hidden>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={3}>
+                        <Typography variant={"h5"} align={"center"}
+                                    className={classNames(classes.classHeaders)}>
+                            Highschool Clay
+                        </Typography>
+                        <Typography variant={"subtitle1"} component={"p"} align={"center"} className={classes.classSubHeaders}>
+                            With: <br/><BioDialogMS/><br/>
+                            Mondays 1:00pm-4:00pm<br/>
+                            $200/ 8 week session
+                        </Typography>
+                    </GridItem>
+                    <Hidden smDown>
+                        <img src={vCone} alt={""} className={classes.verticalCones}/>
+                    </Hidden>
+                    <Hidden mdUp>
+                        <img src={hCone} alt={""} className={classes.horizontalCones}/>
+                    </Hidden>
+                    <GridItem xs={12} sm={12} md={6}>
+                        <ul>
+                            <li><Typography variant={"body1"}>
+                                Includes 15lbs of clay, studio glazes, firings, and shelving space
+                            </Typography></li>
+                            <li><Typography variant={"body1"}>
+                                Students will learn to create pottery using both hand-building techniques and the pottery wheel
+                            </Typography></li>
+                            <li><Typography variant={"body1"}>
+                                We will explore the development of ideas for form and functionality and different decorative techniques
+                            </Typography></li>
+                            <li><Typography variant={"body1"}>
+                                Designed to meet the needs of home school curriculum
+                            </Typography></li>
+                        </ul>
+                        <Hidden smDown>
+                            <div className={classes.bookButton}>
+                                <BookServiceDialog apptType={"13180426"} buttonText={"Join Highschool Clay"}/>
+                            </div>
+                        </Hidden>
+                    </GridItem>
+                </GridContainer>
+                <Hidden mdUp>
+                    <div className={classNames(classes.smallButton)}>
+                        <BookServiceDialog apptType={"13180426"} buttonText={"Join Highschool Clay"}/>
                     </div>
                 </Hidden>
                 <Hidden smDown>

@@ -33,7 +33,7 @@ export default class MyApp extends App {
       <React.Fragment>
           <Head>
               <title>Bozeman Community Kiln • BCKstudio.com</title>
-              <link href="https://fonts.googleapis.com/css?family=Asap:600,700|Lato|Merriweather+Sans:800&display=swap" rel="stylesheet"/>
+              <link href="https://fonts.googleapis.com/css?family=Asap:600,700&display=swap|Lato&display=swap|Merriweather+Sans:800&display=swap" rel="stylesheet"/>
           </Head>
         <ThemeProvider theme={theme}>
             <ParallaxProvider>
