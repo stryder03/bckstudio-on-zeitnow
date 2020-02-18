@@ -46,6 +46,11 @@ export default function ContactPage(props) {
         <div>
             <Head>
                 <title>CONTACT US • Bozeman Community Kiln</title>
+                {/*TODO: Add meta description*/}
+                {/*<meta name="description"*/}
+                {/*      content=""/>*/}
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
             </Head>
             <Layout>
                 <BrandedHeader>

@@ -86,7 +86,7 @@ export default function HeaderLinks(props) {
                       <Button
                           color="transparent"
                           className={classes.navLink}
-                      ><Typography variant={"body1"} className={classes.navText}>Contact</Typography>
+                      ><Typography variant={"body1"} className={classes.navText}>Contact Us</Typography>
                       </Button>
                   </Link>
               </ListItem>

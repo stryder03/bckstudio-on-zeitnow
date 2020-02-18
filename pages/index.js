@@ -38,7 +38,8 @@ export default function homePage(props) {
             <Head>
                 <title>HOME • Bozeman Community Kiln</title>
                 <meta name="description"
-                      content="Whether you are interested in a first clay encounter, looking for the perfect pottery class, or need your own studio space, Bozeman Community Kiln is here."/>
+                      content="Whether you are interested in a first clay encounter, looking for the perfect pottery
+                      class, or need your own ceramic studio space, Bozeman Community Kiln is here."/>
             </Head>
             <Layout>
                 <BrandedHeader>
