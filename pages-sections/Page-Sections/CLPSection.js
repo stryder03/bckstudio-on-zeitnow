@@ -44,7 +44,7 @@ export default function CLPSection(props) {
             <Typography variant={"h6"} component={"h3"} className={classes.upper}>Memberships</Typography>
             <Typography variant={"body1"} align={"center"} justify={"center"}>
               Join our clay family!
-              Different levels of studio access to meet your needs.
+              Choose from different levels of studio access to meet your needs.
             </Typography>
             <Link href={"/memberships"}>
               <CustomButtons className={classes.clpButton}>
