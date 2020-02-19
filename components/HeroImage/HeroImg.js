@@ -10,6 +10,7 @@ export default function HeroImg(props) {
     const {image, children} = props;
     const classes = useStyles();
     const heroClasses = classNames(classes.container,);
+
     return (
         <div
             className={heroClasses}
