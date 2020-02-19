@@ -1,0 +1,63 @@
+{
+  "category": "Adult Classes",
+  "categoryList": [
+    {
+      "title": "Beginner Wheel Class",
+      "classInfo": {
+        "instructor": "Megan Sprenger",
+        "subtitles": [
+          "Class: Tuesdays 6:30pm-9:30pm",
+          "Open Studio: Thursdays 7:00pm-10:00pm",
+          "Pricing starts at $55 / per class"
+        ],
+        "pricing": {
+          "title": "Pricing Options:",
+          "priceList": [
+            {
+              "strikeItem": {
+                "clearText": "Intro Class: $55",
+                "strikeText": "(incl glazing and firing)"
+              }
+            },
+            "3 Class bundle: $165 (incl glazing and firing)",
+            "6 Class bundle: $300 (incl glazing and firing)"
+          ]
+        }
+      },
+      "classDescription": [
+        "Level: Novice",
+        "Concentrate on techniques to center clay, create volume, and build simple bowl and mug forms",
+        "Learn trimming techniques, glazing practices, and gain knowledge on the clay firing process",
+        "Clay Included!"
+      ],
+      "classID": "10782608",
+      "buttonText": "Join Megan's Wheel Class"
+    },
+    {
+      "title": "Beginner Hand Building Class",
+      "classInfo": {
+        "instructor": "Megan Sprenger",
+        "subtitles": [
+          "Class: Thursdays 7:00pm-10:00pm",
+          "Open Studio: Tuesdays 6:30pm-9:30pm",
+          "Pricing starts at $55 / per class"
+        ],
+        "pricing": {
+          "title": "Pricing Options:",
+          "priceList": [
+            "Intro  Mug Class: $55 (incl glazing and firing)",
+            "6 Class bundle: $300 (incl glazing and firing)"
+          ]
+        }
+      },
+      "classDescription": [
+        "Level: Novice",
+        "Learn to work with clay from start to finish using several pottery hand building techniques like pinch, coil, slab and sculpting",
+        "Work on individual projects in a fun and energetic environment!",
+        "Clay Included!"
+      ],
+      "classID": "10906689",
+      "buttonText": "Join Megan's Hand Building Class"
+    }
+  ]
+}
