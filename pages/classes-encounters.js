@@ -6,7 +6,6 @@ import {Typography} from "@material-ui/core";
 import classNames from "classnames";
 import {
     brandFont,
-    dividerBar,
     mainElement,
     playBrand,
     primaryFontColor,
@@ -203,9 +202,8 @@ export default function ClassesEncounters(props) {
         <div>
             <Head>
                 <title>Clay Classes & Encounters • Bozeman Community Kiln</title>
-                {/*TODO: Add meta description*/}
-                {/*<meta name="description"*/}
-                {/*      content=""/>*/}
+                <meta name="description"
+                      content="Join us for one of our classes to learn a variety of pottery techniques from local artists, or try our clay encounters, a one-time visit great for playing with clay."/>
             </Head>
             <Layout>
                 <BrandedHeader>

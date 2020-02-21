@@ -104,9 +104,8 @@ export default function StudiosPage(props) {
             <div>
                 <Head>
                     <title>Studio Rentals • Bozeman Community Kiln</title>
-                    {/*TODO: Add meta description*/}
-                    {/*<meta name="description"*/}
-                    {/*      content=""/>*/}
+                    <meta name="description"
+                          content=" The Bozeman area's resource for Ceramic Artists. Semi-private and private ceramics studio rentals, and studio use for teaching classes and creating personal income available."/>
                 </Head>
                 <Layout>
                     <div>
