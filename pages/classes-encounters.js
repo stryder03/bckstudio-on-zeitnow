@@ -174,7 +174,7 @@ export default function ClassesEncounters(props) {
                 classInfo: {
                     instructor: 'Megan Sprenger',
                     subtitles: [
-                        'Class: Thursdays 7:00pm-10:00pm',
+                        'Class: Thursdays 6:30pm-9:30pm',
                         'Open Studio: Tuesdays 6:30pm-9:30pm',
                         'Pricing starts at $55 / per class'
                     ],
