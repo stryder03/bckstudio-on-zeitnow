@@ -12,6 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import msImg from "assets/img/ms-thumb-10782608optimize.jpg"
+import smLogo from 'assets/img/bck/smallLogo.png'
 import {dividerBar, mainElement} from "assets/jss/nextjs-material-kit";
 import Button from "@material-ui/core/Button";
 
@@ -49,9 +50,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Fade ref={ref} {...props} />;
 });
 
-export default function BioDialogMS(props) {
+export default function InstrBioDialog(props) {
     const classes = useStyles();
-    const {} = props;
+    const {instr} = props;
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         setOpen(false);
@@ -60,10 +61,20 @@ export default function BioDialogMS(props) {
         setOpen(!open);
     };
 
+    const getImage = (instructor) => {
+
+        switch (instructor) {
+            case 'Megan Sprenger':
+                return msImg;
+            default:
+                return smLogo;
+        }
+    };
     return (
-        <>
+
+        <React.Fragment>
             <Button variant={"outlined"} onClick={handleToggle} color={"primary"}>
-                Megan Sprenger
+                {instr.name}
             </Button>
             <Dialog open={open} onBackdropClick={handleClose} TransitionComponent={Transition}
                     className={classes.container}>
@@ -73,43 +84,27 @@ export default function BioDialogMS(props) {
                             <Close/>
                         </IconButton>
                         <Typography variant="h5" className={classes.title} align={"center"}>
-                            Meet Megan Sprenger
+                            Meet {instr.name}
                         </Typography>
                     </Toolbar>
                 </DialogTitle>
                 <DialogContent>
                     <GridContainer align={"center"}>
                         <GridItem xs={12} md={12}>
-                            <img src={msImg} alt={"Megan Sprenger"} className={classes.bioImg}/>
+                            <img src={getImage(instr.name)} alt={instr.name} className={classes.bioImg}/>
                         </GridItem>
                         <GridItem xs={12} md={12}>
-                            <Typography variant={"body1"}>Megan Sprenger received her Master of Fine Arts from Montana
-                                State University in 2019. She received her Bachelor of Fine Arts in Studio Art with an
-                                emphasis in ceramics and sculpture from the University of Minnesota Duluth in 2016
-                                Her work is inspired by her love for traveling, combined with the history of ceramics
-                                and the progression of sciences. She interweaves psychology, biology, and urban planning
-                                philosophies into her work. The use of historical ideology within ceramics and
-                                architectural and city planning is incorporated to introduce a more modern theme
-                                and encourage on a conversation between the ceramic vessel and the viewer.
-                                The imagery and surface details exemplify disorders, more precisely as the small
-                                particles of matter that change our perceptions within a variety of situations.
-                                These situations come across in the ways that the space we live in creates a
-                                phenomenological atmosphere, ultimately mirroring our own subconscious development.
+                            <Typography variant={"body1"}>
+                                {instr.bio}
                             </Typography>
                             <div className={classes.raisedDivider}/>
                             <Typography variant={"body1"}>
-                                Megan has been teaching art for the last three years. Her goals for her students are to
-                                step into a new tactile world where they can explore the use of ceramics through
-                                history,
-                                functionality, and expressions.<br/>
-                                Each student receives hands on time with Megan,
-                                as she breaks down the importance of ceramics as a material and its use in our daily
-                                lives.
+                                {instr.statement}
                             </Typography>
                         </GridItem>
                     </GridContainer>
                 </DialogContent>
             </Dialog>
-        </>
+        </React.Fragment>
     );
 }
