@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "lint": "eslint --fix pages/**/*.js pages-sections/**/*.js components/**/*.js Scripts/**/*.js tests/**/*.js assets/theme.js",
-    "push": "npm run lint && git push origin dev"
+    "push": "npm run lint && git pull && git push origin dev"
   },
   "dependencies": {
     "@material-ui/core": "4.9.3",
