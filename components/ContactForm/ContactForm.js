@@ -54,7 +54,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function ContactForm(props) {
 
     const classes = useStyles();
-    const { register, handleSubmit, reset, watch, errors } = useForm();
+    const { register, handleSubmit, reset} = useForm();
     const [buttonDisabled, setButtonDisabled] = React.useState(true);
     const [open, setOpen] = React.useState(false);
     const [displayDialog, setDialog] = React.useState(<CircularProgress color={"primary"}/>);
@@ -91,7 +91,6 @@ export default function ContactForm(props) {
         setButtonDisabled(false)
     };
 
-    const { } = props;
     const formTitle = props.formTitle === undefined ? "Contact US" : props.formTitle;
 
     return (

@@ -11,8 +11,7 @@ import {makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles(style);
 
-export default function SocialMediaInfo(props) {
-    const {} = props;
+export default function SocialMediaInfo() {
     const classes = useStyles();
 
     return (

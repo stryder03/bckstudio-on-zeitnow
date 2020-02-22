@@ -21,5 +21,5 @@ export default function HeroImg(props) {
             {children}
         </div>
     );
-};
+}
 

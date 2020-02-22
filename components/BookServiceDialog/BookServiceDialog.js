@@ -84,7 +84,7 @@ export default function BookServiceDialog(props) {
                             <Close />
                         </IconButton>
                         <Typography variant="h5" className={classes.title} align={"center"}>
-                            Let's Get You Booked
+                            Let&apos;s Get You Booked
                         </Typography>
                     </Toolbar>
                 </DialogTitle>

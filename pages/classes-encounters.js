@@ -93,9 +93,8 @@ const style = theme => ({
 });
 const useStyles = makeStyles(style);
 
-export default function ClassesEncounters(props) {
+export default function ClassesEncounters() {
     const classes = useStyles();
-    const {} = props;
 
     const youthClasses = [{
         category: 'Youth Classes',

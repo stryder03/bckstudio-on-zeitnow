@@ -7,7 +7,7 @@ import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import Typography from "@material-ui/core/Typography";
 import classNames from "classnames";
 
-const style = theme => ({
+const style = ({
     clp_exclaim,
     title,
     playBrand,
@@ -21,7 +21,7 @@ const style = theme => ({
 });
 const useStyles = makeStyles(style);
 
-export default function ConfirmationPage(props) {
+export default function ConfirmationPage() {
     const classes = useStyles();
 
     return (

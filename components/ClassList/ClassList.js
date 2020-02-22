@@ -9,7 +9,6 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {brandFont, dividerBar, mainElement} from "../../assets/jss/nextjs-material-kit";
 import InstrBioDialog from "../BioDialog/InstrBioDialog";
-import Layout from "../../pages-sections/Page-Sections/Layout";
 
 
 const useStyles = makeStyles(theme => ({
@@ -122,18 +121,18 @@ export default function ClassList(props) {
                     </Typography>
                 </div>
                 <ol className={classes.priceList}>
-                    {classInfo.pricing.priceList.map((item) => {
+                    {classInfo.pricing.priceList.map((item, index) => {
                         console.log(item.strikeItem);
                         if (!item.strikeItem){
                             return (
-                                <li><Typography variant={"body1"} >
+                                <li key={index}><Typography variant={"body1"} >
                                     {item}
                                 </Typography></li>
 
                             )
                         }
                         return (
-                            <li><Typography variant={"body1"} >
+                            <li key={index}><Typography variant={"body1"} >
                                 {item.strikeItem.clearText} <span className={classes.strike}><span className={classes.strikeText}>{item.strikeItem.strikeText}</span></span>
                             </Typography></li>
                         )
@@ -145,21 +144,21 @@ export default function ClassList(props) {
     };
     return (
         <React.Fragment>
-            {classList.map(classType => (
-                <React.Fragment>
+            {classList.map((classType, index) => (
+                <React.Fragment key={index}>
                     <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
                         {classType.category}
                     </Typography>
-                    {classType.categoryList.map(clayClass => (
-                        <React.Fragment>
+                    {classType.categoryList.map((clayClass, i) => (
+                        <React.Fragment key={i}>
                             <GridContainer>
                                 <GridItem xs={12} sm={12} md={3}>
                                     <Typography variant={"h5"} align={"center"} className={classNames(classes.classHeaders)}>
                                         {clayClass.title}
                                     </Typography>
                                     {getClassInstr(clayClass.classInfo)}
-                                    {clayClass.classInfo.subtitles.map(subtitle => (
-                                        <Typography variant={"subtitle1"} component={"p"} align={"center"} className={classes.classSubHeaders}>
+                                    {clayClass.classInfo.subtitles.map((subtitle, j) => (
+                                        <Typography variant={"subtitle1"} component={"p"} align={"center"} className={classes.classSubHeaders} key={j}>
                                             {subtitle}
                                         </Typography>
                                     ))}
@@ -172,8 +171,8 @@ export default function ClassList(props) {
                                 </Hidden>
                                 <GridItem xs={12} sm={12} md={6}>
                                     <ul>
-                                        {clayClass.classDescription.map( (line) => (
-                                            <li><Typography variant={"body1"}>
+                                        {clayClass.classDescription.map( (line, k) => (
+                                            <li key={k}><Typography variant={"body1"}>
                                                 {line}
                                             </Typography></li>
                                         ))}

@@ -97,9 +97,8 @@ const style = theme => ({
 });
 const useStyles = makeStyles(style);
 
-export default function StudiosPage(props) {
+export default function StudiosPage() {
     const classes = useStyles();
-    const {} = props;
     return (
             <div>
                 <Head>
@@ -214,7 +213,7 @@ export default function StudiosPage(props) {
                                         <Typography variant={"body1"}>
                                             <br/>
                                             Your income, your students, your schedule, our equipment. Starting to teach a
-                                            regular pottery class can be expensive! We've got you covered though. You will
+                                            regular pottery class can be expensive! We&apos;ve got you covered though. You will
                                             have access to the studio outside of normal hours, the freedom to design and
                                             teach classes that interest you, and the use of a studio, equipment, and glazes
                                             that can

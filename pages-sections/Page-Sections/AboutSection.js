@@ -19,7 +19,7 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
-const style = theme => ({
+const style = ({
   inlineType: {
     display: "inline"
   },

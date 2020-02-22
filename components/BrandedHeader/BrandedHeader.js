@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import {Typography} from "@material-ui/core";
 import React from "react";
 import {brandFont} from "../../assets/jss/nextjs-material-kit";
 import {makeStyles} from "@material-ui/core/styles";
@@ -31,4 +30,4 @@ export default function BrandedHeader(props) {
             {props.children}
         </div>
     )
-};
+}

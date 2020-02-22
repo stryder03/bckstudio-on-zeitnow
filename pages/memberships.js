@@ -54,9 +54,8 @@ const style = theme => ({
 
 const useStyles = makeStyles(style);
 
-export default function MembershipPage(props) {
+export default function MembershipPage() {
     const classes = useStyles();
-    const {} = props;
 
     const memberTiers = [
         {

@@ -33,7 +33,7 @@ const style = theme => ({
 });
 const useStyles = makeStyles(style);
 
-export default function CLPSection(props) {
+export default function CLPSection() {
   const classes = useStyles();
   return (
       <div>
@@ -115,4 +115,4 @@ export default function CLPSection(props) {
         </GridContainer>
     </div>
   )
-};
+}
