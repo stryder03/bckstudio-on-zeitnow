@@ -9,7 +9,7 @@ import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 
-Router.events.on("routeChangeStart", url => {
+Router.events.on("routeChangeStart", (url) => {
     document.body.classList.add("body-page-transition");
     ReactDOM.render(
         <PageChange path={url} />,

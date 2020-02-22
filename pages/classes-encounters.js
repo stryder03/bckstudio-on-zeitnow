@@ -16,7 +16,7 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import ClassList from "../components/ClassList/ClassList";
 
-const style = theme => ({
+const style = (theme) => ({
     h1Container: {
         backgroundColor: theme.palette.secondary.main,
         padding: "2.5rem",
@@ -28,7 +28,7 @@ const style = theme => ({
     },
 
     column: {
-        flexBasis: '33.33%',
+        flexBasis: "33.33%",
     },
     panel: {
         maxWidth: "50%",
@@ -93,106 +93,105 @@ const style = theme => ({
 });
 const useStyles = makeStyles(style);
 
-export default function ClassesEncounters(props) {
+export default function ClassesEncounters() {
     const classes = useStyles();
-    const {} = props;
 
     const youthClasses = [{
-        category: 'Youth Classes',
+        category: "Youth Classes",
         categoryList: [
             {
-                title: 'Bozeman Clay Kids',
+                title: "Bozeman Clay Kids",
                 classInfo: {
-                        subtitles: ['Thursdays 4:00pm-6:30pm', '$200/ 8 week session']
+                        subtitles: ["Thursdays 4:00pm-6:30pm", "$200/ 8 week session"]
                     },
                 classDescription: [
-                    'Includes 15lbs of clay, studio glazes, firings, and shelving space',
-                    'Students are encouraged to plan their own projects, developing the skills which interest them the most',
-                    'Students will receive instruction on techniques for hand-building as well as throwing on a pottery wheel',
-                    'Designed for students aged 8-17'
+                    "Includes 15lbs of clay, studio glazes, firings, and shelving space",
+                    "Students are encouraged to plan their own projects, developing the skills which interest them the most",
+                    "Students will receive instruction on techniques for hand-building as well as throwing on a pottery wheel",
+                    "Designed for students aged 8-17"
                 ],
-                classID: '10494352',
-                buttonText: 'Join Clay Kids'
+                classID: "10494352",
+                buttonText: "Join Clay Kids"
             },
             {
-                title: 'Highschool Clay',
+                title: "Highschool Clay",
                 classInfo: {
-                    instructor: 'Megan Sprenger',
-                    subtitles: ['Mondays 1:00pm-4:00pm','$200/ 8 week session']
+                    instructor: "Megan Sprenger",
+                    subtitles: ["Mondays 1:00pm-4:00pm","$200/ 8 week session"]
                 },
                 classDescription: [
-                    'Includes 15lbs of clay, studio glazes, firings, and shelving space',
-                    'Students will learn to create pottery using both hand-building techniques and the pottery wheel',
-                    'We will explore the development of ideas for form and functionality and different decorative techniques',
-                    'Designed to meet the needs of home school curriculum'
+                    "Includes 15lbs of clay, studio glazes, firings, and shelving space",
+                    "Students will learn to create pottery using both hand-building techniques and the pottery wheel",
+                    "We will explore the development of ideas for form and functionality and different decorative techniques",
+                    "Designed to meet the needs of home school curriculum"
                 ],
-                classID: '13180426',
-                buttonText: 'Join Highschool Clay'
+                classID: "13180426",
+                buttonText: "Join Highschool Clay"
             },
         ]
     }];
 
     const adultClasses = [{
-        category: 'Adult Classes',
+        category: "Adult Classes",
         categoryList: [
             {
-                title: 'Beginner Wheel Class',
+                title: "Beginner Wheel Class",
                 classInfo: {
-                    instructor: 'Megan Sprenger',
+                    instructor: "Megan Sprenger",
                     subtitles: [
-                        'Class: Tuesdays 6:30pm-9:30pm',
-                        'Open Studio: Thursdays 7:00pm-10:00pm',
-                        'Pricing starts at $55 / per class'
+                        "Class: Tuesdays 6:30pm-9:30pm",
+                        "Open Studio: Thursdays 7:00pm-10:00pm",
+                        "Pricing starts at $55 / per class"
                     ],
                     pricing: {
-                        title: 'Pricing Options:',
+                        title: "Pricing Options:",
                         priceList: [
                             {
                                 strikeItem: {
-                                    clearText: 'Intro Class: $55',
-                                    strikeText: '(incl glazing and firing)'
+                                    clearText: "Intro Class: $55",
+                                    strikeText: "(incl glazing and firing)"
                                 },
                             },
-                            '3 Class bundle: $165 (incl glazing and firing)',
-                            '6 Class bundle: $300 (incl glazing and firing)'
+                            "3 Class bundle: $165 (incl glazing and firing)",
+                            "6 Class bundle: $300 (incl glazing and firing)"
                         ]
 
                     }
                 },
                 classDescription: [
-                    'Level: Novice',
-                    'Concentrate on techniques to center clay, create volume, and build simple bowl and mug forms',
-                    'Learn trimming techniques, glazing practices, and gain knowledge on the clay firing process',
-                    'Clay Included!'
+                    "Level: Novice",
+                    "Concentrate on techniques to center clay, create volume, and build simple bowl and mug forms",
+                    "Learn trimming techniques, glazing practices, and gain knowledge on the clay firing process",
+                    "Clay Included!"
                 ],
-                classID: '10782608',
-                buttonText: 'Join Megan\'s Wheel Class'
+                classID: "10782608",
+                buttonText: "Join Megan's Wheel Class"
             },
             {
-                title: 'Beginner Hand Building Class',
+                title: "Beginner Hand Building Class",
                 classInfo: {
-                    instructor: 'Megan Sprenger',
+                    instructor: "Megan Sprenger",
                     subtitles: [
-                        'Class: Thursdays 6:30pm-9:30pm',
-                        'Open Studio: Tuesdays 6:30pm-9:30pm',
-                        'Pricing starts at $55 / per class'
+                        "Class: Thursdays 6:30pm-9:30pm",
+                        "Open Studio: Tuesdays 6:30pm-9:30pm",
+                        "Pricing starts at $55 / per class"
                     ],
                     pricing: {
-                        title: 'Pricing Options:',
+                        title: "Pricing Options:",
                         priceList: [
-                            'Intro  Mug Class: $55 (incl glazing and firing)',
-                            '6 Class bundle: $300 (incl glazing and firing)'
+                            "Intro  Mug Class: $55 (incl glazing and firing)",
+                            "6 Class bundle: $300 (incl glazing and firing)"
                         ]
                     }
                 },
                 classDescription: [
-                    'Level: Novice',
-                    'Learn to work with clay from start to finish using several pottery hand building techniques like pinch, coil, slab and sculpting',
-                    'Work on individual projects in a fun and energetic environment!',
-                    'Clay Included!'
+                    "Level: Novice",
+                    "Learn to work with clay from start to finish using several pottery hand building techniques like pinch, coil, slab and sculpting",
+                    "Work on individual projects in a fun and energetic environment!",
+                    "Clay Included!"
                 ],
-                classID: '10906689',
-                buttonText: 'Join Megan\'s Hand Building Class'
+                classID: "10906689",
+                buttonText: "Join Megan's Hand Building Class"
             },
 
         ]

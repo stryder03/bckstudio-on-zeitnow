@@ -18,11 +18,11 @@ import {Close} from "@material-ui/icons";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle"
-import classNames from 'classnames';
+import classNames from "classnames";
 import ReCAPTCHA from "react-google-recaptcha";
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     ...styles,
     form: {
         maxWidth: "100%",
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
         zIndex: theme.zIndex.drawer + 1
     },
     appBar: {
-        position: 'relative',
+        position: "relative",
         backgroundColor: theme.palette.secondary.main,
         color: theme.palette.secondary.contrastText
     },
@@ -54,7 +54,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function ContactForm(props) {
 
     const classes = useStyles();
-    const { register, handleSubmit, reset, watch, errors } = useForm();
+    const { register, handleSubmit, reset} = useForm();
     const [buttonDisabled, setButtonDisabled] = React.useState(true);
     const [open, setOpen] = React.useState(false);
     const [displayDialog, setDialog] = React.useState(<CircularProgress color={"primary"}/>);
@@ -91,7 +91,6 @@ export default function ContactForm(props) {
         setButtonDisabled(false)
     };
 
-    const { } = props;
     const formTitle = props.formTitle === undefined ? "Contact US" : props.formTitle;
 
     return (
@@ -103,7 +102,7 @@ export default function ContactForm(props) {
                 <TextField id={"firstName"} name={"firstName"} margin={"normal"} fullWidth label={"First Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register}/>
                 <TextField id={"lastName"} name={"lastName"} margin={"normal"} fullWidth label={"Last Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register}/>
                 <TextField id={"email"} label={"Email"} name={"email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register}/>
-                <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} placeholder="How can we help?" variant={"outlined"} color={'primary'} inputRef={register}/>
+                <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} placeholder="How can we help?" variant={"outlined"} color={"primary"} inputRef={register}/>
                 <br/>
                 <ReCAPTCHA sitekey={"6LcKbdkUAAAAAAI9vInOSkXuRV93iuncCdv13wVd"} onChange={allowSubmit}/>
                 <br/>

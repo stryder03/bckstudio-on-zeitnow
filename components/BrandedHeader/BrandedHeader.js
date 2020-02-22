@@ -1,10 +1,9 @@
 import classNames from "classnames";
-import {Typography} from "@material-ui/core";
 import React from "react";
 import {brandFont} from "../../assets/jss/nextjs-material-kit";
 import {makeStyles} from "@material-ui/core/styles";
 
-const style = theme => ({
+const style = (theme) => ({
     mainContentRaised: {
         zIndex: "3",
         paddingTop: "2.5rem",
@@ -31,4 +30,4 @@ export default function BrandedHeader(props) {
             {props.children}
         </div>
     )
-};
+}

@@ -4,7 +4,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import {makeStyles} from "@material-ui/core/styles";
 // core components
-import {TextareaAutosize, TextField, Typography} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 // Sections for this page
 import Head from "next/head";
 import Layout from "../pages-sections/Page-Sections/Layout";
@@ -14,7 +14,7 @@ import GridItem from "../components/Grid/GridItem";
 import GridContainer from "../components/Grid/GridContainer";
 import ContactForm from "../components/ContactForm/ContactForm";
 
-const style = theme => ({
+const style = (theme) => ({
     brandFont,
     clp_exclaim,
     dividerBar,
@@ -38,9 +38,8 @@ const style = theme => ({
 
 const useStyles = makeStyles(style);
 
-export default function ContactPage(props) {
+export default function ContactPage() {
     const classes = useStyles();
-    const {} = props;
     const gKey = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJrb7LA0RJRVMRLThXYkgPKbk&key=" + process.env.MAPS_KEY;
     return (
         <div>

@@ -12,7 +12,7 @@ import {brandFont, playBrand} from "../../assets/jss/nextjs-material-kit";
 import Typography from "@material-ui/core/Typography";
 import {Hidden} from "@material-ui/core";
 
-const style = theme => ({
+const style = (theme) => ({
   clp_exclaim: {
     ...playBrand,
     fontSize: "0.85em"
@@ -33,7 +33,7 @@ const style = theme => ({
 });
 const useStyles = makeStyles(style);
 
-export default function CLPSection(props) {
+export default function CLPSection() {
   const classes = useStyles();
   return (
       <div>
@@ -87,7 +87,7 @@ export default function CLPSection(props) {
           </GridItem>
           <Hidden smDown>
             <GridItem md={12}>
-              <GridContainer alignItems={'space-between'}>
+              <GridContainer alignItems={"space-between"}>
                 <GridItem md={3}>
                   <Link href={"/memberships"}>
                     <CustomButtons className={classes.clpButton}>
@@ -103,7 +103,7 @@ export default function CLPSection(props) {
                   </Link>
                 </GridItem>
                 <GridItem md={3}>
-                  <Link href={"/classes-encounters#play"} passHref>
+                  <Link href={"classes-encounters/#play"} passHref>
                     <CustomButtons className={classes.clpButton}>
                       Come Play
                     </CustomButtons>
@@ -115,4 +115,4 @@ export default function CLPSection(props) {
         </GridContainer>
     </div>
   )
-};
+}

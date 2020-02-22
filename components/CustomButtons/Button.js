@@ -10,11 +10,12 @@ import buttonStyle from "assets/jss/nextjs-material-kit/components/buttonStyle.j
 
 // core components
 
-const makeComponentStyles = makeStyles((theme) => ({
+const makeComponentStyles = makeStyles(({
   ...buttonStyle
 }));
 
-const RegularButton = React.forwardRef((props, ref) => {
+// eslint-disable-next-line no-unused-vars
+const RegularButton = React.forwardRef((props,ref) => {
   const {
     color,
     round,

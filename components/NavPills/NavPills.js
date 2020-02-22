@@ -21,7 +21,7 @@ export default function NavPills(props) {
   const handleChange = (event, active) => {
     setActive(active);
   };
-  const handleChangeIndex = index => {
+  const handleChangeIndex = (index) => {
     setActive(index);
   };
   const classes = useStyles();
@@ -74,13 +74,11 @@ export default function NavPills(props) {
         index={active}
         onChangeIndex={handleChangeIndex}
       >
-        {tabs.map((prop, key) => {
-          return (
+        {tabs.map((prop, key) => (
             <div className={classes.tabContent} key={key}>
               {prop.tabContent}
             </div>
-          );
-        })}
+          ))}
       </SwipeableViews>
     </div>
   );
