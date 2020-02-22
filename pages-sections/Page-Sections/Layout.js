@@ -5,7 +5,7 @@ import classNames from "classnames";
 import {makeStyles} from "@material-ui/core/styles";
 import {Hidden} from "@material-ui/core";
 
-const style = theme => ({
+const style = ({
     mainElement: {
         background: "#FFFFFF",
         zIndex: "2",
@@ -49,4 +49,4 @@ export default function Layout(props) {
         </div>
     )
 
-};
+}

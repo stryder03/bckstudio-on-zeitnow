@@ -15,14 +15,14 @@ import AcuityScheduler from "../../pages-sections/Page-Sections/AcuityScheduler"
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     ...styles,
     ...container,
     dialog: {
         zIndex: theme.zIndex.drawer + 1
     },
     appBar: {
-        position: 'relative',
+        position: "relative",
         backgroundColor: theme.palette.secondary.main,
         color: theme.palette.secondary.contrastText
     },
@@ -84,7 +84,7 @@ export default function BookServiceDialog(props) {
                             <Close />
                         </IconButton>
                         <Typography variant="h5" className={classes.title} align={"center"}>
-                            Let's Get You Booked
+                            Let&apos;s Get You Booked
                         </Typography>
                     </Toolbar>
                 </DialogTitle>

@@ -12,18 +12,18 @@ import Typography from "@material-ui/core/Typography";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import msImg from "assets/img/ms-thumb-10782608optimize.jpg"
-import smLogo from 'assets/img/bck/smallLogo.png'
+import smLogo from "assets/img/bck/smallLogo.png"
 import {dividerBar, mainElement} from "assets/jss/nextjs-material-kit";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     ...styles,
     ...container,
     dialog: {
         zIndex: theme.zIndex.drawer + 1
     },
     appBar: {
-        position: 'relative',
+        position: "relative",
         backgroundColor: theme.palette.secondary.main,
         color: theme.palette.secondary.contrastText
     },
@@ -64,7 +64,7 @@ export default function InstrBioDialog(props) {
     const getImage = (instructor) => {
 
         switch (instructor) {
-            case 'Megan Sprenger':
+            case "Megan Sprenger":
                 return msImg;
             default:
                 return smLogo;

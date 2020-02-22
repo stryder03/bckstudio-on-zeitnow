@@ -16,8 +16,7 @@ const style = {
 };
 const useStyles = makeStyles(style);
 
-export default function MainLogo(props) {
-    const {} = props;
+export default function MainLogo() {
     const classes = useStyles();
 
     return (

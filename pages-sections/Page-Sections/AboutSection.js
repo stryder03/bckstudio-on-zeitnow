@@ -16,10 +16,10 @@ import {cardTitle, title} from "../../assets/jss/nextjs-material-kit";
 import imagesStyle from "../../assets/jss/nextjs-material-kit/imagesStyles";
 import {ExpansionPanel, ExpansionPanelDetails} from "@material-ui/core";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 
-const style = theme => ({
+const style = ({
   inlineType: {
     display: "inline"
   },

@@ -12,7 +12,7 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 import {brandFont, clp_exclaim, dividerBar, mainElement, playBrand, title,} from "../assets/jss/nextjs-material-kit";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 
-const style = theme => ({
+const style = (theme) => ({
     whiteContainer:{
         backgroundColor: "#fff"
     },
@@ -54,80 +54,79 @@ const style = theme => ({
 
 const useStyles = makeStyles(style);
 
-export default function MembershipPage(props) {
+export default function MembershipPage() {
     const classes = useStyles();
-    const {} = props;
 
     const memberTiers = [
         {
-            title: 'Casual Pass',
-            price: '120',
-            description: ['10 studio sessions included', 'Good for 3 months', 'Use for yourself OR a guest', '15lb of Clay', 'Studio Glazes', 'Kiln Firings', 'Community Shelf Space'],
-            buttonText: 'Buy a Pass',
-            buttonVariant: 'outlined',
+            title: "Casual Pass",
+            price: "120",
+            description: ["10 studio sessions included", "Good for 3 months", "Use for yourself OR a guest", "15lb of Clay", "Studio Glazes", "Kiln Firings", "Community Shelf Space"],
+            buttonText: "Buy a Pass",
+            buttonVariant: "outlined",
             inputValue: "FKFE3BSB82ZSS",
-            term: 'pass'
+            term: "pass"
         },
         {
-            title: 'Standard',
-            price: '120',
+            title: "Standard",
+            price: "120",
             description: [
-                'Full Access during Business Hours',
-                '25lb Clay',
-                'Studio Glazes',
-                'Kiln Firings',
-                'Personal Shelf Space',
-                'Discounts on Tools, Clay, After Hours Classes',
-                'Early Registration for Classes and Special Events',
-                'Opportunity to display work in our Gallery'
+                "Full Access during Business Hours",
+                "25lb Clay",
+                "Studio Glazes",
+                "Kiln Firings",
+                "Personal Shelf Space",
+                "Discounts on Tools, Clay, After Hours Classes",
+                "Early Registration for Classes and Special Events",
+                "Opportunity to display work in our Gallery"
 
             ],
-            buttonText: 'Buy Standard',
-            buttonVariant: 'contained',
+            buttonText: "Buy Standard",
+            buttonVariant: "contained",
             inputValue: "SNRKVF7FLC4US",
-            term: 'mo'
+            term: "mo"
         },
         {
-            title: 'Premium',
-            price: '260',
+            title: "Premium",
+            price: "260",
             description: [
-                '24/7 Studio Access',
-                '25lb Clay',
-                'Studio Glazes',
-                'Kiln Firings',
-                'Personal Shelf Space',
-                'Discounts on Tools, Clay, After Hours Classes',
-                'Early Registration for Classes and Special Events',
-                'Opportunity to display work in our Gallery',
-                'Special Discounts to give to friends and family'
+                "24/7 Studio Access",
+                "25lb Clay",
+                "Studio Glazes",
+                "Kiln Firings",
+                "Personal Shelf Space",
+                "Discounts on Tools, Clay, After Hours Classes",
+                "Early Registration for Classes and Special Events",
+                "Opportunity to display work in our Gallery",
+                "Special Discounts to give to friends and family"
             ],
-            buttonText: 'Buy Premium',
-            buttonVariant: 'outlined',
+            buttonText: "Buy Premium",
+            buttonVariant: "outlined",
             inputValue: "T2Q8D3PZQFQJU",
-            term: 'mo'
+            term: "mo"
         },
     ];
 
     const familyTier = [{
-        title: 'Family',
-        price: '350',
+        title: "Family",
+        price: "350",
         description: [
-            '2 Adult Memberships for  Artists aged 15+',
-            'Full Access during Business Hours',
-            '25lb Clay',
-            'Studio Glazes',
-            'Kiln Firings',
-            'Personal Shelf Space',
-            'Discounts on Tools, Clay, After Hours Classes',
-            'Early Registration for Classes and Special Events',
-            'Opportunity to display work in our Gallery',
-            '3 vouchers for Clay Kids',
+            "2 Adult Memberships for  Artists aged 15+",
+            "Full Access during Business Hours",
+            "25lb Clay",
+            "Studio Glazes",
+            "Kiln Firings",
+            "Personal Shelf Space",
+            "Discounts on Tools, Clay, After Hours Classes",
+            "Early Registration for Classes and Special Events",
+            "Opportunity to display work in our Gallery",
+            "3 vouchers for Clay Kids",
 
         ],
-        buttonText: 'Buy Family',
-        buttonVariant: 'contained',
+        buttonText: "Buy Family",
+        buttonVariant: "contained",
         inputValue: "N48DNJFPZ94HN",
-        term: 'mo'
+        term: "mo"
     },];
     return (
         <div>
