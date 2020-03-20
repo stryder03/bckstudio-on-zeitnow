@@ -7,7 +7,6 @@ import React from "react";
 import classNames from "classnames";
 import BookServiceDialog from "../BookServiceDialog/BookServiceDialog";
 
-
 const style = {
     ...styles,
     heroButton: {
