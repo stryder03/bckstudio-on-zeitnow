@@ -55,6 +55,7 @@ module.exports = {
         "jsx-quotes": ["error", "prefer-double"],
         "linebreak-style": ["error", "unix"],
         "arrow-parens": ["error", "always"],
-        "arrow-body-style": ["error", "as-needed"]
+        "arrow-body-style": ["error", "as-needed"],
+        "react/no-unescaped-entities": 0,
     }
 };

@@ -13,7 +13,7 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import Button from "../CustomButtons/Button.js";
 
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
-import {primaryColor, title} from "../../assets/jss/nextjs-material-kit";
+import {primaryColor} from "../../assets/jss/nextjs-material-kit";
 import BookServiceDialog from "../BookServiceDialog/BookServiceDialog";
 import Link from "next/link";
 import Typography from "@material-ui/core/Typography";
@@ -38,7 +38,7 @@ const style = theme => ({
 
 const useStyles = makeStyles(style);
 
-export default function HeaderLinks(props) {
+export default function HeaderLinks() {
   const classes = useStyles();
 
   return (
@@ -87,6 +87,15 @@ export default function HeaderLinks(props) {
                           color="transparent"
                           className={classes.navLink}
                       ><Typography variant={"body1"} className={classes.navText}>Contact Us</Typography>
+                      </Button>
+                  </Link>
+              </ListItem>
+              <ListItem className={classes.listItem} color={"#F00"}>
+                  <Link href={"/covid19"} passHref>
+                      <Button
+                          color="transparent"
+                          className={classes.navLink}
+                      ><Typography variant={"body1"} className={classes.navText}>COVID Updates</Typography>
                       </Button>
                   </Link>
               </ListItem>
