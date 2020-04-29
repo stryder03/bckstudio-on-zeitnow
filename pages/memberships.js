@@ -61,7 +61,7 @@ export default function MembershipPage() {
         {
             title: "Casual Pass",
             price: "120",
-            description: ["10 studio sessions included", "Good for 3 months", "Use for yourself OR a guest", "15lb of Clay", "Studio Glazes", "Kiln Firings", "Community Shelf Space"],
+            description: ["5 one hour, one-on-one studio sessions included", "Good for 2 months", "Use for yourself OR a guest", "15lb of Clay", "Studio Glazes", "Kiln Firings", "Community Shelf Space"],
             buttonText: "Buy a Pass",
             buttonVariant: "outlined",
             inputValue: "FKFE3BSB82ZSS",
