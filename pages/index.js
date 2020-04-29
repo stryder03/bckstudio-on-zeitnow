@@ -16,10 +16,6 @@ export default function homePage() {
                       content="Whether you are interested in a first clay encounter, looking for the perfect pottery
                       class, or need your own ceramic studio space, Bozeman Community Kiln is here."
                 />
-
-                <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-                <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"7c2ebc786b5f2387d9c8b05be","lid":"051cf184b5","uniqueMethods":true}) })</script>
-
             </Head>
             <Layout>
                 <BrandedHeader>
