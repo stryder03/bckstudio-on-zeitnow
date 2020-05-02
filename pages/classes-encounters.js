@@ -143,13 +143,13 @@ export default function ClassesEncounters() {
                         "Open Studio: Thursdays 7:00pm-10:00pm",
                         "$300 / 6 Week Session"
                     ],
-                    pricing: {
-                        title: "Pricing Options:",
-                        priceList: [
-                           "6 week session: $300 (incl glazing and firing)"
-                        ]
-
-                    }
+                    // pricing: {
+                    //     title: "Pricing Options:",
+                    //     priceList: [
+                    //        "6 week session: $300 (incl glazing and firing)"
+                    //     ]
+                    //
+                    // }
                 },
                 classDescription: [
                     "Level: Novice",
@@ -169,12 +169,12 @@ export default function ClassesEncounters() {
                         "Open Studio: Tuesdays 6:30pm-9:30pm",
                         "$300 / 6 Week Session"
                     ],
-                    pricing: {
-                        title: "Pricing Options:",
-                        priceList: [
-                            "6 week session: $300 (incl glazing and firing)"
-                        ]
-                    }
+                    // pricing: {
+                    //     title: "Pricing Options:",
+                    //     priceList: [
+                    //         "6 week session: $300 (incl glazing and firing)"
+                    //     ]
+                    // }
                 },
                 classDescription: [
                     "Level: Novice",
