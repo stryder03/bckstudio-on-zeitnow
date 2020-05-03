@@ -114,7 +114,7 @@ export default function ClassesEncounters() {
                 buttonText: "Join Clay Kids"
             },
             {
-                title: "Highschool Clay",
+                title: "High School Clay",
                 classInfo: {
                     instructor: "Megan Sprenger",
                     subtitles: ["Mondays 1:00pm-4:00pm","$200/ 8 week session"]
@@ -123,7 +123,7 @@ export default function ClassesEncounters() {
                     "Includes 15lbs of clay, studio glazes, firings, and shelving space",
                     "Students will learn to create pottery using both hand-building techniques and the pottery wheel",
                     "We will explore the development of ideas for form and functionality and different decorative techniques",
-                    "Designed to meet the needs of home school curriculum"
+                    "Designed to meet the needs of home school curriculum, but open to all high schoolers!"
                 ],
                 classID: "13180426",
                 buttonText: "Join Highschool Clay"
@@ -141,22 +141,15 @@ export default function ClassesEncounters() {
                     subtitles: [
                         "Class: Tuesdays 6:30pm-9:30pm",
                         "Open Studio: Thursdays 7:00pm-10:00pm",
-                        "Pricing starts at $55 / per class"
+                        "$300 / 6 Week Session"
                     ],
-                    pricing: {
-                        title: "Pricing Options:",
-                        priceList: [
-                            {
-                                strikeItem: {
-                                    clearText: "Intro Class: $55",
-                                    strikeText: "(incl glazing and firing)"
-                                },
-                            },
-                            "3 Class bundle: $165 (incl glazing and firing)",
-                            "6 Class bundle: $300 (incl glazing and firing)"
-                        ]
-
-                    }
+                    // pricing: {
+                    //     title: "Pricing Options:",
+                    //     priceList: [
+                    //        "6 week session: $300 (incl glazing and firing)"
+                    //     ]
+                    //
+                    // }
                 },
                 classDescription: [
                     "Level: Novice",
@@ -174,15 +167,14 @@ export default function ClassesEncounters() {
                     subtitles: [
                         "Class: Thursdays 6:30pm-9:30pm",
                         "Open Studio: Tuesdays 6:30pm-9:30pm",
-                        "Pricing starts at $55 / per class"
+                        "$300 / 6 Week Session"
                     ],
-                    pricing: {
-                        title: "Pricing Options:",
-                        priceList: [
-                            "Intro  Mug Class: $55 (incl glazing and firing)",
-                            "6 Class bundle: $300 (incl glazing and firing)"
-                        ]
-                    }
+                    // pricing: {
+                    //     title: "Pricing Options:",
+                    //     priceList: [
+                    //         "6 week session: $300 (incl glazing and firing)"
+                    //     ]
+                    // }
                 },
                 classDescription: [
                     "Level: Novice",
