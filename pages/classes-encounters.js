@@ -117,7 +117,7 @@ export default function ClassesEncounters() {
                 title: "High School Clay",
                 classInfo: {
                     instructor: "Megan Sprenger",
-                    subtitles: ["Mondays 1:00pm-4:00pm","$200/ 8 week session"]
+                    subtitles: ["Mondays 1:00pm-4:00pm","$200/ 6 week session"]
                 },
                 classDescription: [
                     "Includes 15lbs of clay, studio glazes, firings, and shelving space",
