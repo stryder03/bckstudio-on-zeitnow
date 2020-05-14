@@ -155,7 +155,7 @@ export default function ClassesEncounters() {
                     "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
                 classID: "10782608",
-                buttonText: "Join Megan's Wheel Class"
+                buttonText: "Join Megan's Tuesday Class"
             },
             {
                 title: "Thursday Pottery Class",
@@ -177,7 +177,7 @@ export default function ClassesEncounters() {
                     "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
                 classID: "10906689",
-                buttonText: "Join Megan's Hand Building Class"
+                buttonText: "Join Megan's Thursday Class"
             },
 
         ]
