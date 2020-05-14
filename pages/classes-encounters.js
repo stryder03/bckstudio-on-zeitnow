@@ -126,7 +126,7 @@ export default function ClassesEncounters() {
                     "Designed to meet the needs of home school curriculum, but open to all high schoolers!"
                 ],
                 classID: "13180426",
-                buttonText: "Join Highschool Clay"
+                buttonText: "Join High School Clay"
             },
         ]
     }];
@@ -154,7 +154,7 @@ export default function ClassesEncounters() {
                 classDescription: [
                     "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
-                classID: "10782608",
+                classID: "14347381",
                 buttonText: "Join Megan's Tuesday Class"
             },
             {
@@ -176,7 +176,7 @@ export default function ClassesEncounters() {
                 classDescription: [
                     "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
-                classID: "10906689",
+                classID: "14348661",
                 buttonText: "Join Megan's Thursday Class"
             },
 
