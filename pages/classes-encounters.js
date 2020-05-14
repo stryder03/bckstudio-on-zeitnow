@@ -135,7 +135,7 @@ export default function ClassesEncounters() {
         category: "Adult Classes",
         categoryList: [
             {
-                title: "Beginner Wheel Class",
+                title: "Tuesday Pottery Class",
                 classInfo: {
                     instructor: "Megan Sprenger",
                     subtitles: [
@@ -152,16 +152,13 @@ export default function ClassesEncounters() {
                     // }
                 },
                 classDescription: [
-                    "Level: Novice",
-                    "Concentrate on techniques to center clay, create volume, and build simple bowl and mug forms",
-                    "Learn trimming techniques, glazing practices, and gain knowledge on the clay firing process",
-                    "Clay Included!"
+                    "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
                 classID: "10782608",
                 buttonText: "Join Megan's Wheel Class"
             },
             {
-                title: "Beginner Hand Building Class",
+                title: "Thursday Pottery Class",
                 classInfo: {
                     instructor: "Megan Sprenger",
                     subtitles: [
@@ -177,10 +174,7 @@ export default function ClassesEncounters() {
                     // }
                 },
                 classDescription: [
-                    "Level: Novice",
-                    "Learn to work with clay from start to finish using several pottery hand building techniques like pinch, coil, slab and sculpting",
-                    "Work on individual projects in a fun and energetic environment!",
-                    "Clay Included!"
+                    "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
                 classID: "10906689",
                 buttonText: "Join Megan's Hand Building Class"
