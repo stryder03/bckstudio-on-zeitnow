@@ -1,6 +1,6 @@
 {
   "name": "bckstudio_website",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Bozeman Community Kiln Website",
   "scripts": {
     "dev": "next",
