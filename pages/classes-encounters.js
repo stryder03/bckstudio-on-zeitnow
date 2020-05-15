@@ -139,8 +139,7 @@ export default function ClassesEncounters() {
                 classInfo: {
                     instructor: "Megan Sprenger",
                     subtitles: [
-                        "Class: Tuesdays 6:30pm-9:30pm",
-                        "Open Studio: Thursdays 7:00pm-10:00pm",
+                        "Class: Tuesdays 6:45pm-9:30pm",
                         "$300 / 6 Week Session"
                     ],
                     // pricing: {
@@ -162,8 +161,7 @@ export default function ClassesEncounters() {
                 classInfo: {
                     instructor: "Megan Sprenger",
                     subtitles: [
-                        "Class: Thursdays 6:30pm-9:30pm",
-                        "Open Studio: Tuesdays 6:30pm-9:30pm",
+                        "Class: Thursdays 6:45pm-9:30pm",
                         "$300 / 6 Week Session"
                     ],
                     // pricing: {
