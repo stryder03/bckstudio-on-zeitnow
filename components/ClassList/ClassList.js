@@ -204,7 +204,7 @@ export default function ClassList(props) {
                             </GridContainer>
                             <Hidden mdUp>
                                 <div className={classNames(classes.smallButton)}>
-                                    <BookServiceDialog apptType={classList.classID} buttonText={classList.buttonText}/>
+                                    {disableBookDialogButton(clayClass)}
                                 </div>
                             </Hidden>
                             <Hidden smDown>
