@@ -78,11 +78,15 @@ const ms = {
         "of ceramics as a material and its use in our daily lives.",
 
 };
-
+const ale = {
+    name: "Ashleah",
+    bio: "Ashleah holds a BFA in Ceramics from Montana State University and a license in Vocational Nursing. Ashleah has helped curate an exhibit at the Museum of the Rockies, participated in juried and collaborative art shows in and out of Montana State University, and created work for many non-profit fundraising events. Ashleah has taught skills in the ceramic medium to a wide variety of individuals. In her own work, Ashleah explores the emotional and physical impact objects can have on the subconscious. She uses subliminal cultural references, local materials, essential oils, and tactile perceptions to elicit mindful experiences.",
+    statement: "Ashleah enjoys helping people develop skills and create with clay. From children to older adults and individuals with special needs, she believes that working with clay is a pastime that builds community, fosters healing, and provides lasting life skills."
+};
 const bckStaff = {
     name: "BCK Staff Member",
-    bio: "",
-    statement: "",
+    bio: "One of our outstanding staff members will be teaching this class",
+    statement: "At our core, artists are communicators. Here at Bozeman Community Kiln, our goal as instructors is to teach each student how to tell their own stories through ceramic creations",
 };
 export default function ClassList(props) {
     const classes = useStyles();
@@ -92,6 +96,8 @@ export default function ClassList(props) {
         switch (instructor) {
             case "Megan Sprenger":
                 return ms;
+            case "Ashleah":
+                return ale;
             default:
                 return bckStaff;
         }
@@ -141,6 +147,18 @@ export default function ClassList(props) {
             </React.Fragment>
         )
     };
+
+    const disableBookDialogButton = (clayClass) => {
+
+        if (clayClass.disable) {
+            return (
+                <Typography align={"left"} className={classNames(classes.classHeaders)}>Call to be placed on our Waitlist!</Typography>
+            );
+        }
+        return (
+            <BookServiceDialog apptType={clayClass.classID} buttonText={clayClass.buttonText}/>
+            );
+    };
     return (
         <React.Fragment>
             {classList.map((classType, index) => (
@@ -179,7 +197,7 @@ export default function ClassList(props) {
                                     {getPriceList(clayClass.classInfo)}
                                     <Hidden smDown>
                                         <div className={classes.bookButton}>
-                                            <BookServiceDialog apptType={clayClass.classID} buttonText={clayClass.buttonText}/>
+                                            {disableBookDialogButton(clayClass)}
                                         </div>
                                     </Hidden>
                                 </GridItem>
