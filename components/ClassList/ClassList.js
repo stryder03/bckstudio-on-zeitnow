@@ -148,9 +148,14 @@ export default function ClassList(props) {
         )
     };
 
-    const disableBookDialogButton = (clayClass) => {
+    const disableBookDialogButton = (clayClass, deviceSize) => {
 
         if (clayClass.disable) {
+            if(deviceSize === "small"){
+                return (
+                    <Typography align={"center"} className={classNames(classes.classHeaders)}>Call to be placed on our Waitlist!</Typography>
+                );
+            }
             return (
                 <Typography align={"left"} className={classNames(classes.classHeaders)}>Call to be placed on our Waitlist!</Typography>
             );
@@ -204,7 +209,7 @@ export default function ClassList(props) {
                             </GridContainer>
                             <Hidden mdUp>
                                 <div className={classNames(classes.smallButton)}>
-                                    {disableBookDialogButton(clayClass)}
+                                    {disableBookDialogButton(clayClass, "small")}
                                 </div>
                             </Hidden>
                             <Hidden smDown>
