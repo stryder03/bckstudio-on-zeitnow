@@ -15,6 +15,7 @@ import msImg from "assets/img/ms-thumb-10782608optimize.jpg"
 import smLogo from "assets/img/bck/smallLogo.png"
 import {dividerBar, mainElement} from "assets/jss/nextjs-material-kit";
 import Button from "@material-ui/core/Button";
+import aleImg from"assets/img/bck/8FDB054E-A020-49CB-9059-9969ABA3CA8B.jpg"
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -66,6 +67,8 @@ export default function InstrBioDialog(props) {
         switch (instructor) {
             case "Megan Sprenger":
                 return msImg;
+            case "Ashleah":
+                return aleImg;
             default:
                 return smLogo;
         }

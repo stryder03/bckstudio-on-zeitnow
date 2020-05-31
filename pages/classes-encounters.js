@@ -116,7 +116,7 @@ export default function ClassesEncounters() {
             {
                 title: "High School Clay",
                 classInfo: {
-                    instructor: "Megan Sprenger",
+                    instructor: "Ashleah",
                     subtitles: ["Mondays 1:00pm-4:00pm","$200/ 6 week session"]
                 },
                 classDescription: [
@@ -126,7 +126,8 @@ export default function ClassesEncounters() {
                     "Designed to meet the needs of home school curriculum, but open to all high schoolers!"
                 ],
                 classID: "category:Highschool%20Clay",
-                buttonText: "Join High School Clay"
+                buttonText: "Join High School Clay",
+                disable: true
             },
         ]
     }];
@@ -137,7 +138,7 @@ export default function ClassesEncounters() {
             {
                 title: "Tuesday Pottery Class",
                 classInfo: {
-                    instructor: "Megan Sprenger",
+                    instructor: "Ashleah",
                     subtitles: [
                         "Class: Tuesdays 6:45pm-9:30pm",
                         "$300 / 6 Week Session"
@@ -154,12 +155,12 @@ export default function ClassesEncounters() {
                     "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
                 classID: "category:Tuesday%20classes",
-                buttonText: "Join Megan's Tuesday Class"
+                buttonText: "Join Tuesday's Class"
             },
             {
                 title: "Thursday Pottery Class",
                 classInfo: {
-                    instructor: "Megan Sprenger",
+                    instructor: "Ashleah",
                     subtitles: [
                         "Class: Thursdays 6:45pm-9:30pm",
                         "$300 / 6 Week Session"
@@ -175,7 +176,7 @@ export default function ClassesEncounters() {
                     "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
                 ],
                 classID: "category:Thursday%20classes",
-                buttonText: "Join Megan's Thursday Class"
+                buttonText: "Join Thursday's Class"
             },
 
         ]
