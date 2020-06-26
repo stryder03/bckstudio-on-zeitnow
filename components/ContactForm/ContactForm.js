@@ -13,14 +13,13 @@ import Button from "../CustomButtons/Button";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {useForm} from "react-hook-form";
-import submitForm from "../../Scripts/submitForm";
 import {Close} from "@material-ui/icons";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle"
 import classNames from "classnames";
 import ReCAPTCHA from "react-google-recaptcha";
-
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -72,7 +71,7 @@ export default function ContactForm(props) {
         let submitSuccess;
         try {
 
-            submitSuccess = await submitForm(data)
+            submitSuccess = await axios.post("https://us-central1-bckapp-84b75.cloudfunctions.net/c1e1dc4562aa425cb765ae56c92e937d", data)
         }
         catch(err){
             return false
