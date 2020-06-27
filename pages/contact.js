@@ -40,14 +40,14 @@ const useStyles = makeStyles(style);
 
 export default function ContactPage() {
     const classes = useStyles();
-    const gKey = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJrb7LA0RJRVMRLThXYkgPKbk&key=" + process.env.MAPS_KEY;
+    const gKey = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJrb7LA0RJRVMRLThXYkgPKbk&key=" + process.env.NEXT_PUBLIC_MAPS_KEY;
     return (
         <div>
             <Head>
                 <title>CONTACT US • Bozeman Community Kiln</title>
                 <meta name="description"
                       content="Let's connect! Reach your community pottery studio via phone or email from our contact page or visit us in Belgrade next to Stockman Bank."/>
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <script src="https://www.google.com/recaptcha/api.js" async defer/>
 
             </Head>
             <Layout>
