@@ -112,7 +112,11 @@ export default function ContactForm(props) {
         }
 
     };
-    const allowSubmit = () => {
+    const allowSubmit = (value) => {
+        if (!value){
+            setSubmitButtonDisabled(true);
+            return
+        }
         setSubmitButtonDisabled(false)
     };
 
@@ -129,7 +133,12 @@ export default function ContactForm(props) {
                 <TextField id={"email"} label={"Email"} name={"email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register}/>
                 <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} placeholder="How can we help?" variant={"outlined"} color={"primary"} inputRef={register}/>
                 <br/>
-                <ReCAPTCHA sitekey={"6LcKbdkUAAAAAAI9vInOSkXuRV93iuncCdv13wVd"} onChange={allowSubmit}/>
+
+                <ReCAPTCHA
+                    sitekey={"6LcKbdkUAAAAAAI9vInOSkXuRV93iuncCdv13wVd"}
+                    onChange={allowSubmit}
+                    size={"compact"}
+                />
                 <br/>
                 <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classNames(classes.textArea)} type={"submit"} disabled={submitButtonDisabled}>Send Message</Button>
             </form>
