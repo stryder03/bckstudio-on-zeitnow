@@ -10,7 +10,7 @@ import {
     Typography
 } from "@material-ui/core";
 import Button from "../CustomButtons/Button";
-import React from "react";
+import React, {useEffect} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {useForm} from "react-hook-form";
 import {Close} from "@material-ui/icons";
@@ -53,10 +53,37 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function ContactForm(props) {
 
     const classes = useStyles();
-    const { register, handleSubmit, reset} = useForm();
-    const [buttonDisabled, setButtonDisabled] = React.useState(true);
+
+    // react-hook-forms props
+    const { register, handleSubmit, reset, formState} = useForm();
+
+    const [submitButtonDisabled, setSubmitButtonDisabled] = React.useState(true);
     const [open, setOpen] = React.useState(false);
     const [displayDialog, setDialog] = React.useState(<CircularProgress color={"primary"}/>);
+    const [cloudFunctionReady, warmUpCloudFunction] = React.useState(false);
+
+    // Identify when a form field has been touched
+    const { touched } = formState;
+
+    // Warm up cloud function when a form field is touched. Decreases time to submit form
+    useEffect(() => {
+        if (!cloudFunctionReady) {
+            const formTouched = async () => {
+                if (JSON.stringify(touched).length > 2) {
+                    return await axios.get("https://us-central1-bckapp-84b75.cloudfunctions.net/c1e1dc4562aa425cb765ae56c92e937d", {
+                        validateStatus: function (status) {
+                            return status < 500; // Reject only if the status code is greater than or equal to 500
+                        }
+                    })
+                }
+            };
+            formTouched().then((status) => {
+                if(status) {
+                    warmUpCloudFunction(true)
+                }
+            }).catch();
+        }
+    });
     const handleClose = () => {
         setOpen(false);
     };
@@ -70,7 +97,6 @@ export default function ContactForm(props) {
         handleToggle();
         let submitSuccess;
         try {
-
             submitSuccess = await axios.post("https://us-central1-bckapp-84b75.cloudfunctions.net/c1e1dc4562aa425cb765ae56c92e937d", data)
         }
         catch(err){
@@ -87,10 +113,10 @@ export default function ContactForm(props) {
 
     };
     const allowSubmit = () => {
-        setButtonDisabled(false)
+        setSubmitButtonDisabled(false)
     };
 
-    const formTitle = props.formTitle === undefined ? "Contact US" : props.formTitle;
+    const formTitle = props.formTitle === undefined ? "Contact Us" : props.formTitle;
 
     return (
         <div className={classes.form}>
@@ -105,7 +131,7 @@ export default function ContactForm(props) {
                 <br/>
                 <ReCAPTCHA sitekey={"6LcKbdkUAAAAAAI9vInOSkXuRV93iuncCdv13wVd"} onChange={allowSubmit}/>
                 <br/>
-                <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classNames(classes.textArea)} type={"submit"} disabled={buttonDisabled}>Send Message</Button>
+                <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classNames(classes.textArea)} type={"submit"} disabled={submitButtonDisabled}>Send Message</Button>
             </form>
             <div className={classes.listItem}>
                 <Dialog open={open} onBackdropClick={handleClose} TransitionComponent={Transition} aria-label={"Sending Contact Form"}>
