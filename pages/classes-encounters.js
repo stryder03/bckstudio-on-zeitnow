@@ -152,7 +152,7 @@ export default function ClassesEncounters() {
                     // }
                 },
                 classDescription: [
-                    "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
+                    "This beginner's pottery class goes for 6 consecutive weeks and includes the option for open studio time on Thursday evenings. Students will develop wedging, coil building and slab building knowledge and techniques as well as learning how to use forms and various support molds. Higher skill levels are welcome and will be guided in advancing their ceramic skill set. Clay glazings, firings, and basic tools are included. "
                 ],
                 classID: "category:Tuesday%20classes",
                 buttonText: "Join Tuesday's Class"
@@ -173,7 +173,7 @@ export default function ClassesEncounters() {
                     // }
                 },
                 classDescription: [
-                    "This beginning pottery class goes for 6 consecutive weeks and will concentrate on techniques for novice students to work with clay on the wheel or hand-build simple bowl and mug forms. Higher skill levels are welcome."
+                    "This beginner's pottery class goes for 6 consecutive weeks and includes the option for open studio time on Tuesday evenings. Students will develop wedging, centering, wheel wedging, and various throwing knowledge and techniques. Higher skill levels are welcome and will be guided in advancing their ceramic skill set. Clay, glazing, firing, and basic tools are included."
                 ],
                 classID: "category:Thursday%20classes",
                 buttonText: "Join Thursday's Class"
