@@ -139,7 +139,7 @@ const formClassList = (classList) => {
         const result = {categories: []};
         classList.classes.map(course => {
             course.classCategory = course.classCategory.replace("_", " ");
-            result.categories[course.classCategory] ? result.categories[course.classCategory].push(course) : result.categories[course.classCategory]= {categoryClasses: [course]}
+            result.categories[course.classCategory] ? result.categories[course.classCategory].categoryClasses.push(course) : result.categories[course.classCategory]= {categoryClasses: [course]}
         });
 
         return result;
