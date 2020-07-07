@@ -145,7 +145,7 @@ const formClassList = (classList) => {
         return result;
 };
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
     const queryResult = await getClasses(classQuery);
     return {
         props: { queryResult }, // will be passed to the page component as props
@@ -162,7 +162,7 @@ export default function ClassesEncounters(props) {
 
         let result = [];
         for (let key in classList.categories) {
-            if (classList.categories.hasOwnProperty(key)) {
+            if (Object.prototype.hasOwnProperty.call(classList.categories, key)) {
                 result.push(<ClassList classList={classList.categories[key]} key={key} title={key}/>)
 
             }
