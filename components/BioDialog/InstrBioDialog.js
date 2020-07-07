@@ -11,11 +11,8 @@ import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle"
 import Typography from "@material-ui/core/Typography";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
-import msImg from "assets/img/ms-thumb-10782608optimize.jpg"
-import smLogo from "assets/img/bck/smallLogo.png"
 import {dividerBar, mainElement} from "assets/jss/nextjs-material-kit";
 import Button from "@material-ui/core/Button";
-import aleImg from"assets/img/bck/8FDB054E-A020-49CB-9059-9969ABA3CA8B.jpg"
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -55,6 +52,7 @@ export default function InstrBioDialog(props) {
     const classes = useStyles();
     const {instr} = props;
     const [open, setOpen] = React.useState(false);
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -62,22 +60,11 @@ export default function InstrBioDialog(props) {
         setOpen(!open);
     };
 
-    const getImage = (instructor) => {
-
-        switch (instructor) {
-            case "Megan Sprenger":
-                return msImg;
-            case "Ashleah":
-                return aleImg;
-            default:
-                return smLogo;
-        }
-    };
     return (
 
         <React.Fragment>
             <Button variant={"outlined"} onClick={handleToggle} color={"primary"}>
-                {instr.name}
+                {instr.firstName}
             </Button>
             <Dialog open={open} onBackdropClick={handleClose} TransitionComponent={Transition}
                     className={classes.container}>
@@ -87,22 +74,22 @@ export default function InstrBioDialog(props) {
                             <Close/>
                         </IconButton>
                         <Typography variant="h5" className={classes.title} align={"center"}>
-                            Meet {instr.name}
+                            Meet {instr.firstName}
                         </Typography>
                     </Toolbar>
                 </DialogTitle>
                 <DialogContent>
                     <GridContainer align={"center"}>
                         <GridItem xs={12} md={12}>
-                            <img src={getImage(instr.name)} alt={instr.name} className={classes.bioImg}/>
+                            <img src={instr.headshotImage.url} alt={instr.firstName} className={classes.bioImg}/>
                         </GridItem>
                         <GridItem xs={12} md={12}>
                             <Typography variant={"body1"}>
-                                {instr.bio}
+                                {instr.bio.text}
                             </Typography>
                             <div className={classes.raisedDivider}/>
                             <Typography variant={"body1"}>
-                                {instr.statement}
+                                {instr.instructorStatement.text}
                             </Typography>
                         </GridItem>
                     </GridContainer>
