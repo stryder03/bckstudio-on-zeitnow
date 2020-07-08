@@ -79,14 +79,9 @@ const useStyles = makeStyles((theme) => ({
 //
 // };
 
-const bckStaff = {
-    name: "BCK Staff Member",
-    bio: "One of our outstanding staff members will be teaching this class",
-    statement: "At our core, artists are communicators. Here at Bozeman Community Kiln, our goal as instructors is to teach each student how to tell their own stories through ceramic creations",
-};
 export default function ClassList(props) {
     const classes = useStyles();
-    const { classList, title } = props;
+    const { classList, title, defaultInstructor } = props;
 
     const disableBookDialogButton = (clayClass, deviceSize) => {
 
@@ -113,6 +108,7 @@ export default function ClassList(props) {
         return clayClass.displayTitle
     };
 
+
     return <React.Fragment>
         <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
             {title}
@@ -125,7 +121,7 @@ export default function ClassList(props) {
                                 {getClassTitle(clayClass)}
                             </Typography>
                             <Typography variant={"subtitle1"} component={"p"} align={"center"} className={classes.classSubHeaders}>
-                                With: <br/><InstrBioDialog instr={clayClass.instructor}/><br/>
+                                With: <br/><InstrBioDialog instr={clayClass.instructor} defaultInstructor={defaultInstructor}/><br/>
                             </Typography>
                             {clayClass.classInfoList.map((line, j) => (
                                 <Typography variant={"subtitle1"} component={"p"} align={"center"} className={classes.classSubHeaders} key={j}>

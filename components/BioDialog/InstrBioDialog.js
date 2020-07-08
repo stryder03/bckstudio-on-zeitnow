@@ -50,8 +50,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function InstrBioDialog(props) {
     const classes = useStyles();
-    const {instr} = props;
+    const {instr, defaultInstructor} = props;
     const [open, setOpen] = React.useState(false);
+    let instructor = defaultInstructor.instructor;
 
     const handleClose = () => {
         setOpen(false);
@@ -60,11 +61,15 @@ export default function InstrBioDialog(props) {
         setOpen(!open);
     };
 
+    if (instr) {
+        instructor = instr;
+    }
+
     return (
 
         <React.Fragment>
             <Button variant={"outlined"} onClick={handleToggle} color={"primary"}>
-                {instr.firstName}
+                {instructor.firstName}
             </Button>
             <Dialog open={open} onBackdropClick={handleClose} TransitionComponent={Transition}
                     className={classes.container}>
@@ -74,22 +79,22 @@ export default function InstrBioDialog(props) {
                             <Close/>
                         </IconButton>
                         <Typography variant="h5" className={classes.title} align={"center"}>
-                            Meet {instr.firstName}
+                            Meet {instructor.firstName}
                         </Typography>
                     </Toolbar>
                 </DialogTitle>
                 <DialogContent>
                     <GridContainer align={"center"}>
                         <GridItem xs={12} md={12}>
-                            <img src={instr.headshotImage.url} alt={instr.firstName} className={classes.bioImg}/>
+                            <img src={instructor.headshotImage.url} alt={instructor.firstName} className={classes.bioImg}/>
                         </GridItem>
                         <GridItem xs={12} md={12}>
                             <Typography variant={"body1"}>
-                                {instr.bio.text}
+                                {instructor.bio.text}
                             </Typography>
                             <div className={classes.raisedDivider}/>
                             <Typography variant={"body1"}>
-                                {instr.instructorStatement.text}
+                                {instructor.instructorStatement.text}
                             </Typography>
                         </GridItem>
                     </GridContainer>

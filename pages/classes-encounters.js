@@ -94,7 +94,7 @@ const style = (theme) => ({
 });
 const useStyles = makeStyles(style);
 
-const getClasses = async (query) => {
+const queryCMS = async (query) => {
     try {
         return await new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT, {
             headers: {
@@ -108,62 +108,79 @@ const getClasses = async (query) => {
 
 const classQuery =
     `{ 
-            classes(where: {listOnWebsite: true}){
-                listOnWebsite
-                classCategory
-                className
-                displayTitle
-                instructor {
-                    firstName
-                    lastName
-                    headshotImage {
-                        url
-                    }
-                    bio {
-                        text
-                    }
-                    instructorStatement {
-                        text
-                    }
-                }
-                classId
-                buttonText
-                disableBookingButton
-                classDescriptionList
-                classInfoList      
-            }    
-        }`
-;
+         classes(where: {listOnWebsite: true}){
+              listOnWebsite
+              classCategory
+              className
+              displayTitle
+              instructor {  
+                  firstName
+                  lastName
+                  headshotImage {
+                      url
+                  }
+                  bio {
+                      text
+                  }
+                  instructorStatement {
+                      text
+                  }
+              }
+              classId
+              buttonText
+              disableBookingButton
+              classDescriptionList
+              classInfoList          
+         }  
+    }`;
 
+const instructorQuery =
+    `{  
+        instructor(where: {id: "ckcdvyiso02tm0120n6ug0trk"}){
+            firstName
+            lastName
+            headshotImage {
+                url
+            }
+            bio {
+                text
+            }
+            instructorStatement {
+                text
+            }
+        }       
+    }`;
 const formClassList = (classList) => {
         const result = {categories: []};
         classList.classes.map(course => {
             course.classCategory = course.classCategory.replace("_", " ");
-            result.categories[course.classCategory] ? result.categories[course.classCategory].categoryClasses.push(course) : result.categories[course.classCategory]= {categoryClasses: [course]}
+            result.categories[course.classCategory] ? result.categories[course.classCategory].categoryClasses.push(course) : result.categories[course.classCategory]= {categoryClasses: [course]};
         });
 
         return result;
 };
 
 export async function getStaticProps() {
-    const queryResult = await getClasses(classQuery);
+    const classListQueryResult = await queryCMS(classQuery);
+    const defaultInstructor = await queryCMS(instructorQuery);
+
     return {
-        props: { queryResult }, // will be passed to the page component as props
+        props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
     }
 }
 
 export default function ClassesEncounters(props) {
     const classes = useStyles();
-    const { queryResult } = props;
+    const { classListQueryResult, defaultInstructor } = props;
 
-    const classData = formClassList(queryResult);
+    const classData = formClassList(classListQueryResult);
 
     const classLists = (classList) => {
 
         let result = [];
         for (let key in classList.categories) {
             if (Object.prototype.hasOwnProperty.call(classList.categories, key)) {
-                result.push(<ClassList classList={classList.categories[key]} key={key} title={key}/>)
+                result.push(<ClassList classList={classList.categories[key]} key={key} title={key} defaultInstructor={defaultInstructor}/>)
 
             }
         }
