@@ -78,30 +78,15 @@ const useStyles = makeStyles((theme) => ({
 //         "of ceramics as a material and its use in our daily lives.",
 //
 // };
-// const ale = {
-//     name: "Ashleah",
-//     bio: "Ashleah holds a BFA in Ceramics from Montana State University and a license in Vocational Nursing. Ashleah has helped curate an exhibit at the Museum of the Rockies, participated in juried and collaborative art shows in and out of Montana State University, and created work for many non-profit fundraising events. Ashleah has taught skills in the ceramic medium to a wide variety of individuals. In her own work, Ashleah explores the emotional and physical impact objects can have on the subconscious. She uses subliminal cultural references, local materials, essential oils, and tactile perceptions to elicit mindful experiences.",
-//     statement: "Ashleah enjoys helping people develop skills and create with clay. From children to older adults and individuals with special needs, she believes that working with clay is a pastime that builds community, fosters healing, and provides lasting life skills."
-// };
-// const bckStaff = {
-//     name: "BCK Staff Member",
-//     bio: "One of our outstanding staff members will be teaching this class",
-//     statement: "At our core, artists are communicators. Here at Bozeman Community Kiln, our goal as instructors is to teach each student how to tell their own stories through ceramic creations",
-// };
+
+const bckStaff = {
+    name: "BCK Staff Member",
+    bio: "One of our outstanding staff members will be teaching this class",
+    statement: "At our core, artists are communicators. Here at Bozeman Community Kiln, our goal as instructors is to teach each student how to tell their own stories through ceramic creations",
+};
 export default function ClassList(props) {
     const classes = useStyles();
     const { classList, title } = props;
-
-    // const instructor = (instructor) => {
-    //     switch (instructor) {
-    //         case "Megan Sprenger":
-    //             return ms;
-    //         case "Ashleah":
-    //             return ale;
-    //         default:
-    //             return bckStaff;
-    //     }
-    // };
 
     const disableBookDialogButton = (clayClass, deviceSize) => {
 
@@ -132,7 +117,7 @@ export default function ClassList(props) {
         <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
             {title}
         </Typography>
-            {classList.categoryClasses.filter(clayClass => clayClass.listOnWebsite === true).map((clayClass, index) => (
+            {classList.categoryClasses.map((clayClass, index) => (
                 <React.Fragment key={index}>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={3}>

@@ -108,7 +108,7 @@ const getClasses = async (query) => {
 
 const classQuery =
     `{ 
-            classes{
+            classes(where: {listOnWebsite: true}){
                 listOnWebsite
                 classCategory
                 className
