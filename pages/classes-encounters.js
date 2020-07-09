@@ -108,7 +108,7 @@ const queryCMS = async (query) => {
 
 const classQuery =
     `{ 
-         classes(where: {listOnWebsite: true}){
+         classes(where: {listOnWebsite: true}  orderBy: displayOrder_ASC){
               listOnWebsite
               classCategory
               className
