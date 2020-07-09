@@ -18,7 +18,6 @@ import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle"
 import classNames from "classnames";
-import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,9 +53,9 @@ export default function ContactForm(props) {
 
     const classes = useStyles();
     const { register, handleSubmit, reset} = useForm();
-    const [buttonDisabled, setButtonDisabled] = React.useState(true);
     const [open, setOpen] = React.useState(false);
     const [displayDialog, setDialog] = React.useState(<CircularProgress color={"primary"}/>);
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -86,10 +85,6 @@ export default function ContactForm(props) {
         }
 
     };
-    const allowSubmit = () => {
-        setButtonDisabled(false)
-    };
-
     const formTitle = props.formTitle === undefined ? "Contact US" : props.formTitle;
 
     return (
@@ -98,14 +93,13 @@ export default function ContactForm(props) {
                 { formTitle }
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <TextField id={"firstName"} name={"firstName"} margin={"normal"} fullWidth label={"First Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register}/>
-                <TextField id={"lastName"} name={"lastName"} margin={"normal"} fullWidth label={"Last Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register}/>
-                <TextField id={"email"} label={"Email"} name={"email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register}/>
-                <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} placeholder="How can we help?" variant={"outlined"} color={"primary"} inputRef={register}/>
+                <TextField id={"firstName"} name={"firstName"} margin={"normal"} fullWidth label={"First Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register({required: true, maxLength: 80})}/>
+                <TextField id={"lastName"} name={"lastName"} margin={"normal"} fullWidth label={"Last Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register({required: true, maxLength: 100})}/>
+                <TextField id={"email"} label={"Email"} name={"email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register({required: true, pattern: /^\S+@\S+$/i})}/>
+                <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} required placeholder="How can we help?" variant={"outlined"} color={"primary"} inputRef={register({required: true, max: 10, min: 5})}/>
                 <br/>
-                <ReCAPTCHA sitekey={"6LcKbdkUAAAAAAI9vInOSkXuRV93iuncCdv13wVd"} onChange={allowSubmit}/>
                 <br/>
-                <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classNames(classes.textArea)} type={"submit"} disabled={buttonDisabled}>Send Message</Button>
+                <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classNames(classes.textArea)} type={"submit"}>Send Message</Button>
             </form>
             <div className={classes.listItem}>
                 <Dialog open={open} onBackdropClick={handleClose} TransitionComponent={Transition} aria-label={"Sending Contact Form"}>
