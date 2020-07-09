@@ -15,6 +15,7 @@ import {
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import ClassList from "../components/ClassList/ClassList";
+import {GraphQLClient} from "graphql-request";
 
 const style = (theme) => ({
     h1Container: {
@@ -93,94 +94,98 @@ const style = (theme) => ({
 });
 const useStyles = makeStyles(style);
 
-export default function ClassesEncounters() {
+const queryCMS = async (query) => {
+    try {
+        return await new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT, {
+            headers: {
+                authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN}`
+            }
+        }).request(query);
+    }catch (e) {
+        return e
+    }
+};
+
+const classQuery =
+    `{ 
+         classes(where: {listOnWebsite: true}  orderBy: displayOrder_ASC){
+              listOnWebsite
+              classCategory
+              className
+              displayTitle
+              instructor {  
+                  firstName
+                  lastName
+                  headshotImage {
+                      url
+                  }
+                  bio {
+                      text
+                  }
+                  instructorStatement {
+                      text
+                  }
+              }
+              classId
+              buttonText
+              disableBookingButton
+              classDescriptionList
+              classInfoList          
+         }  
+    }`;
+
+const instructorQuery =
+    `{  
+        instructor(where: {id: "ckcdvyiso02tm0120n6ug0trk"}){
+            firstName
+            lastName
+            headshotImage {
+                url
+            }
+            bio {
+                text
+            }
+            instructorStatement {
+                text
+            }
+        }       
+    }`;
+const formClassList = (classList) => {
+        const result = {categories: []};
+        classList.classes.map(course => {
+            course.classCategory = course.classCategory.replace("_", " ");
+            result.categories[course.classCategory] ? result.categories[course.classCategory].categoryClasses.push(course) : result.categories[course.classCategory]= {categoryClasses: [course]};
+        });
+
+        return result;
+};
+
+export async function getStaticProps() {
+    const classListQueryResult = await queryCMS(classQuery);
+    const defaultInstructor = await queryCMS(instructorQuery);
+
+    return {
+        props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
+    }
+}
+
+export default function ClassesEncounters(props) {
     const classes = useStyles();
+    const { classListQueryResult, defaultInstructor } = props;
 
-    const youthClasses = [{
-        category: "Youth Classes",
-        categoryList: [
-            {
-                title: "Bozeman Clay Kids",
-                classInfo: {
-                        subtitles: ["Thursdays 4:00pm-6:30pm", "$200/ 8 week session"]
-                    },
-                classDescription: [
-                    "Includes 15lbs of clay, studio glazes, firings, and shelving space",
-                    "Students are encouraged to plan their own projects, developing the skills which interest them the most",
-                    "Students will receive instruction on techniques for hand-building as well as throwing on a pottery wheel",
-                    "Designed for students aged 8-17"
-                ],
-                classID: "10494352",
-                buttonText: "Join Clay Kids"
-            },
-            {
-                title: "High School Clay",
-                classInfo: {
-                    instructor: "Ashleah",
-                    subtitles: ["Mondays 1:00pm-4:00pm","$200/ 6 week session"]
-                },
-                classDescription: [
-                    "Includes 15lbs of clay, studio glazes, firings, and shelving space",
-                    "Students will learn to create pottery using both hand-building techniques and the pottery wheel",
-                    "We will explore the development of ideas for form and functionality and different decorative techniques",
-                    "Designed to meet the needs of home school curriculum, but open to all high schoolers!"
-                ],
-                classID: "category:Highschool%20Clay",
-                buttonText: "Join High School Clay",
-                disable: true
-            },
-        ]
-    }];
+    const classData = formClassList(classListQueryResult);
 
-    const adultClasses = [{
-        category: "Adult Classes",
-        categoryList: [
-            {
-                title: "Tuesday Pottery Class",
-                classInfo: {
-                    instructor: "Ashleah",
-                    subtitles: [
-                        "Class: Tuesdays 6:45pm-9:30pm",
-                        "$300 / 6 Week Session"
-                    ],
-                    // pricing: {
-                    //     title: "Pricing Options:",
-                    //     priceList: [
-                    //        "6 week session: $300 (incl glazing and firing)"
-                    //     ]
-                    //
-                    // }
-                },
-                classDescription: [
-                    "This beginner's pottery class goes for 6 consecutive weeks and includes the option for open studio time on Thursday evenings. Students will develop wedging, coil building and slab building knowledge and techniques as well as learning how to use forms and various support molds. Higher skill levels are welcome and will be guided in advancing their ceramic skill set. Clay glazings, firings, and basic tools are included. "
-                ],
-                classID: "category:Tuesday%20classes",
-                buttonText: "Join Tuesday's Class"
-            },
-            {
-                title: "Thursday Pottery Class",
-                classInfo: {
-                    instructor: "Ashleah",
-                    subtitles: [
-                        "Class: Thursdays 6:45pm-9:30pm",
-                        "$300 / 6 Week Session"
-                    ],
-                    // pricing: {
-                    //     title: "Pricing Options:",
-                    //     priceList: [
-                    //         "6 week session: $300 (incl glazing and firing)"
-                    //     ]
-                    // }
-                },
-                classDescription: [
-                    "This beginner's pottery class goes for 6 consecutive weeks and includes the option for open studio time on Tuesday evenings. Students will develop wedging, centering, wheel wedging, and various throwing knowledge and techniques. Higher skill levels are welcome and will be guided in advancing their ceramic skill set. Clay, glazing, firing, and basic tools are included."
-                ],
-                classID: "category:Thursday%20classes",
-                buttonText: "Join Thursday's Class"
-            },
+    const classLists = (classList) => {
 
-        ]
-    }];
+        let result = [];
+        for (let key in classList.categories) {
+            if (Object.prototype.hasOwnProperty.call(classList.categories, key)) {
+                result.push(<ClassList classList={classList.categories[key]} key={key} title={key} defaultInstructor={defaultInstructor}/>)
+
+            }
+        }
+        return result
+    };
 
     return (
         <div>
@@ -208,8 +213,7 @@ export default function ClassesEncounters() {
                         </Typography>
                     </div>
                 </BrandedHeader>
-                <ClassList classList={youthClasses}/>
-                <ClassList classList={adultClasses}/>
+                {classLists(classData)}
                 <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders} id={"play"}
                             name={"play"}>
                     Encounters
