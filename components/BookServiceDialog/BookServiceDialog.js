@@ -57,7 +57,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function BookServiceDialog(props) {
     const classes = useStyles();
-    const { buttonText, apptType} = props;
+    const { buttonText, src} = props;
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         setOpen(false);
@@ -91,7 +91,7 @@ export default function BookServiceDialog(props) {
                 <DialogContent>
                     <GridContainer align={"center"}>
                         <GridItem xs={12}>
-                            <AcuityScheduler apptType={apptType}/>
+                            <AcuityScheduler src={src}/>
                         </GridItem>
                     </GridContainer>
                 </DialogContent>

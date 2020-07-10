@@ -106,10 +106,11 @@ const queryCMS = async (query, token) => {
     }
 };
 
+// TODO: Update "listOnWebsite" to "displayInClassesView" here and in graphcms api
 const classQuery =
     `{ 
-         classes(where: {listOnWebsite: true}  orderBy: displayOrder_ASC){
-              listOnWebsite
+         classes(where: {displayInClassesView: true}  orderBy: displayOrder_ASC){
+              displayInClassesView
               classCategory
               className
               displayTitle
@@ -126,7 +127,7 @@ const classQuery =
                       text
                   }
               }
-              classId
+              classLink
               buttonText
               disableBookingButton
               classDescriptionList
@@ -168,7 +169,6 @@ export async function getStaticProps(context) {
     const classListQueryResult = await queryCMS(classQuery, token);
     const defaultInstructor = await queryCMS(instructorQuery, prodToken);
 
-    console.log(classListQueryResult);
     return {
         props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
     }
