@@ -96,7 +96,7 @@ export default function ClassList(props) {
             );
         }
         return (
-            <BookServiceDialog apptType={clayClass.classId} buttonText={clayClass.buttonText}/>
+            <BookServiceDialog src={clayClass.classLink} buttonText={clayClass.buttonText}/>
             );
     };
 
