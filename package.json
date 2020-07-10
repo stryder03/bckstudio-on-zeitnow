@@ -56,6 +56,6 @@
     "replace-in-file": "^6.1.0",
     "typescript": "^3.9.5",
     "uuid": "^8.1.0",
-    "vercel": "^19.1.0"
+    "vercel": "^19.1.2"
   }
 }

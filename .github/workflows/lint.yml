@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
         with:
-          files: --fix pages/**/*.js pages-sections/**/*.js components/**/*.js Scripts/**/*.js tests/**/*.js assets/theme.js
+          files: --fix pages/**/*.js pages-sections/**/*.js components/**/*.js Scripts/**/*.js assets/theme.js
