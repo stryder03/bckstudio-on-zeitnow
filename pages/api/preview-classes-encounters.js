@@ -8,7 +8,9 @@ export default async (req, res) => {
     }
     // Enable Preview Mode by setting the cookies
 
-    res.setPreviewData({token: process.env.GRAPH_CMS_PREVIEW_TOKEN_SERVER});
+    res.setPreviewData({token: process.env.GRAPH_CMS_PREVIEW_TOKEN_SERVER}, {
+        maxAge: 10, // The preview mode cookies expire in 10 seconds
+    });
 
     // Redirect to the classes-encounters page
     res.writeHead(307, { Location: "/classes-encounters" });
