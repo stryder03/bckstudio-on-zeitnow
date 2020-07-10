@@ -109,7 +109,7 @@ const queryCMS = async (query, token) => {
 // TODO: Update "listOnWebsite" to "displayInClassesView" here and in graphcms api
 const classQuery =
     `{ 
-         classes(where: {listOnWebsite: true}  orderBy: displayOrder_ASC){
+         classes(where: {displayInClassesView: true}  orderBy: displayOrder_ASC){
               listOnWebsite
               classCategory
               className
