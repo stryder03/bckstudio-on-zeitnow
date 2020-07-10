@@ -110,7 +110,7 @@ const queryCMS = async (query, token) => {
 const classQuery =
     `{ 
          classes(where: {displayInClassesView: true}  orderBy: displayOrder_ASC){
-              listOnWebsite
+              displayInClassesView
               classCategory
               className
               displayTitle
