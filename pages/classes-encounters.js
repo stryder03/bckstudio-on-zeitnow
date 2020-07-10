@@ -161,10 +161,10 @@ const formClassList = (classList) => {
 };
 
 export async function getStaticProps(context) {
-    console.log("token: " + context.previewData.token);
+
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
     const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
-    console.log("token: " + token);
+
     const classListQueryResult = await queryCMS(classQuery, token);
     const defaultInstructor = await queryCMS(instructorQuery, prodToken);
 
