@@ -94,11 +94,11 @@ const style = (theme) => ({
 });
 const useStyles = makeStyles(style);
 
-const queryCMS = async (query) => {
+const queryCMS = async (query, token) => {
     try {
         return await new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT, {
             headers: {
-                authorization: `Bearer ${process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN}`
+                authorization: `Bearer ${token}`
             }
         }).request(query);
     }catch (e) {
@@ -160,10 +160,15 @@ const formClassList = (classList) => {
         return result;
 };
 
-export async function getStaticProps() {
-    const classListQueryResult = await queryCMS(classQuery);
-    const defaultInstructor = await queryCMS(instructorQuery);
+export async function getStaticProps(context) {
+    console.log("token: " + context.previewData.token);
+    const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
+    const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
+    console.log("token: " + token);
+    const classListQueryResult = await queryCMS(classQuery, token);
+    const defaultInstructor = await queryCMS(instructorQuery, prodToken);
 
+    console.log(classListQueryResult);
     return {
         props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
     }
