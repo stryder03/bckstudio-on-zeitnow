@@ -7,7 +7,6 @@
     "build": "next build",
     "export": "next export",
     "lint": "eslint --fix src/**/*.js",
-    "push": "npm run lint && git pull && git push origin dev",
     "relay": "relay-compiler --src ./src --schema ./Graphql/schema.graphql --extensions js jsx"
   },
   "dependencies": {
