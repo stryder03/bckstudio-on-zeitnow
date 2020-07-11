@@ -11,7 +11,6 @@
   user-select: none;
 
   -webkit-touch-callout: none;
-  -khtml-user-select: none;
   -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
@@ -32,7 +31,6 @@
     padding-top: 20px;
     color: #ffffff;
     text-align: center;
-    z-index: 3;
     display: none;
   }
   .slick-slide {
@@ -63,7 +61,6 @@
   outline: none;
 }
 .slick-list.dragging {
-  cursor: pointer;
   cursor: hand;
 }
 
@@ -159,7 +156,7 @@ button.slick-arrow.slick-next {
   &::before {
     content: "\f053";
     font-weight: 600;
-    font-family: Font Awesome\ 5 Free;
+    font-family: Font Awesome\ 5 Free, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
@@ -177,7 +174,7 @@ button.slick-arrow.slick-next {
   &::before {
     content: "\f054";
     font-weight: 600;
-    font-family: Font Awesome\ 5 Free;
+    font-family: Font Awesome\ 5 Free, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;

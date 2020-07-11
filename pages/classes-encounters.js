@@ -106,7 +106,6 @@ const queryCMS = async (query, token) => {
     }
 };
 
-// TODO: Update "listOnWebsite" to "displayInClassesView" here and in graphcms api
 const classQuery =
     `{ 
          classes(where: {displayInClassesView: true}  orderBy: displayOrder_ASC){
