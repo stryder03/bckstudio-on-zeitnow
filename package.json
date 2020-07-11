@@ -7,9 +7,9 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "lint": "eslint --fix src/pages/**/*.js src/pages-sections/**/*.js src/components/**/*.js src/Scripts/**/*.js src/assets/theme.js",
+    "lint": "eslint --fix src/**/*.js",
     "push": "npm run lint && git pull && git push origin dev",
-    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx"
+    "relay": "relay-compiler --src ./src --schema ./Graphql/schema.graphql --extensions js jsx"
   },
   "resolutions": {
     "minimist": "latest",
