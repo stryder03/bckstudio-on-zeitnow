@@ -1,6 +1,6 @@
 {
   "name": "bckstudio_website",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Bozeman Community Kiln Website",
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
