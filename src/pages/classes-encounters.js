@@ -15,7 +15,7 @@ import {
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import ClassList from "../components/ClassList/ClassList";
-import {GraphQLClient} from "graphql-request";
+import {queryCMS} from "../Scripts/queryCMS";
 
 const style = (theme) => ({
     h1Container: {
@@ -93,18 +93,6 @@ const style = (theme) => ({
     brandFont
 });
 const useStyles = makeStyles(style);
-
-const queryCMS = async (query, token) => {
-    try {
-        return await new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT, {
-            headers: {
-                authorization: `Bearer ${token}`
-            }
-        }).request(query);
-    }catch (e) {
-        return e
-    }
-};
 
 const classQuery =
     `{ 

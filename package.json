@@ -9,7 +9,8 @@
     "build": "next build",
     "export": "next export",
     "lint": "eslint --fix src/**/*.js",
-    "relay": "relay-compiler --src ./src --schema ./Graphql/schema.graphql --extensions js jsx"
+    "relay": "relay-compiler --src ./src --schema ./Graphql/schema.graphql --extensions js jsx",
+    "test": "jest"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -43,6 +44,7 @@
     "eslint": "^7.4.0",
     "eslint-plugin-react": "^7.20.3",
     "graphql": "^15.3.0",
+    "jest": "^26.1.0",
     "typescript": "^3.9.6",
     "uuid": "^8.2.0",
     "vercel": "^19.1.2"
