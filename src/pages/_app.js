@@ -8,7 +8,7 @@ import {ThemeProvider} from "@material-ui/styles";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
-import * as Sentry from '@sentry/react';
+import * as Sentry from "@sentry/react";
 
 if (process.env.VERCEL_GITHUB_COMMIT_SHA) {
     // eslint-disable-next-line no-console

@@ -154,17 +154,12 @@ export async function getStaticProps(context) {
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
     const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
 
-    try {
-        const classListQueryResult = await queryCMS(classQuery, token);
-        const defaultInstructor = await queryCMS(instructorQuery, prodToken);
+    const classListQueryResult = await queryCMS(classQuery, token);
+    const defaultInstructor = await queryCMS(instructorQuery, prodToken);
 
-        return {
-            props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
-        }
-    }catch (e) {
-        throw e
+    return {
+        props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
     }
-
 }
 
 export default function ClassesEncounters(props) {
