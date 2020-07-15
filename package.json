@@ -9,8 +9,7 @@
     "build": "next build",
     "export": "next export",
     "lint": "eslint --fix src/**/*.js",
-    "test": "jest",
-    "one": "webpack --config ScriptEnv/webpack.config.js"
+    "test": "jest"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -34,8 +33,7 @@
     "react-hook-form": "^6.0.5",
     "react-scroll-parallax": "^2.3.4",
     "react-slick": "^0.26.1",
-    "react-swipeable-views": "^0.13.9",
-    "webpack": "^4.43.0"
+    "react-swipeable-views": "^0.13.9"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -51,7 +49,6 @@
     "jest": "^26.1.0",
     "typescript": "^3.9.6",
     "uuid": "^8.2.0",
-    "vercel": "^19.1.2",
-    "webpack-cli": "^3.3.12"
+    "vercel": "^19.1.2"
   }
 }
