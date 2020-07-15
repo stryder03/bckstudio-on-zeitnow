@@ -9,12 +9,14 @@
     "build": "next build",
     "export": "next export",
     "lint": "eslint --fix src/**/*.js",
-    "relay": "relay-compiler --src ./src --schema ./Graphql/schema.graphql --extensions js jsx"
+    "test": "jest",
+    "one": "webpack --config ScriptEnv/webpack.config.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.10.0",
+    "@sentry/react": "^5.19.2",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "graphql-request": "^2.1.0-next.1",
@@ -29,22 +31,27 @@
     "react": "^16.13.1",
     "react-datetime": "^2.16.3",
     "react-dom": "^16.13.1",
-    "react-hook-form": "^6.0.4",
-    "react-scroll-parallax": "^2.3.3",
+    "react-hook-form": "^6.0.5",
+    "react-scroll-parallax": "^2.3.4",
     "react-slick": "^0.26.1",
     "react-swipeable-views": "^0.13.9",
     "webpack": "^4.43.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
+    "@babel/cli": "^7.10.5",
     "@babel/plugin-transform-flow-strip-types": "^7.10.4",
+    "@jest/globals": "^26.1.0",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.4.0",
     "eslint-plugin-react": "^7.20.3",
     "graphql": "^15.3.0",
+    "graphql-config": "^3.0.3",
+    "graphql-tag": "^2.10.4",
+    "jest": "^26.1.0",
     "typescript": "^3.9.6",
     "uuid": "^8.2.0",
-    "vercel": "^19.1.2"
+    "vercel": "^19.1.2",
+    "webpack-cli": "^3.3.12"
   }
 }

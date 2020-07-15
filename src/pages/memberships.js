@@ -4,13 +4,15 @@ import classNames from "classnames";
 // @material-ui/core components
 import {makeStyles} from "@material-ui/core/styles";
 // core components
-import {Typography} from "@material-ui/core";
+import {Hidden, Typography} from "@material-ui/core";
 // Sections for this page
 import Head from "next/head";
 import Pricing from "../components/Pricing/Pricing";
 import Layout from "../pages-sections/Page-Sections/Layout";
 import {brandFont, clp_exclaim, dividerBar, mainElement, playBrand, title,} from "../assets/jss/nextjs-material-kit";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
+import {queryCMS} from "../Scripts/queryCMS";
+import Container from "@material-ui/core/Container";
 
 const style = (theme) => ({
     whiteContainer:{
@@ -40,10 +42,6 @@ const style = (theme) => ({
         ...mainElement,
         marginTop: "0"
     },
-    categoryHeaders: {
-        color: theme.palette.primary.main,
-        marginTop: "2.5rem"
-    },
     mainElement,
     title,
     brandFont,
@@ -54,80 +52,58 @@ const style = (theme) => ({
 
 const useStyles = makeStyles(style);
 
-export default function MembershipPage() {
+const membershipsQuery = `
+    {
+        membershipTiers{
+            category
+            title
+            price
+            description
+            buttonText
+            buttonVariant
+            inputValue
+            term
+        }
+    }
+`
+
+const formMembershipList = (membershipsList) => {
+    const result = {categories: []};
+    membershipsList.membershipTiers.map((tier) => {
+        tier.category = tier.category.replace("_", " ");
+        result.categories[tier.category] ? result.categories[tier.category].categoryTiers.push(tier) : result.categories[tier.category]= {categoryTiers: [tier]};
+    });
+
+    return result;
+};
+
+export async function getStaticProps(context) {
+
+    const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
+    const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
+
+    const membershipsQueryResult = await queryCMS(membershipsQuery, token);
+
+    return {
+        props: {membershipsQueryResult}, // will be passed to the page component as props
+    }
+}
+
+export default function MembershipPage(props) {
     const classes = useStyles();
+    const {membershipsQueryResult} = props
 
-    const memberTiers = [
-        {
-            title: "Casual Pass",
-            price: "120",
-            description: ["5 one hour, one-on-one studio sessions included", "Good for 2 months", "Use for yourself OR a guest", "15lb of Clay", "Studio Glazes", "Kiln Firings", "Community Shelf Space"],
-            buttonText: "Buy a Pass",
-            buttonVariant: "outlined",
-            inputValue: "FKFE3BSB82ZSS",
-            term: "pass"
-        },
-        {
-            title: "Standard",
-            price: "120",
-            description: [
-                "Full Access during Business Hours",
-                "25lb Clay",
-                "Studio Glazes",
-                "Kiln Firings",
-                "Personal Shelf Space",
-                "Discounts on Tools, Clay, After Hours Classes",
-                "Early Registration for Classes and Special Events",
-                "Opportunity to display work in our Gallery"
+    const membershipsData = formMembershipList(membershipsQueryResult);
 
-            ],
-            buttonText: "Buy Standard",
-            buttonVariant: "contained",
-            inputValue: "SNRKVF7FLC4US",
-            term: "mo"
-        },
-        {
-            title: "Premium",
-            price: "260",
-            description: [
-                "24/7 Studio Access",
-                "25lb Clay",
-                "Studio Glazes",
-                "Kiln Firings",
-                "Personal Shelf Space",
-                "Discounts on Tools, Clay, After Hours Classes",
-                "Early Registration for Classes and Special Events",
-                "Opportunity to display work in our Gallery",
-                "Special Discounts to give to friends and family"
-            ],
-            buttonText: "Buy Premium",
-            buttonVariant: "outlined",
-            inputValue: "T2Q8D3PZQFQJU",
-            term: "mo"
-        },
-    ];
-
-    const familyTier = [{
-        title: "Family",
-        price: "350",
-        description: [
-            "2 Adult Memberships for  Artists aged 15+",
-            "Full Access during Business Hours",
-            "25lb Clay",
-            "Studio Glazes",
-            "Kiln Firings",
-            "Personal Shelf Space",
-            "Discounts on Tools, Clay, After Hours Classes",
-            "Early Registration for Classes and Special Events",
-            "Opportunity to display work in our Gallery",
-            "3 vouchers for Clay Kids",
-
-        ],
-        buttonText: "Buy Family",
-        buttonVariant: "contained",
-        inputValue: "N48DNJFPZ94HN",
-        term: "mo"
-    },];
+    const priceLists = (membershipCategories, maxWidth) => {
+        let result = [];
+        for (let key in membershipCategories.categories) {
+            if (Object.prototype.hasOwnProperty.call(membershipCategories.categories, key)) {
+                result.push(<Pricing tierCategory={membershipCategories.categories[key].categoryTiers} title={key} key={key} maxWidth={maxWidth}/>)
+            }
+        }
+        return result;
+    };
     return (
         <div>
                 <Head>
@@ -142,18 +118,16 @@ export default function MembershipPage() {
                             CREATE.
                         </Typography>
                     </BrandedHeader>
-                    <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
-                        Individual Memberships
-                    </Typography>
-                    <Pricing tiers={memberTiers}/>
-                    <div className={classNames(classes.main_content, classes.mainContentRaised)}>
-                    <div className={classes.headerContainer}>
-                        <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
-                            Family Membership
-                        </Typography>
-                        </div>
-                    </div>
-                    <Pricing tiers={familyTier} />
+                    <Hidden smDown>
+                        <Container component="main" maxWidth={"lg"}>
+                            {priceLists(membershipsData, "lg")}
+                        </Container>
+                    </Hidden>
+                    <Hidden mdUp>
+                        <Container component="main" maxWidth={"sm"}>
+                            {priceLists(membershipsData, "sm")}
+                        </Container>
+                    </Hidden>
                 </Layout>
             </div>
         </div>

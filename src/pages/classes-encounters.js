@@ -15,7 +15,7 @@ import {
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import ClassList from "../components/ClassList/ClassList";
-import {GraphQLClient} from "graphql-request";
+import {queryCMS} from "../Scripts/queryCMS";
 
 const style = (theme) => ({
     h1Container: {
@@ -94,18 +94,6 @@ const style = (theme) => ({
 });
 const useStyles = makeStyles(style);
 
-const queryCMS = async (query, token) => {
-    try {
-        return await new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT, {
-            headers: {
-                authorization: `Bearer ${token}`
-            }
-        }).request(query);
-    }catch (e) {
-        return e
-    }
-};
-
 const classQuery =
     `{ 
          classes(where: {displayInClassesView: true}  orderBy: displayOrder_ASC){
@@ -136,7 +124,7 @@ const classQuery =
 
 const instructorQuery =
     `{  
-        instructor(where: {id: "ckcdvyiso02tm0120n6ug0trk"}){
+        instructor(where: {defaultInstructor: true}){
             firstName
             lastName
             headshotImage {
@@ -150,6 +138,7 @@ const instructorQuery =
             }
         }       
     }`;
+
 const formClassList = (classList) => {
         const result = {categories: []};
         classList.classes.map((course) => {
@@ -185,7 +174,6 @@ export default function ClassesEncounters(props) {
         for (let key in classList.categories) {
             if (Object.prototype.hasOwnProperty.call(classList.categories, key)) {
                 result.push(<ClassList classList={classList.categories[key]} key={key} title={key} defaultInstructor={defaultInstructor}/>)
-
             }
         }
         return result

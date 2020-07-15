@@ -7,9 +7,9 @@ import CardHeader from "@material-ui/core/CardHeader";
 import Grid from "@material-ui/core/Grid";
 import StarIcon from "@material-ui/icons/StarBorder";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import {makeStyles} from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
+import classNames from "classnames";
 
 const useStyles = makeStyles((theme) => ({
     "@global": {
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
     },
     cards: {
-        marginTop: "2.5rem"
+        marginTop: "2.5rem",
     },
     priceButton: {
         fontWeight: "bold",
@@ -43,22 +43,28 @@ const useStyles = makeStyles((theme) => ({
             color: "#ffffff"
         }
     },
-}));
+    categoryHeaders: {
+        color: theme.palette.primary.main,
+        marginTop: "2.5rem"
+    },
+    smButton: {
+        maxWidth: "50%"
+    },
 
+}));
 
 export default function Pricing(props) {
     const classes = useStyles();
 
-    const {tiers} = props;
+    const {tierCategory, title, maxWidth} = props;
 
-
-    return (
-        <React.Fragment>
-            <Container maxWidth="md" component="main">
-                <Grid container spacing={5} alignItems={ tiers.length > 1 ? "flex-end" : "center"} justify={"center"}>
-                    {tiers.map((tier) => (
-                        // Premium card is full width at sm breakpoint
-                        <Grid item key={tier.title} xs={12} sm={tier.title === "Premium" ? 12 : 6} md={4}>
+    return (<React.Fragment>
+            <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
+                {title}
+            </Typography>
+            <Grid container spacing={5} alignItems={ tierCategory.length > 1 ? "flex-end" : "center"} justify={"center"}>
+            {tierCategory.map((tier) => (
+                        <Grid item key={tier.title} xs={12} sm={12} md={4}>
                             <Card className={classes.cards}>
                                 <CardHeader
                                     title={tier.title}
@@ -87,20 +93,18 @@ export default function Pricing(props) {
                                     </ul>
                                 </CardContent>
                                 <CardActions>
-                                    <Button fullWidth
+                                    <Button fullWidth={maxWidth === "sm" ? false : true}
                                             variant={tier.buttonVariant}
                                             color="primary"
                                             href={"https://www.paypal.com/cgi-bin/webscr&cmd=_s-xclick&hosted_button_id="+tier.inputValue}
-                                            className={tier.buttonVariant === "contained" ? classes.featuredPriceButton : classes.priceButton}>
-                                            {tier.buttonText}
+                                            className={classNames(
+                                                tier.buttonVariant === "contained" ? classes.featuredPriceButton : classes.priceButton)}>
+                                        {tier.buttonText}
                                     </Button>
                                 </CardActions>
                             </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-        </React.Fragment>
-    );
+                    </Grid>
+            ))}
+            </Grid>
+    </React.Fragment>);
 }
-
