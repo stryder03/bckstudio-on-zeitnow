@@ -124,7 +124,7 @@ const classQuery =
 
 const instructorQuery =
     `{  
-        instructor(where: {id: "ckcdvyiso02tm0120n6ug0trk"}){
+        instructor(where: {defaultInstructor: true}){
             firstName
             lastName
             headshotImage {
@@ -138,6 +138,7 @@ const instructorQuery =
             }
         }       
     }`;
+
 const formClassList = (classList) => {
         const result = {categories: []};
         classList.classes.map((course) => {
@@ -153,12 +154,17 @@ export async function getStaticProps(context) {
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
     const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
 
-    const classListQueryResult = await queryCMS(classQuery, token);
-    const defaultInstructor = await queryCMS(instructorQuery, prodToken);
+    try {
+        const classListQueryResult = await queryCMS(classQuery, token);
+        const defaultInstructor = await queryCMS(instructorQuery, prodToken);
 
-    return {
-        props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
+        return {
+            props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
+        }
+    }catch (e) {
+        throw e
     }
+
 }
 
 export default function ClassesEncounters(props) {
@@ -173,7 +179,6 @@ export default function ClassesEncounters(props) {
         for (let key in classList.categories) {
             if (Object.prototype.hasOwnProperty.call(classList.categories, key)) {
                 result.push(<ClassList classList={classList.categories[key]} key={key} title={key} defaultInstructor={defaultInstructor}/>)
-
             }
         }
         return result

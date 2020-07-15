@@ -8,6 +8,13 @@ import {ThemeProvider} from "@material-ui/styles";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
+import * as Sentry from '@sentry/react';
+
+if (process.env.VERCEL_GITHUB_COMMIT_SHA) {
+    // eslint-disable-next-line no-console
+    console.log("VERCEL_GITHUB_COMMIT_SHA: " + process.env.VERCEL_GITHUB_COMMIT_SHA)
+    Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, release: process.env.VERCEL_GITHUB_COMMIT_SHA});
+}
 
 Router.events.on("routeChangeStart", (url) => {
     document.body.classList.add("body-page-transition");
