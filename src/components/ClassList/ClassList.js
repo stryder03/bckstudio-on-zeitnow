@@ -94,7 +94,7 @@ export default function ClassList(props) {
         <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
             {title}
         </Typography>
-            {classList.categoryClasses.map((clayClass, index) => (
+            {classList.classes.map((clayClass, index) => (
                 <React.Fragment key={index}>
                     <GridContainer>
                         <GridItem xs={12} sm={12} md={3}>

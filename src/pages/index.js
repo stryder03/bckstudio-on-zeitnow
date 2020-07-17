@@ -6,7 +6,21 @@ import CLPSection from "../pages-sections/Page-Sections/CLPSection.js";
 import AboutSection from "../pages-sections/Page-Sections/AboutSection.js";
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
+// import {queryCMS} from "../Scripts/queryCMS";
+// import gql from "graphql-tag";
 
+// export async function getStaticProps(context) {
+//
+//     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
+//     const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
+//
+//     const classListQueryResult = await queryCMS(classCategories, token);
+//     const defaultInstructor = await queryCMS(instructorQuery, prodToken);
+//
+//     return {
+//         props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
+//     }
+// }
 export default function homePage() {
     return (
         <div>

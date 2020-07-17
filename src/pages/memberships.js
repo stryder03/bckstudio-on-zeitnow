@@ -64,8 +64,7 @@ const membershipsQuery = `
             inputValue
             term
         }
-    }
-`
+    }`
 
 const formMembershipList = (membershipsList) => {
     const result = {categories: []};
@@ -91,7 +90,7 @@ export async function getStaticProps(context) {
 
 export default function MembershipPage(props) {
     const classes = useStyles();
-    const {membershipsQueryResult} = props
+    const { membershipsQueryResult } = props
 
     const membershipsData = formMembershipList(membershipsQueryResult);
 
