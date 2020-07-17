@@ -70,10 +70,10 @@ export default function ContactForm(props) {
         let submitSuccess;
         try {
 
-            submitSuccess = await axios.post("https://us-central1-bckapp-84b75.cloudfunctions.net/c1e1dc4562aa425cb765ae56c92e937d", data)
+            submitSuccess = await axios.post("/api/contact-form", data)
         }
         catch(err){
-            return false
+            return err
         }
         if (submitSuccess){
             handleDialog(<Typography variant={"h6"} color={"primary"}>Thanks for reaching out, we will get in touch with you soon</Typography> );
