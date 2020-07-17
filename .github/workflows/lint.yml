@@ -9,5 +9,4 @@ jobs:
               node-version: 12.x
       - uses: actions/checkout@v2
       - run: npm ci
-      - run: npm run build
       - run: npm run lint
