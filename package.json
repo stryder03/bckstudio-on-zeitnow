@@ -49,7 +49,7 @@
     "graphql-config": "^3.0.3",
     "graphql-tag": "^2.10.4",
     "jest": "^26.1.0",
-    "typescript": "^3.9.6",
+    "typescript": "^3.9.7",
     "uuid": "^8.2.0",
     "vercel": "^19.1.2",
     "webpack-cli": "^3.3.12"
