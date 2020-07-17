@@ -18,7 +18,6 @@ import {ExpansionPanel, ExpansionPanelDetails} from "@material-ui/core";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-
 const style = ({
   inlineType: {
     display: "inline"

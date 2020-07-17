@@ -94,6 +94,34 @@ const style = (theme) => ({
 });
 const useStyles = makeStyles(style);
 
+const classCategories = `{
+    classCategories {
+        categoryTitle
+        classes(where: {displayInClassesView: true}){
+            displayInClassesView
+            className
+            displayTitle
+            instructor {
+                firstName
+                lastName
+                headshotImage {
+                    url
+                }
+                bio {
+                    text
+                }
+                instructorStatement {
+                    text
+                }
+            }
+            classLink
+            buttonText
+            disableBookingButton
+            classDescriptionList
+            classInfoList
+        }
+    }
+}`
 const classQuery =
     `{ 
          classes(where: {displayInClassesView: true}  orderBy: displayOrder_ASC){
@@ -154,7 +182,7 @@ export async function getStaticProps(context) {
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
     const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
 
-    const classListQueryResult = await queryCMS(classQuery, token);
+    const classListQueryResult = await queryCMS(classCategories, token);
     const defaultInstructor = await queryCMS(instructorQuery, prodToken);
 
     return {
@@ -166,16 +194,12 @@ export default function ClassesEncounters(props) {
     const classes = useStyles();
     const { classListQueryResult, defaultInstructor } = props;
 
-    const classData = formClassList(classListQueryResult);
-
     const classLists = (classList) => {
 
         let result = [];
-        for (let key in classList.categories) {
-            if (Object.prototype.hasOwnProperty.call(classList.categories, key)) {
-                result.push(<ClassList classList={classList.categories[key]} key={key} title={key} defaultInstructor={defaultInstructor}/>)
-            }
-        }
+        classList.classCategories.map((category) => {
+            result.push(<ClassList classList={category} key={category.categoryTitle} title={category.categoryTitle} defaultInstructor={defaultInstructor}/>)
+        })
         return result
     };
 
@@ -205,7 +229,7 @@ export default function ClassesEncounters(props) {
                         </Typography>
                     </div>
                 </BrandedHeader>
-                {classLists(classData)}
+                {classLists(classListQueryResult)}
                 <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders} id={"play"}
                             name={"play"}>
                     Encounters
