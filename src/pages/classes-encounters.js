@@ -122,33 +122,6 @@ const classCategories = `{
         }
     }
 }`
-const classQuery =
-    `{ 
-         classes(where: {displayInClassesView: true}  orderBy: displayOrder_ASC){
-              displayInClassesView
-              classCategory
-              className
-              displayTitle
-              instructor {  
-                  firstName
-                  lastName
-                  headshotImage {
-                      url
-                  }
-                  bio {
-                      text
-                  }
-                  instructorStatement {
-                      text
-                  }
-              }
-              classLink
-              buttonText
-              disableBookingButton
-              classDescriptionList
-              classInfoList          
-         }  
-    }`;
 
 const instructorQuery =
     `{  
@@ -167,15 +140,6 @@ const instructorQuery =
         }       
     }`;
 
-const formClassList = (classList) => {
-        const result = {categories: []};
-        classList.classes.map((course) => {
-            course.classCategory = course.classCategory.replace("_", " ");
-            result.categories[course.classCategory] ? result.categories[course.classCategory].categoryClasses.push(course) : result.categories[course.classCategory]= {categoryClasses: [course]};
-        });
-
-        return result;
-};
 
 export async function getStaticProps(context) {
 
