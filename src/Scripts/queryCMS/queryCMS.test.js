@@ -4,8 +4,9 @@ import {describe, expect, it} from "@jest/globals";
 describe('CMS Query API with CLIENT Token', () => {
     it('should return status code 200', async() => {
         const expected = 200;
+      
         const query = `
-        query{
+          query{
             instructors(where: {defaultInstructor: true}){
                 firstName
             }
