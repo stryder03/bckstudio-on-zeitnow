@@ -11,9 +11,8 @@ import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import * as Sentry from "@sentry/react";
 
 if (process.env.VERCEL_GITHUB_COMMIT_SHA) {
-    // eslint-disable-next-line no-console
-    console.log("VERCEL_GITHUB_COMMIT_SHA: " + process.env.VERCEL_GITHUB_COMMIT_SHA)
-    Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, release: process.env.VERCEL_GITHUB_COMMIT_SHA});
+    Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, release: process.env.VERCEL_GITHUB_COMMIT_SHA,
+        enabled: process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'preview',});
 }
 
 Router.events.on("routeChangeStart", (url) => {
@@ -34,7 +33,7 @@ Router.events.on("routeChangeError", () => {
 
 export default class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, err } = this.props;
 
     return (
       <React.Fragment>
@@ -44,7 +43,7 @@ export default class MyApp extends App {
           </Head>
         <ThemeProvider theme={theme}>
             <ParallaxProvider>
-                <Component {...pageProps} />
+                <Component {...pageProps} err={err} Sentry={Sentry}/>
             </ParallaxProvider>
         </ThemeProvider>
       </React.Fragment>
