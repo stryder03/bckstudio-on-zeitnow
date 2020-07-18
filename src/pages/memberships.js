@@ -54,28 +54,19 @@ const useStyles = makeStyles(style);
 
 const membershipsQuery = `
     {
-        membershipTiers{
-            category
+        membershipCategories{
             title
-            price
-            description
-            buttonText
-            buttonVariant
-            inputValue
-            term
+            membershipTiers{
+                title
+                price
+                description
+                buttonText
+                buttonVariant
+                inputValue
+                term
+            }
         }
-    }
-`
-
-const formMembershipList = (membershipsList) => {
-    const result = {categories: []};
-    membershipsList.membershipTiers.map((tier) => {
-        tier.category = tier.category.replace("_", " ");
-        result.categories[tier.category] ? result.categories[tier.category].categoryTiers.push(tier) : result.categories[tier.category]= {categoryTiers: [tier]};
-    });
-
-    return result;
-};
+    }`
 
 export async function getStaticProps(context) {
 
@@ -91,19 +82,16 @@ export async function getStaticProps(context) {
 
 export default function MembershipPage(props) {
     const classes = useStyles();
-    const {membershipsQueryResult} = props
+    const { membershipsQueryResult } = props
 
-    const membershipsData = formMembershipList(membershipsQueryResult);
-
-    const priceLists = (membershipCategories, maxWidth) => {
+    const priceLists = (categoriesList, maxWidth) => {
         let result = [];
-        for (let key in membershipCategories.categories) {
-            if (Object.prototype.hasOwnProperty.call(membershipCategories.categories, key)) {
-                result.push(<Pricing tierCategory={membershipCategories.categories[key].categoryTiers} title={key} key={key} maxWidth={maxWidth}/>)
-            }
-        }
+        categoriesList.membershipCategories.map((category) => {
+            result.push(<Pricing tierCategory={category} title={category.title} key={category.title} maxWidth={maxWidth}/>)
+        })
         return result;
     };
+
     return (
         <div>
                 <Head>
@@ -120,12 +108,12 @@ export default function MembershipPage(props) {
                     </BrandedHeader>
                     <Hidden smDown>
                         <Container component="main" maxWidth={"lg"}>
-                            {priceLists(membershipsData, "lg")}
+                            {priceLists(membershipsQueryResult, "lg")}
                         </Container>
                     </Hidden>
                     <Hidden mdUp>
                         <Container component="main" maxWidth={"sm"}>
-                            {priceLists(membershipsData, "sm")}
+                            {priceLists(membershipsQueryResult, "sm")}
                         </Container>
                     </Hidden>
                 </Layout>

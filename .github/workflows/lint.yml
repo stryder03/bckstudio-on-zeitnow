@@ -1,12 +1,12 @@
 name: ESLint
-
-on: [push]
-
+on: push
 jobs:
-  eslint:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
+      - uses: actions/setup-node@v1
         with:
-          files: --fix src/**/*.js
+          node-version: 12.x
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm run lint
