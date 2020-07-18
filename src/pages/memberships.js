@@ -13,6 +13,7 @@ import {brandFont, clp_exclaim, dividerBar, mainElement, playBrand, title,} from
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import {queryCMS} from "../Scripts/queryCMS";
 import Container from "@material-ui/core/Container";
+import gql from "graphql-tag";
 
 const style = (theme) => ({
     whiteContainer:{
@@ -52,7 +53,7 @@ const style = (theme) => ({
 
 const useStyles = makeStyles(style);
 
-const membershipsQuery = `
+const membershipsQuery = gql`
     {
         membershipCategories{
             title
@@ -72,8 +73,9 @@ export async function getStaticProps(context) {
 
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
     const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
+    const endPoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-    const membershipsQueryResult = await queryCMS(membershipsQuery, token);
+    const membershipsQueryResult = await queryCMS(membershipsQuery, token, endPoint);
 
     return {
         props: {membershipsQueryResult}, // will be passed to the page component as props
