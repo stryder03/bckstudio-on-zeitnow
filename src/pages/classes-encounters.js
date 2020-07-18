@@ -16,6 +16,7 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import ClassList from "../components/ClassList/ClassList";
 import {queryCMS} from "../Scripts/queryCMS";
+import gql from "graphql-tag"
 
 const style = (theme) => ({
     h1Container: {
@@ -94,7 +95,7 @@ const style = (theme) => ({
 });
 const useStyles = makeStyles(style);
 
-const classCategories = `{
+const classCategories = gql`{
     classCategories {
         categoryTitle
         classes(where: {displayInClassesView: true}){
@@ -124,7 +125,7 @@ const classCategories = `{
 }`
 
 const instructorQuery =
-    `{  
+    gql`{  
         instructor(where: {defaultInstructor: true}){
             firstName
             lastName
@@ -145,9 +146,10 @@ export async function getStaticProps(context) {
 
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
     const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
+    const endPoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
-    const classListQueryResult = await queryCMS(classCategories, token);
-    const defaultInstructor = await queryCMS(instructorQuery, prodToken);
+    const classListQueryResult = await queryCMS(classCategories, token, endPoint);
+    const defaultInstructor = await queryCMS(instructorQuery, token, endPoint);
 
     return {
         props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
