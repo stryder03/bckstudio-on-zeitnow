@@ -9,6 +9,7 @@ export const queryCMS = async (query, token, endPoint) => {
             }
         }).request(print(query));
     }catch (e) {
+
         return e
     }
 };
