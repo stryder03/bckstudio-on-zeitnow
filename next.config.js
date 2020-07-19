@@ -73,7 +73,7 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
             ignore: ['node_modules'],
             urlPrefix: '~/_next',
             release: process.env.VERCEL_GITHUB_COMMIT_SHA,
-            setCommits: {auto: true},
+            setCommits: {auto: false, repo: "justin-elias/bckstudio-on-zeitnow", commit: process.env.VERCEL_GITHUB_COMMIT_SHA},
             deploy: {env: NODE_ENV}
           })
       )
