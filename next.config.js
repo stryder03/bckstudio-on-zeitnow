@@ -72,7 +72,7 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
             include: '.next',
             ignore: ['node_modules'],
             urlPrefix: '~/_next',
-            release: options.buildId,
+            release: process.env.VERCEL_GITHUB_COMMIT_SHA,
           })
       )
     }
