@@ -10,7 +10,6 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import {Typography} from "@material-ui/core";
 import classNames from "classnames";
-import {useAuth0} from "@auth0/auth0-react";
 import CustomButtons from "../components/CustomButtons/Button";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function login() {
     const classes = useStyles();
-    const { loginWithRedirect } = useAuth0();
 
     return (
         <React.Fragment>
@@ -49,7 +47,7 @@ export default function login() {
                     </Typography>
                 </BrandedHeader>
                 <div className={classNames(classes.main_content, classes.mainContentRaised, classes.container)}>
-                    <CustomButtons onClick={() => loginWithRedirect()}
+                    <CustomButtons onClick={() => {}}
                                    className={classNames(classes.bookButton)}
                     >Log In</CustomButtons>
                 </div>
