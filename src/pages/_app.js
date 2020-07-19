@@ -13,7 +13,7 @@ import {Auth0Provider} from "@auth0/auth0-react";
 
 if (process.env.VERCEL_GITHUB_COMMIT_SHA) {
     Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, release: process.env.VERCEL_GITHUB_COMMIT_SHA,
-        enabled: process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'preview',});
+        enabled: process.env.NODE_ENV === "production" || process.env.NODE_ENV === "preview",});
 }
 
 Router.events.on("routeChangeStart", (url) => {
