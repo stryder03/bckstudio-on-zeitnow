@@ -55,6 +55,10 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
       config.resolve.alias['@sentry/node'] = '@sentry/browser'
     }
 
+    const ENVIRONMENT = process.env.VERCEL_GITHUB_COMMIT_REF === "master" ? "production" :
+        process.env.VERCEL_GITHUB_COMMIT_REF === "staging" ? "staging" : "development";
+
+
     // When all the Sentry configuration env variables are available/configured
     // The Sentry webpack plugin gets pushed to the webpack plugins to build
     // and upload the source maps to sentry.
@@ -74,11 +78,10 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
             urlPrefix: '~/_next',
             release: process.env.VERCEL_GITHUB_COMMIT_SHA,
             setCommits: {auto: false, repo: "justin-elias/bckstudio-on-zeitnow", commit: process.env.VERCEL_GITHUB_COMMIT_SHA},
-            deploy: {env: NODE_ENV}
+            deploy: {env: ENVIRONMENT}
           })
       )
     }
-
     return config;
   },
   target: 'serverless',
