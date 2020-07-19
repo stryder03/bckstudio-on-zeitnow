@@ -28,3 +28,4 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_RETRY_SLEEP: "30000"
           MERGE_LABELS: ""
+          UPDATE_LABELS: ""

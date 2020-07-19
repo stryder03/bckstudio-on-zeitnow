@@ -13,9 +13,7 @@ import classNames from "classnames";
 import {useAuth0} from "@auth0/auth0-react";
 import CustomButtons from "../components/CustomButtons/Button";
 
-/* eslint-disable no-unused-vars */
 const useStyles = makeStyles((theme) => ({
-    /* eslint-enable no-unused-vars */
     brandFont,
     container: {
         ...container,
