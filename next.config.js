@@ -65,7 +65,7 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
         SENTRY_ORG &&
         SENTRY_PROJECT &&
         SENTRY_AUTH_TOKEN &&
-        NODE_ENV === ('production' || 'preview')
+        (NODE_ENV === 'production' || NODE_ENV === 'preview')
     ) {
       config.plugins.push(
           new SentryWebpackPlugin({
