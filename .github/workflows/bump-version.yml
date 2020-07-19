@@ -7,7 +7,7 @@ on:
       - 'package.json'
       - 'CHANGELOG.md'
 jobs:
-  Bump Version:
+  build-bump-version:
     runs-on: ubuntu-latest
 
     steps:
