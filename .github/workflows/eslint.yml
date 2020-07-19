@@ -12,12 +12,12 @@ jobs:
         with:
           node-version: 12.x
       - uses: actions/checkout@v2
-      - name: Extract branch name
-        shell: bash
-        run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')"
       - run: npm ci
       - run: npm run lint
       - name: Opening pull request
+        - name: Extract branch name
+          shell: bash
+          run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//_/g')"
         id: pull
         uses: tretuna/sync-branches@1.2.0
         with:
