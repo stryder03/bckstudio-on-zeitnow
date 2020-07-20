@@ -43,7 +43,7 @@ export default class MyApp extends App {
           </Head>
         <ThemeProvider theme={theme}>
             <ParallaxProvider>
-                <Component {...pageProps}/>
+                <Component {...pageProps} err={err}/>
             </ParallaxProvider>
         </ThemeProvider>
       </React.Fragment>
