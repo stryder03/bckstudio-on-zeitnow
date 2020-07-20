@@ -1,6 +1,6 @@
 name: Bump version
 on:
-  pull_request:
+  push:
     branches:
       - master
     paths-ignore:
@@ -9,16 +9,10 @@ on:
 jobs:
   build-bump-version:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Bump version and push tag
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-message: 'chore(release): {version}'
-          preset: 'angular'
-          tag-prefix: ''
-          output-file: 'CHANGELOG.md'
