@@ -11,30 +11,28 @@ import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import {Typography} from "@material-ui/core";
 import classNames from "classnames";
 import CustomButtons from "../components/CustomButtons/Button";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
     brandFont,
     container: {
         ...container,
         marginTop: "2.5rem",
-        paddingBottom: "2.5rem"
+        paddingBottom: "2.5rem",
     },
-    bookButton: {
+    loginButton: {
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.primary.contrastText,
-        marginLeft: "1rem",
-        marginTop: "0",
-        [theme.breakpoints.down("md")]: {
-            marginTop: "auto"
-        },
+        marginRight: "-2.5rem"
     }
 }));
 
 export default function login() {
     const classes = useStyles();
+    const [infoText, setInfoText] = React.useState("")
 
     return (
-        <React.Fragment>
+        <div>
             <Head>
                 <title>LOGIN • Bozeman Community Kiln</title>
                 <meta name="description"
@@ -46,12 +44,19 @@ export default function login() {
                         Login to BCK
                     </Typography>
                 </BrandedHeader>
-                <div className={classNames(classes.main_content, classes.mainContentRaised, classes.container)}>
-                    <CustomButtons onClick={() => {}}
-                                   className={classNames(classes.bookButton)}
-                    >Log In</CustomButtons>
-                </div>
+                <Grid container justify="center" direction="column" alignItems={"center"} className={classes.container}>
+                    <Grid item>
+                        <Typography variant={"body2"}>
+                            {infoText}
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <CustomButtons onClick={() => setInfoText("This Feature will be available in the future. Check back soon!")}
+                                       className={classNames(classes.loginButton)}
+                        >Log In</CustomButtons>
+                    </Grid>
+                </Grid>
             </Layout>
-        </React.Fragment>
+        </div>
     );
 }
