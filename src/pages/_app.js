@@ -43,7 +43,7 @@ export default class MyApp extends App {
           </Head>
         <ThemeProvider theme={theme}>
             <ParallaxProvider>
-                <Component {...pageProps} err={err} Sentry={Sentry}/>
+                <Component {...pageProps}/>
             </ParallaxProvider>
         </ThemeProvider>
       </React.Fragment>
