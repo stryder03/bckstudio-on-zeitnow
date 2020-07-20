@@ -1,8 +1,10 @@
-# [1.5.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.4.0...v1.5.0) (2020-07-20)
+# [1.6.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.4.0...v1.6.0) (2020-07-20)
 
 
 ### Bug Fixes
 
+* fixed missing react imports and unused variable ([68aaa5f](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/68aaa5ffe5fd460ee3d1c55aff0d5cfa2758b914))
+* onClick now indicates login feature is not implemented ([264d19c](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/264d19c4a18323d176f87b5b40a96c4dc055897b))
 * **bump-version:** changed to on: pull instead of on: push ([5077bfe](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/5077bfee58204ea9bf464d6bac397c39c21d21b3))
 * **circleci:** moved branches to workflow ([a3ea1c5](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/a3ea1c59461b09e7da230d071e4c86a485368c33))
 * **sentry:** manually set commits ([41ad221](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/41ad22184a99f02a187348279b70c70175d88906))
