@@ -14,7 +14,8 @@ import hCones from "../../assets/img/bck/svg/bckHorizonalCones.svg";
 import Typography from "@material-ui/core/Typography";
 import {cardTitle, title} from "../../assets/jss/nextjs-material-kit";
 import imagesStyle from "../../assets/jss/nextjs-material-kit/imagesStyles";
-import {Accordion, AccordionDetails, AccordionSummary} from "@material-ui/core";
+import {ExpansionPanel, ExpansionPanelDetails} from "@material-ui/core";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const style = ({
@@ -114,15 +115,15 @@ export default function AboutSection() {
                 <img src={hCones} alt={""} className={coneImgClasses}/>
               </GridItem>
               <CardBody>
-                <Accordion>
-                  <AccordionSummary
+                <ExpansionPanel>
+                  <ExpansionPanelSummary
                       expandIcon={<ExpandMoreIcon/>}
                       aria-controls="ashleah-elias-bio-content"
                       id="ashleah-elias-bio-header"
                   >
                     <h4 className={classNames(classes.cardTitle)}>Learn about Ashleah</h4>
-                  </AccordionSummary>
-                  <AccordionDetails>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
                     <Typography variant={"body1"} align={"right"}>
                       Ashleah moved to Bozeman in 2014 with her family after her husband of 13 years was medically
                       retired
@@ -141,8 +142,8 @@ export default function AboutSection() {
                       Injuries. Her leadership, communication skills, and artistic abilities are the driving force behind
                       Bozeman Community Kiln.
                     </Typography>
-                  </AccordionDetails>
-                </Accordion>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
               </CardBody>
             </Card>
           </GridItem>
@@ -160,15 +161,15 @@ export default function AboutSection() {
                 <img src={hCones} alt={""} className={coneImgClasses}/>
               </GridItem>
               <CardBody>
-                <Accordion>
-                  <AccordionSummary
+                <ExpansionPanel>
+                  <ExpansionPanelSummary
                       expandIcon={<ExpandMoreIcon/>}
                       aria-controls="heather-hodapp-bio-content"
                       id="heather-hodapp-bio-header"
                   >
                     <h4 className={classNames(classes.cardTitle)}>Learn about Heather</h4>
-                  </AccordionSummary>
-                  <AccordionDetails>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
                     <Typography variant={"body1"} align={"left"}>
                       Attracted by the veteran community in Bozeman as well as her military family connections with
                       Ashleah,
@@ -188,8 +189,8 @@ export default function AboutSection() {
                   in ceramics. Her organization, sales, logistics and managerial experience are the foundation on which
                   Bozeman Community Kiln operates.
                 </Typography>
-                  </AccordionDetails>
-                </Accordion>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
               </CardBody>
             </Card>
           </GridItem>
