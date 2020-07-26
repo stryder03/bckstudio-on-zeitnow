@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Bump version and push tag
-        uses: justin-elias/conventional-changelog-action@v3.1.2
+        uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.ACTION_TOKEN }}
           git-message: 'chore(release): {version}'
