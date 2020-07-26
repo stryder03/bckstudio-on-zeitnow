@@ -1,3 +1,12 @@
+## [1.6.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.0...v1.6.1) (2020-07-26)
+
+
+### Bug Fixes
+
+* **fonts:** updated font link ([2b027d8](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/2b027d8563c3181a8c879faa64e5f92c5eaca915))
+
+
+
 # [1.6.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.4.0...v1.6.0) (2020-07-20)
 
 
@@ -32,10 +41,6 @@
 
 
 ## [1.2.2](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.2.1...v1.2.2) (2020-05-15)
-
-
-
-## [1.2.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.2.0...v1.2.1) (2020-05-15)
 
 
 
