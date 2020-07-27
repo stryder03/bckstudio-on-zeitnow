@@ -7,7 +7,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         root: {
             fontWeight: "bold",
             fontSize: "1.125rem",
-            maxHeight: "auto",
+            lineHeight: "1.42857143",
+            minHeight: "auto",
+            minWidth: "auto",
+            margin: "0.3125rem 0.0625rem",
+            padding: "0.75rem 1.875rem",
             textTransform: "uppercase",
             willChange: "box-shadow, transform",
             transition:
@@ -28,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const PrimaryContainedButton = (props: ButtonProps) => {
     const classes = useStyles(props);
     return (
-        <Button {...props} className={classes.root} variant={"contained"} color={"primary"}>
+        <Button {...props} className={classes.root} variant={"contained"} color={"primary"} size={"large"}>
         </Button>
     );
 };

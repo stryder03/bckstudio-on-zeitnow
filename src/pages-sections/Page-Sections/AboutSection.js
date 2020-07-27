@@ -4,10 +4,10 @@ import classNames from "classnames";
 // @material-ui/core components
 import {makeStyles} from "@material-ui/core/styles";
 // core components
-import GridContainer from "../../components/Grid/GridContainer.js";
-import GridItem from "../../components/Grid/GridItem.js";
+import GridContainer from "../../components/Grid/GridContainer";
+import GridItem from "../../components/Grid/GridItem";
 import Card from "../../components/Card/Card.js";
-import CardBody from "../../components/Card/CardBody.js";
+import CardBody from "../../components/Card/CardBody";
 import ale from "../../assets/img/faces/ale_01.jpeg";
 import hbh from "../../assets/img/faces/hbh_01.jpeg";
 import hCones from "../../assets/img/bck/svg/bckHorizonalCones.svg";
@@ -86,7 +86,7 @@ export default function AboutSection() {
   return (
     <div className={classes.section}>
       <Typography variant={"h3"} className={classes.title}>ABOUT BOZEMAN COMMUNITY KILN</Typography>
-        <GridContainer alignItems={"flex-start"}>
+        <GridContainer alignItems={"flex-start"} justify={"center"}>
           <GridItem xs={12} sm={12} md={8}>
             <Typography variant={"body1"}>
               Bozeman Community Kiln invites you to come create, learn, and play with ceramic clay. Members enjoy a relaxed,

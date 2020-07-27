@@ -15,7 +15,10 @@
     "target": "es5",
     "types": [
       "react",
-      "node"
+      "node",
+      "material-ui",
+      "classnames",
+      "react-dom"
     ],
     "lib": [
       "es2017",
