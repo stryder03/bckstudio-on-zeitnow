@@ -1,7 +1,7 @@
 import React from "react";
 import Document, {Head, Main, NextScript} from "next/document";
 import {ServerStyleSheets} from "@material-ui/styles";
-import favicon from "../assets/img/favicon.png"
+import favicon from "../../public/favicon.png"
 import theme from "../assets/theme";
 import {GA_TRACKING_ID} from "../Scripts/gtag"
 
@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <link rel="shortcut icon" type="image/x-icon" href={favicon}/>
+          <link rel="icon" type="image/png" href={favicon}/>
           <link
               rel="apple-touch-icon"
               sizes="76x76"
