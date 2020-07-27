@@ -14,9 +14,10 @@ const makeComponentStyles = makeStyles(({
   ...buttonStyle
 }));
 
-// eslint-disable-next-line no-unused-vars
+
 // forwadRef requires prop and ref and warns if one is missing
-const RegularButton = React.forwardRef((props,ref) => {
+// eslint-disable-next-line no-unused-vars
+const RegularButton = React.forwardRef((props) => {
   const {
     color,
     round,

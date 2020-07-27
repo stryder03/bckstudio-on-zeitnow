@@ -5,12 +5,14 @@ import {makeStyles} from "@material-ui/core/styles";
 // core components
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
+import BasicButton from "../../components/Buttons/PrimaryContainedButton"
 import CustomButtons from "../../components/CustomButtons/Button"
 import Link from "next/link"
 // Style
 import {brandFont, playBrand} from "../../assets/jss/nextjs-material-kit";
 import Typography from "@material-ui/core/Typography";
 import {Hidden} from "@material-ui/core";
+
 
 const style = (theme) => ({
   clp_exclaim: {
@@ -32,6 +34,7 @@ const style = (theme) => ({
   playBrand
 });
 const useStyles = makeStyles(style);
+
 
 export default function CLPSection() {
   const classes = useStyles();
@@ -89,15 +92,13 @@ export default function CLPSection() {
             <GridItem md={12}>
               <GridContainer alignItems={"space-between"}>
                 <GridItem md={3}>
-                  <Link href={"/memberships"}>
-                    <CustomButtons className={classes.clpButton}>
+                    <BasicButton href={"/memberships"}>
                       Come Create
-                    </CustomButtons>
-                  </Link>
+                    </BasicButton>
                 </GridItem>
                 <GridItem md={3}>
                   <Link href={"/classes-encounters"} passHref>
-                    <CustomButtons className={classes.clpButton} variantType={"outlined"}>
+                    <CustomButtons className={classes.clpButton} >
                       Come Learn
                     </CustomButtons>
                   </Link>
