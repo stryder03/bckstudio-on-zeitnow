@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // core components
 import Head from "next/head";
-import {makeStyles} from "@material-ui/core/styles";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 // Sections for this page
 import {Hidden, Typography} from "@material-ui/core";
 import GridContainer from "../components/Grid/GridContainer";
@@ -24,7 +24,7 @@ import {
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 
-const style = (theme) => ({
+const useStyles = makeStyles((theme) => createStyles({
     subHeaderBar: {
         color: theme.palette.secondary.contrastText,
         margin: "auto",
@@ -94,11 +94,10 @@ const style = (theme) => ({
     playBrand,
     dividerBar,
     brandFont
-});
-const useStyles = makeStyles(style);
+}));
 
-export default function StudiosPage() {
-    const classes = useStyles();
+export default function StudiosPage(props) {
+    const classes = useStyles(props);
     return (
             <div>
                 <Head>
@@ -113,7 +112,7 @@ export default function StudiosPage() {
                                 WELCOMING <span className={classes.playBrand}>STUDIO ARTISTS</span>
                             </Typography>
                         </BrandedHeader>
-                                <GridContainer>
+                                <GridContainer className={classes.container} alignItems={"center"}>
                                     <GridItem xs={12} sm={12} md={3}>
                                         <Typography variant={"h5"} align={"center"}
                                                     className={classNames(classes.rentalHeaders)}>
@@ -152,7 +151,7 @@ export default function StudiosPage() {
                                     </GridItem>
                                 </GridContainer>
                                 <div className={classes.raisedDivider}/>
-                                <GridContainer>
+                                <GridContainer className={classes.container} alignItems={"center"}>
                                     <GridItem xs={12} sm={12} md={3}>
                                         <Typography variant={"h5"} align={"center"}
                                                     className={classNames(classes.rentalHeaders)}>
@@ -193,7 +192,7 @@ export default function StudiosPage() {
                                     <Typography variant={"h5"} align={"center"} className={classes.subHeaderBar}>
                                         NEED SPACE TO TEACH YOUR OWN CLASSES?
                                     </Typography>
-                                <GridContainer>
+                                <GridContainer className={classes.container} alignItems={"center"}>
                                     <GridItem xs={12} sm={12} md={3}>
                                         <Typography variant={"h5"} align={"center"}
                                                     className={classNames(classes.rentalHeaders)}>
