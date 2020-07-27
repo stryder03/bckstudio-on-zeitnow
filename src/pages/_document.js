@@ -34,8 +34,8 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" href={favicon}/>
           <link
               rel="apple-touch-icon"
-              sizes="76x76"
-              href={require("../assets/img/apple-icon.png")}
+              sizes="180x180"
+              href={require("../../public/apple-touch-icon.png")}
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
         </Head>
