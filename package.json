@@ -51,7 +51,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
     "eslint": "^7.5.0",
-    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react": "^7.20.4",
     "graphql": "^15.3.0",
     "graphql-config": "^3.0.3",
     "graphql-tag": "^2.10.4",
