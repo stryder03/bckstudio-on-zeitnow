@@ -1,8 +1,6 @@
 import React from "react";
 import Document, {Head, Main, NextScript} from "next/document";
 import {ServerStyleSheets} from "@material-ui/styles";
-import favicon from "../assets/img/favicon.png"
-import theme from "../assets/theme";
 import {GA_TRACKING_ID} from "../Scripts/gtag"
 
 export default class MyDocument extends Document {
@@ -31,13 +29,13 @@ export default class MyDocument extends Document {
               name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <link rel="shortcut icon" type="image/x-icon" href={favicon}/>
-          <link
-              rel="apple-touch-icon"
-              sizes="76x76"
-              href={require("../assets/img/apple-icon.png")}
-          />
-          <meta name="theme-color" content={theme.palette.primary.main} />
+          <link rel="apple-touch-icon" sizes="180x180" href={require("../../public/apple-touch-icon.png")}/>
+          <link rel="icon" type="image/png" sizes="32x32" href={require("../../public/favicon-32x32.png")}/>
+          <link rel="icon" type="image/png" sizes="16x16" href={require("../../public/favicon-16x16.png")}/>
+          <link rel="manifest" href={require("../../public/site.webmanifest")}/>
+          <link rel="mask-icon" href={require("../../public/safari-pinned-tab.svg")} color="#406d7f"/>
+          <meta name="msapplication-TileColor" content="#00aba9"/>
+          <meta name="theme-color" content="#ffffff"/>
         </Head>
         <body>
           <div id="page-transition"/>

@@ -14,8 +14,9 @@ const makeComponentStyles = makeStyles(({
   ...buttonStyle
 }));
 
-// eslint-disable-next-line no-unused-vars
+
 // forwadRef requires prop and ref and warns if one is missing
+// eslint-disable-next-line no-unused-vars
 const RegularButton = React.forwardRef((props,ref) => {
   const {
     color,
@@ -49,7 +50,7 @@ const RegularButton = React.forwardRef((props,ref) => {
     [className]: className
   });
   return (
-    <Button {...rest} classes={{root: btnClasses}} variant={variantType}>
+    <Button {...rest} classes={{root: btnClasses}} variant={variantType} ref={ref}>
       {children}
     </Button>
   );

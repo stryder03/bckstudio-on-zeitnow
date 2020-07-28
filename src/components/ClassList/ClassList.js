@@ -96,7 +96,7 @@ export default function ClassList(props) {
         </Typography>
             {classList.classes.map((clayClass, index) => (
                 <React.Fragment key={index}>
-                    <GridContainer>
+                    <GridContainer className={classes.container} alignItems={"center"}>
                         <GridItem xs={12} sm={12} md={3}>
                             <Typography variant={"h5"} align={"center"} className={classNames(classes.classHeaders)}>
                                 {getClassTitle(clayClass)}

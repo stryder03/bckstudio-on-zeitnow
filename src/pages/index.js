@@ -2,8 +2,8 @@ import React from "react";
 // core components
 import Head from "next/head";
 // Sections for this page
-import CLPSection from "../pages-sections/Page-Sections/CLPSection.js";
-import AboutSection from "../pages-sections/Page-Sections/AboutSection.js";
+import CLPSection from "../pages-sections/Page-Sections/CLPSection";
+import AboutSection from "../pages-sections/Page-Sections/AboutSection";
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 // import {queryCMS} from "../Scripts/queryCMS";

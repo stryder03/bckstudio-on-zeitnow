@@ -7,9 +7,11 @@ import igIcon from "../../assets/img/bck/Asset-5.png";
 import React from "react";
 
 import style from "../../assets/jss/nextjs-material-kit/components/socialMediaInfoStyles";
-import {makeStyles} from "@material-ui/core";
+import {createStyles, makeStyles} from "@material-ui/core";
 
-const useStyles = makeStyles(style);
+const useStyles = makeStyles(() => createStyles({
+    ...style
+}));
 
 export default function SocialMediaInfo() {
     const classes = useStyles();
@@ -17,7 +19,7 @@ export default function SocialMediaInfo() {
     return (
         <div className={classNames(classes.container)}>
             <Typography variant={"h4"} className={classNames(classes.title)}>Find the Latest on Social Media</Typography>
-            <GridContainer spacing={0}>
+            <GridContainer spacing={0} justify={"center"}>
                 <GridItem xs={2} sm={2} md={1}>
                     <a href={"https://www.facebook.com/BozemanCommunityKiln"} rel="noopener noreferrer" target={"_blank"}>
                         <img src={fbIcon} alt={"Follow on Facebook"} className={classes.icon}/>
