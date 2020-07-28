@@ -1,3 +1,12 @@
+## [1.6.4](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.3...v1.6.4) (2020-07-28)
+
+
+### Bug Fixes
+
+* **favicon:** converted site.webmanifest -> manifest.json to resolve webpack loading issues ([8b82f48](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/8b82f48c80e6d8292306c651101a67cc42788472))
+
+
+
 ## [1.6.3](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.2...v1.6.3) (2020-07-28)
 
 
@@ -43,10 +52,6 @@
 
 
 # [1.4.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.3.0...v1.4.0) (2020-07-15)
-
-
-
-# [1.3.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.2.2...v1.3.0) (2020-07-11)
 
 
 
