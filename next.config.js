@@ -36,17 +36,7 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
             loader: 'graphql-tag/loader'
           }
         ]
-      },
-        {
-          test: /\.(webmanifest)$/,
-          include: [dir],
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'file-loader'
-            }
-          ]
-        })
+      })
 
     // In `pages/_app.js`, Sentry is imported from @sentry/node. While
     // @sentry/browser will run in a Node.js environment, @sentry/node will use
