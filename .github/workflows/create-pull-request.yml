@@ -12,5 +12,5 @@ jobs:
         uses: vsoch/pull-request-action@1.0.6
         if: github.actor == 'justin-elias'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
           PULL_REQUEST_BRANCH: "master"
