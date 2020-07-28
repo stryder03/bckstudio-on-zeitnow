@@ -1,3 +1,13 @@
+## [1.6.3](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.2...v1.6.3) (2020-07-28)
+
+
+### Bug Fixes
+
+* **MembershipsPage:** aligned price boxes to bottom ([0bf1b0d](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/0bf1b0d209b0076a0f633163ef4dc763ef116112))
+* **typescript:** removed .js file output that was blocking new changes to button ([9bde09f](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/9bde09fdc59b8ba66b0a102e7f91bc5021dd7a58))
+
+
+
 ## [1.6.2](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.0...v1.6.2) (2020-07-26)
 
 
@@ -37,10 +47,6 @@
 
 
 # [1.3.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.2.2...v1.3.0) (2020-07-11)
-
-
-
-## [1.2.2](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.2.1...v1.2.2) (2020-05-15)
 
 
 
