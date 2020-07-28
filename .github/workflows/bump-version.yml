@@ -2,11 +2,11 @@ name: Bump version
 on:
   push:
     branches:
-      - master
+      - bump-version
     paths-ignore:
       - 'package.json'
       - 'CHANGELOG.md'
-      - 'README.md' 
+      - 'README.md'
 jobs:
   build-bump-version:
     runs-on: ubuntu-latest
