@@ -26,16 +26,27 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
     };
     const { dir } = options
 
-    config.module.rules.push({
-      test: /\.(graphql|gql)$/,
-      include: [dir],
-      exclude: /node_modules/,
-      use: [
+    config.module.rules.push(
         {
-          loader: 'graphql-tag/loader'
-        }
-      ]
-    })
+        test: /\.(graphql|gql)$/,
+        include: [dir],
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'graphql-tag/loader'
+          }
+        ]
+      },
+        {
+          test: /\.(webmanifest)$/,
+          include: [dir],
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'file-loader'
+            }
+          ]
+        })
 
     // In `pages/_app.js`, Sentry is imported from @sentry/node. While
     // @sentry/browser will run in a Node.js environment, @sentry/node will use
