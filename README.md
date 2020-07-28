@@ -32,3 +32,7 @@ during the development phase.
 
 ## Error Tracking
 * [Sentry](https://sentry.io)
+
+## Notes
+* Favicon set generated using [RealFaviconGenerator](https://realfavicongenerator.net)
+* Forms handled with [React Hook Form](https://react-hook-form.com)
