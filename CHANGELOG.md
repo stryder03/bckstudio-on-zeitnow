@@ -35,8 +35,6 @@
 
 ### Features
 
-* **auth0:** added login functionality with auth0 ([bc520a2](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/bc520a2666146c145861102a70f4dc885506cbe5))
-* **auth0:** removed auth0 ([6e4259d](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/6e4259d146db49f814aee479123e19226d2e9c13))
 * **bump-version:** added workflow to bump version using conventional commits ([3c059e4](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/3c059e41a26d05db7b9f9263b95dbd9776b164ae))
 * **circleci:** configure circleci to only run on staging and master ([9ab36e5](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/9ab36e5bbc3cde273b9b366f44ad2d54a1cf32ad))
 
