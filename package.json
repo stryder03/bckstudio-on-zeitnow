@@ -53,7 +53,7 @@
     "babel-plugin-graphql-tag": "^2.5.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.5.0",
-    "eslint-plugin-react": "^7.20.4",
+    "eslint-plugin-react": "^7.20.5",
     "graphql": "^15.3.0",
     "graphql-config": "^3.0.3",
     "graphql-tag": "^2.10.4",
