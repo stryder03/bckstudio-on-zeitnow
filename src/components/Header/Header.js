@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
@@ -9,15 +8,14 @@ import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "src/assets/jss/nextjs-material-kit/components/headerStyle.js";
-
-import logo from "src/assets/img/bck/bckTxtLogo.png";
+import BookServiceDialog from "../BookServiceDialog/BookServiceDialog";
+import LogoButton from "../Buttons/LogoButton";
 
 const style = {
   ...styles,
@@ -40,44 +38,36 @@ export default function Header(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const brandComponent = (
-      <Link href={"/index"} as={"/index"}>
-        <Button>
-          <img id={"nav_logo"} src={logo} className={classes["nav_logo_lg"]} alt={"Bozeman Community Kiln Home"}/>
-        </Button>
-      </Link>
-  );
+
   const headerColorChange = () => {
-    const { color, changeColorOnScroll, logoType } = props;
+    const {color, changeColorOnScroll} = props;
     const windowsScrollTop = window.pageYOffset;
     if (windowsScrollTop > changeColorOnScroll.height) {
       document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes[color]);
+          .getElementsByTagName("header")[0]
+          .classList.remove(classes[color]);
       document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes[changeColorOnScroll.color]);
-      document
-          .getElementById("nav_logo")
-          .classList.remove(classes[logoType]);
-      document
-          .getElementById("nav_logo")
-          .classList.add(classes[changeColorOnScroll.logoType]);
+          .getElementsByTagName("header")[0]
+          .classList.add(classes[changeColorOnScroll.color]);
+      if (document.getElementById("nav_logo")) {
+        document
+            .getElementById("nav_logo")
+            .hidden = false;
+      }
     } else {
       document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes[color]);
+          .getElementsByTagName("header")[0]
+          .classList.add(classes[color]);
       document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes[changeColorOnScroll.color]);
-      document
-          .getElementById("nav_logo")
-          .classList.remove(classes[changeColorOnScroll.logoType]);
-      document
-          .getElementById("nav_logo")
-          .classList.add(classes[logoType]);
+          .getElementsByTagName("header")[0]
+          .classList.remove(classes[changeColorOnScroll.color]);
+      if (document.getElementById("nav_logo")) {
+        document
+            .getElementById("nav_logo")
+            .hidden = true;
+      }
     }
-  };
+  }
   const { color, rightLinks, leftLinks, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -91,20 +81,11 @@ export default function Header(props) {
       <div>
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
-        {leftLinks !== undefined ? brandComponent : null}
-        <div className={classes.flex}>
-          {leftLinks !== undefined ? (
-            <Hidden mdDown implementation="css">
-              {leftLinks}
-            </Hidden>
-          ) : (
-            brandComponent
-          )}
-        </div>
-        <Hidden smDown>
+        <Hidden mdDown>
+          <LogoButton id={"nav_logo"} href={"/index"}/>
           {rightLinks}
         </Hidden>
-        <Hidden mdUp>
+        <Hidden lgUp>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -112,12 +93,14 @@ export default function Header(props) {
           >
             <Menu />
           </IconButton>
+          <LogoButton id={"nav_logo"} href={"/index"}/>
+          <BookServiceDialog className={classNames(classes.heroButton)} buttonText={"Book Now"}/>
         </Hidden>
       </Toolbar>
-      <Hidden mdUp implementation="css">
+      <Hidden lgUp>
         <Drawer
           variant="temporary"
-          anchor={"right"}
+          anchor={"left"}
           open={mobileOpen}
           classes={{
             paper: classes.drawerPaper
@@ -158,7 +141,7 @@ Header.propTypes = {
   absolute: PropTypes.bool,
   // this will cause the sidebar to change the color from
   // props.color (see above) to changeColorOnScroll.color
-  // when the window.pageYOffset is heigher or equal to
+  // when the window.pageYOffset is higher or equal to
   // changeColorOnScroll.height and then when it is smaller than
   // changeColorOnScroll.height change it back to
   // props.color (see above)
