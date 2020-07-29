@@ -73,6 +73,7 @@ const useStyles = makeStyles((theme) => createStyles({
     },
     horizontalCones: {
         width: "10rem",
+        margin: "auto"
     },
     whiteHeader: {
         ...brandFont,

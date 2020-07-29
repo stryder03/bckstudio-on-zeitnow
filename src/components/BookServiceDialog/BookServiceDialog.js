@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     bookButton: {
         marginTop: "0",
         [theme.breakpoints.down("md")]: {
-            marginTop: "auto"
+            margin: "auto"
 
         },
     },
@@ -75,6 +75,7 @@ export default function BookServiceDialog(props) {
                     <Typography variant={"body1"} className={classes.navText}>{buttonText}</Typography>
                 </div>
             </PrimaryContainedButton>
+
             <Dialog fullScreen open={open} onBackdropClick={handleClose} TransitionComponent={Transition}>
                 <DialogTitle className={classes.appBar}>
                     <Toolbar>

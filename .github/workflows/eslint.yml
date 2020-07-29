@@ -4,6 +4,11 @@ on:
     branches-ignore:
       - master
       - staging
+    paths-ignore:
+      - 'package.json'
+      - 'CHANGELOG.md'
+      - 'README.md'
+      - 'package-lock.json'
 jobs:
   ESLint:
     runs-on: ubuntu-latest
