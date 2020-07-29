@@ -99,11 +99,11 @@ export default function HeaderLinks() {
                       </Button>
                   </Link>
               </ListItem>
-              <ListItem className={classes.listItem}>
-                  <Hidden smDown>
+              <Hidden mdDown>
+                  <ListItem className={classes.listItem}>
                       <BookServiceDialog buttonText={"Book Now"} className={classNames(classes.navLink)}/>
-                  </Hidden>
-              </ListItem>
+                  </ListItem>
+              </Hidden>
           </List>
       </nav>
   );

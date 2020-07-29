@@ -8,12 +8,12 @@ import {Close} from "@material-ui/icons";
 // core components
 import {container} from "src/assets/jss/nextjs-material-kit.js";
 import {Dialog, DialogContent, DialogTitle, Fade, IconButton, Toolbar} from "@material-ui/core";
-import CustomButtons from "../CustomButtons/Button";
 import styles from "src/assets/jss/nextjs-material-kit/components/headerLinksStyle"
 import Typography from "@material-ui/core/Typography";
 import AcuityScheduler from "../../pages-sections/Page-Sections/AcuityScheduler";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
+import PrimaryContainedButton from "../Buttons/PrimaryContainedButton";
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -27,12 +27,10 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.secondary.contrastText
     },
     bookButton: {
-        backgroundColor: theme.palette.primary.main,
-        color: theme.palette.primary.contrastText,
-        marginLeft: "1rem",
         marginTop: "0",
         [theme.breakpoints.down("md")]: {
             marginTop: "auto"
+
         },
     },
     title:{
@@ -67,7 +65,7 @@ export default function BookServiceDialog(props) {
     };
     return (
         <div>
-            <CustomButtons
+            <PrimaryContainedButton
                 aria-label={"book service"}
                 className={classNames(classes.navLink,classes.bookButton)}
                 id={"book-header"}
@@ -76,7 +74,7 @@ export default function BookServiceDialog(props) {
                 <div className={classes.buttonText}>
                     <Typography variant={"body1"} className={classes.navText}>{buttonText}</Typography>
                 </div>
-            </CustomButtons>
+            </PrimaryContainedButton>
             <Dialog fullScreen open={open} onBackdropClick={handleClose} TransitionComponent={Transition}>
                 <DialogTitle className={classes.appBar}>
                     <Toolbar>
