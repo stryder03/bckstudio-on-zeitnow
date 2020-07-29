@@ -1,4 +1,4 @@
-## [1.6.5](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.4...v1.6.5) (2020-07-29)
+## [1.6.6](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.4...v1.6.6) (2020-07-29)
 
 
 ### Bug Fixes
