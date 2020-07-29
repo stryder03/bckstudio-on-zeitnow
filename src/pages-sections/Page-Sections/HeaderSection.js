@@ -1,34 +1,41 @@
 import React from "react";
-// core components
-import Header from "../../components/Header/Header.js";
-import HeaderLinks from "../../components/Header/HeaderLinks.js";
+import LargeHeader from "../../components/Header/LargeHeader";
+import HeaderLinks from "../../components/Header/HeaderLinks";
 import {ParallaxBanner} from "react-scroll-parallax"
-// Images
 import heroImg1 from "src/assets/img/bck/darkened-wheel-using-rib/Bozeman-Community-Kiln-design-21-darkened.jpg";
 import MainLogo from "../../components/MainLogo/MainLogo";
+import {Hidden} from "@material-ui/core";
+import SmallHeader from "../../components/Header/SmallHeader";
 
 export default function HeaderSection(props) {
     const { noParallax, ...rest } = props;
 
     return (
         <div>
-            <Header
+            <Hidden mdDown>
+            <LargeHeader
                 color="transparent"
 
                 rightLinks={<HeaderLinks role={"navigation"}/>}
                 fixed
-                logoType="nav_logo_lg"
                 changeColorOnScroll={noParallax === undefined ? {
                     height: 50,
                     color: "white",
-                    logoType: "nav_logo_sm"
                 } : {
                     height: -200,
                     color: "white",
-                    logoType: "nav_logo_sm"
                 }}
                 {...rest}
             />
+            </Hidden>
+            <Hidden lgUp>
+                <SmallHeader
+                    color="white"
+                    rightLinks={<HeaderLinks role={"navigation"}/>}
+                    fixed
+                    {...rest}
+                />
+            </Hidden>
             <ParallaxBanner
                 layers={[
                     {
