@@ -38,10 +38,6 @@ export default class MyApp extends App {
     return (
       <React.Fragment>
           <Head>
-              <meta
-                  name="viewport"
-                  content="width=device-width, initial-scale=1, shrink-to-fit=no"
-              />
               <title>Bozeman Community Kiln • BCKstudio.com</title>
               <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet"/>
           </Head>
