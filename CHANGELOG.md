@@ -1,3 +1,11 @@
+## [1.6.6](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.4...v1.6.6) (2020-07-29)
+
+
+### Bug Fixes
+
+* **NextJS-recommends:** fix for https://github.com/vercel/next.js/blob/master/errors/no-document-viewport-meta.md ([f989832](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/f9898324f4e185e871feb63d2fcf3562bcb4e9ae))
+
+
 ## [1.6.4](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.3...v1.6.4) (2020-07-28)
 
 
