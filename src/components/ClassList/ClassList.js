@@ -30,11 +30,13 @@ const useStyles = makeStyles((theme) => ({
     },
     horizontalCones: {
         width: "10rem",
+        margin: "auto"
     },
     bookButton: {
         marginLeft: "30%"
     },
     smallButton: {
+        width: "40%",
         margin: "auto"
     },
     raisedDivider: {
@@ -77,6 +79,7 @@ export default function ClassList(props) {
             );
         }
         return (
+
             <BookServiceDialog src={clayClass.classLink} buttonText={clayClass.buttonText}/>
             );
     };
@@ -126,21 +129,19 @@ export default function ClassList(props) {
                                     </li>
                                 ))}
                             </ul>
-                            <Hidden smDown>
+                            <Hidden mdDown>
                                 <div className={classes.bookButton}>
                                     {disableBookDialogButton(clayClass)}
                                 </div>
                             </Hidden>
                         </GridItem>
                     </GridContainer>
-                    <Hidden mdUp>
+                    <Hidden lgUp>
                         <div className={classNames(classes.smallButton)}>
                             {disableBookDialogButton(clayClass, "small")}
                         </div>
                     </Hidden>
-                    <Hidden smDown>
                         <div className={classes.raisedDivider}/>
-                    </Hidden>
                 </React.Fragment>
             ))}
         </React.Fragment>
