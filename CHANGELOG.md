@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.8...v1.7.0) (2020-07-30)
+
+
+### Features
+
+* **Sentry:** install sentry-vercel integration ([a64686a](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/a64686a0215322e4e13a25f93a174912940d0651))
+
+
+
 ## [1.6.8](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.7...v1.6.8) (2020-07-29)
 
 
@@ -32,16 +41,6 @@
 ### Bug Fixes
 
 * **favicon:** converted site.webmanifest -> manifest.json to resolve webpack loading issues ([8b82f48](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/8b82f48c80e6d8292306c651101a67cc42788472))
-
-
-
-## [1.6.3](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.2...v1.6.3) (2020-07-28)
-
-
-### Bug Fixes
-
-* **MembershipsPage:** aligned price boxes to bottom ([0bf1b0d](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/0bf1b0d209b0076a0f633163ef4dc763ef116112))
-* **typescript:** removed .js file output that was blocking new changes to button ([9bde09f](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/9bde09fdc59b8ba66b0a102e7f91bc5021dd7a58))
 
 
 
