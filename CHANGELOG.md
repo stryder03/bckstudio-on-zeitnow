@@ -1,3 +1,12 @@
+## [1.7.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.0...v1.7.1) (2020-07-31)
+
+
+### Bug Fixes
+
+* **responsiveness:** footer responsiveness adjusted ([2cc6182](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/2cc61824bd9ebf25f09595828707702d4195f67a))
+
+
+
 # [1.7.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.8...v1.7.0) (2020-07-30)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * **NextJS-recommends:** fix for https://github.com/vercel/next.js/blob/master/errors/no-document-viewport-meta.md ([f989832](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/f9898324f4e185e871feb63d2fcf3562bcb4e9ae))
-
-
-
-## [1.6.4](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.3...v1.6.4) (2020-07-28)
-
-
-### Bug Fixes
-
-* **favicon:** converted site.webmanifest -> manifest.json to resolve webpack loading issues ([8b82f48](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/8b82f48c80e6d8292306c651101a67cc42788472))
 
 
 
