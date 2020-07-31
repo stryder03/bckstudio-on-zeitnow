@@ -10,7 +10,7 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import {Typography} from "@material-ui/core";
 import classNames from "classnames";
-import CustomButtons from "../components/CustomButtons/Button";
+import CustomButtons from "../components/CustomButtons/RegularButton";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({

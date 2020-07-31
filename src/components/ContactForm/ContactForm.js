@@ -9,7 +9,7 @@ import {
     Toolbar,
     Typography
 } from "@material-ui/core";
-import Button from "../CustomButtons/Button";
+import Button from "../CustomButtons/RegularButton";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {useForm} from "react-hook-form";
