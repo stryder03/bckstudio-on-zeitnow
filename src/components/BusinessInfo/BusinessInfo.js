@@ -5,7 +5,7 @@ import GridItem from "../Grid/GridItem";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
 import vertCones from "src/assets/img/bck/svg/bckVerticalCones.svg";
 import horizCones from "src/assets/img/bck/svg/bckHorizonalCones.svg";
-import styles from "src/assets/jss/nextjs-material-kit/components/businessInfoStyle.js";
+import styles from "src/assets/jss/nextjs-material-kit/components/businessInfoStyle";
 import {Hidden} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 
@@ -17,10 +17,13 @@ const useStyles = makeStyles(() => createStyles({
     },
     phone: {
         display: "inline",
-        marginLeft: "5rem"
     },
     phoneLink: {
         display: "inline",
+    },
+    center: {
+        maxWidth: "12rem",
+        margin: "auto"
     }
 }));
 
@@ -42,16 +45,18 @@ export default function BusinessInfo(props) {
                     <img src={horizCones} alt={""} className={classes.horizCones}/>
                 </Hidden>
                 <GridItem xs={12} sm={12} md={3}>
-                    <h2 className={classNames(classes.title, classes.centered)}>Location</h2>
-                    <Typography variant={"body1"} className={classes.centered}>6062 Jackrabbit Lane<br/>
+                    <h2 className={classNames(classes.title, classes.centered)} align={"center"}>Location</h2>
+                    <Typography variant={"body1"} className={classes.centered} align={"center"}>6062 Jackrabbit Lane<br/>
                         Belgrade, Montana 59714
                     </Typography>
-                    <Typography variant={"h6"} component={"p"} className={classNames(classes.title, classes.phone)}>
-                        Phone:
-                    </Typography>
-                    <Typography variant={"body1"} className={classes.phoneLink}>
-                        <a href={"tel:+14062249229"}> (406)224-9229</a>
-                    </Typography>
+                    <div className={classes.center}>
+                        <Typography variant={"h6"} component={"p"} className={classNames(classes.title, classes.phone)} align={"center"} justify={"center"}>
+                            Phone:
+                        </Typography>
+                        <Typography variant={"body1"} className={classes.phoneLink} align={"center"}>
+                            <a href={"tel:+14062249229"}> (406)224-9229</a>
+                        </Typography>
+                    </div>
                 </GridItem>
             </GridContainer>
         </div>

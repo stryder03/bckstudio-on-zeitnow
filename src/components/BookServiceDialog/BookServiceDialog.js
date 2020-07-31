@@ -70,6 +70,7 @@ export default function BookServiceDialog(props) {
                 className={classNames(classes.navLink,classes.bookButton)}
                 id={"book-header"}
                 onClick={handleToggle}
+                size={"small"}
             >
                 <div className={classes.buttonText}>
                     <Typography variant={"body1"} className={classes.navText}>{buttonText}</Typography>
