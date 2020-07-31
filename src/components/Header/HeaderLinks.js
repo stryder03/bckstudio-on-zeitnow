@@ -10,7 +10,7 @@ import {Hidden} from "@material-ui/core";
 // @material-ui/icons
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 // core components
-import Button from "../CustomButtons/Button.js";
+import Button from "../CustomButtons/RegularButton.js";
 
 import styles from "src/assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
 import {primaryColor} from "../../assets/jss/nextjs-material-kit";

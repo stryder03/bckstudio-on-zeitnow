@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import classNames from "classnames";
-import PropTypes from "prop-types";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -83,46 +82,6 @@ function LargeHeader(props) {
 
 LargeHeader.defaultProp = {
   color: "white"
-};
-
-LargeHeader.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "transparent",
-    "white",
-    "rose",
-    "dark"
-  ]),
-  rightLinks: PropTypes.node,
-  leftLinks: PropTypes.node,
-  fixed: PropTypes.bool,
-  absolute: PropTypes.bool,
-  // this will cause the sidebar to change the color from
-  // props.color (see above) to changeColorOnScroll.color
-  // when the window.pageYOffset is higher or equal to
-  // changeColorOnScroll.height and then when it is smaller than
-  // changeColorOnScroll.height change it back to
-  // props.color (see above)
-  changeColorOnScroll: PropTypes.shape({
-    height: PropTypes.number.isRequired,
-    color: PropTypes.oneOf([
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "danger",
-      "transparent",
-      "white",
-      "rose",
-      "dark"
-    ]).isRequired
-  })
 };
 
 export default LargeHeader;
