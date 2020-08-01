@@ -10,9 +10,8 @@ import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import * as Sentry from "@sentry/react";
 
-if (process.env.VERCEL_GITHUB_COMMIT_SHA) {
-    Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, release: process.env.VERCEL_GITHUB_COMMIT_SHA,
-        enabled: process.env.NODE_ENV === "production" || process.env.NODE_ENV === "preview",});
+if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+    Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, enabled: process.env.NODE_ENV === "production"});
 }
 
 Router.events.on("routeChangeStart", (url) => {
