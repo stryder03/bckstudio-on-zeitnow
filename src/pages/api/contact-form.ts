@@ -85,7 +85,7 @@ export default async (req: NowRequest, res: NowResponse) => {
                 try {
                     console.log("cp: test exception")
                     // error producing function to test sentry implementation
-                    notAFunction();
+                    Sentry.captureException("This is an error")
                 } catch (error) {
                     Sentry.captureException(error)
                 }
