@@ -8,7 +8,7 @@ import {ThemeProvider} from "@material-ui/styles";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
-import * as Sentry from "@sentry/react";
+import * as Sentry from "@sentry/node";
 
 Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN, enabled: process.env.NODE_ENV === "production"});
 
@@ -43,11 +43,11 @@ export default class MyApp extends App {
               <title>Bozeman Community Kiln • BCKstudio.com</title>
               <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet"/>
           </Head>
-        <ThemeProvider theme={theme}>
-            <ParallaxProvider>
-                <Component {...pageProps} err={err}/>
-            </ParallaxProvider>
-        </ThemeProvider>
+          <ThemeProvider theme={theme}>
+              <ParallaxProvider>
+                  <Component {...pageProps} err={err}/>
+              </ParallaxProvider>
+          </ThemeProvider>
       </React.Fragment>
     );
   }

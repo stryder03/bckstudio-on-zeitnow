@@ -19,7 +19,7 @@ import GridItem from "../Grid/GridItem";
 import styles from "src/assets/jss/nextjs-material-kit/components/headerLinksStyle"
 import classNames from "classnames";
 import axios from "axios";
-import * as Sentry from "@sentry/react"
+import * as Sentry from "@sentry/node"
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -60,7 +60,7 @@ export default function ContactForm(props) {
 
     const errorHandler = (error) => {
         if (process.env.NEXT_PUBLIC_SENTRY_DSN){
-            Sentry.withScope(function() {
+            Sentry.withScope(function(scope) {
                 scope.setLevel("error");
                 Sentry.captureException(error);
             })
@@ -82,7 +82,6 @@ export default function ContactForm(props) {
         handleToggle();
         let submitSuccess;
         try {
-
             submitSuccess = await axios.post("/api/contact-form", data);
             if (submitSuccess.status === 200){
                 handleDialog(<Typography variant={"h6"} color={"primary"}>Thanks for reaching out, we will get in touch with you soon</Typography> );
