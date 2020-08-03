@@ -26,9 +26,6 @@ const errorHandler = (error: ErrorEvent, errorType: Severity) => {
 }
 
 export default async (req: NowRequest, res: NowResponse) => {
-    function notAFunction() {
-        throw "error for testing sentry"
-    }
 
     try {
         //Required structure for mailgun API
