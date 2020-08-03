@@ -1,3 +1,12 @@
+## [1.7.2](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.1...v1.7.2) (2020-08-03)
+
+
+### Reverts
+
+* Revert "refactor(typescript): refactored contact-form api to typescript" ([6b8a915](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/6b8a9154436f4fd69624f7650d5da6fd858b6a53))
+
+
+
 ## [1.7.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.0...v1.7.1) (2020-07-31)
 
 
@@ -32,15 +41,6 @@
 ### Bug Fixes
 
 * **responsiveness:** header now consistent across view sizes again ([2a18ba3](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/2a18ba3c5a6282853b8749ff9c10289bdd62b70a))
-
-
-
-## [1.6.6](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.4...v1.6.6) (2020-07-29)
-
-
-### Bug Fixes
-
-* **NextJS-recommends:** fix for https://github.com/vercel/next.js/blob/master/errors/no-document-viewport-meta.md ([f989832](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/f9898324f4e185e871feb63d2fcf3562bcb4e9ae))
 
 
 
