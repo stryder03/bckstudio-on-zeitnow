@@ -1,3 +1,12 @@
+## [1.7.3](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.2...v1.7.3) (2020-08-03)
+
+
+### Bug Fixes
+
+* **Sentry:** import from /node instead of /react ([c7db18e](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/c7db18e1cae717974230ba572a5a05ea45d996aa))
+
+
+
 ## [1.7.2](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.1...v1.7.2) (2020-08-03)
 
 
@@ -32,15 +41,6 @@
 
 * **responsiveness:** fixed class page responsive layout ([aa7e796](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/aa7e796edf8762dbdc4b36f45bd2daba6b657d6a))
 * **responsiveness:** fixed studio rental page responsive layout ([db98378](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/db9837852ddd1bb75c8b3cdb5292339ab8fbc9c4))
-
-
-
-## [1.6.7](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.6...v1.6.7) (2020-07-29)
-
-
-### Bug Fixes
-
-* **responsiveness:** header now consistent across view sizes again ([2a18ba3](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/2a18ba3c5a6282853b8749ff9c10289bdd62b70a))
 
 
 
