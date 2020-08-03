@@ -90,7 +90,7 @@ export default async (req: NowRequest, res: NowResponse) => {
                     // error producing function to test sentry implementation
                     notAFunction();
                 } catch (error) {
-                    errorHandler(error, Severity.Debug);
+                    Sentry.captureException(error)
                 }
             }
             const splitEmail = req.body.email.split("@");
