@@ -2,19 +2,36 @@
  * Copyright (c) 2020. Bozeman Community Kiln
  */
 import {NowRequest, NowResponse} from "@vercel/node"
+import * as Sentry from "@sentry/node"
+import Mailgun from "mailgun-js"
 
-const Sentry = require('@sentry/node');
-const mailgun = require('mailgun-js');
+type SendResponse = Mailgun.messages.SendResponse
 
-Sentry.init({ dsn: process.env.SENTRY_DSN});
+Sentry.init({dsn: process.env.SENTRY_DSN, enabled: process.env.NODE_ENV === "production"});
 
-interface AttributeTypes {
-    "to": string,
-    "from": string,
-    "subject": string
-    "h:Reply-To"?: string,
-    "bodyHeader"?: string,
-    "bcc"?: string
+// interface AttributeTypes extends Mailgun.MailgunRequest{
+//     "to": string,
+//     "from": string,
+//     "subject": string
+//     "h:Reply-To"?: string,
+//     "text"?: string,
+//     "bcc"?: string
+// }
+
+type SendData = Mailgun.messages.SendData
+
+
+const errorHandler = (error: ErrorEvent, errorType: string) => {
+    if (process.env.NODE_ENV === "production") {
+        Sentry.withScope(function () {
+            // @ts-ignore
+            scope.setLevel(errorType);
+            Sentry.captureException(error);
+        })
+    }
+    else {
+        console.log(error)
+    }
 }
 
 export default async (req: NowRequest, res: NowResponse) => {
@@ -26,7 +43,7 @@ export default async (req: NowRequest, res: NowResponse) => {
         //Required structure for mailgun API
 
         // address attributes for Test mode
-        const testAttributes: AttributeTypes = {
+        const testAttributes: SendData = {
             to: 'justin@bckstudio.com',
             subject: '***TEST*** ' + req.body.firstName + ' ' + req.body.lastName + ' sent CONTACT FORM (bckstudio.com)',
             // Message has to come from domain verified address
@@ -34,7 +51,7 @@ export default async (req: NowRequest, res: NowResponse) => {
         };
 
         // address attributes for Live mode
-        const liveAttributes: AttributeTypes = {
+        const liveAttributes: SendData = {
             to: 'ashleah@bckstudio.com, heather@bckstudio.com',
             bcc: 'justin@bckstudio.com',
             subject: req.body.firstName + ' ' + req.body.lastName + ' sent CONTACT FORM (bckstudio.com)',
@@ -42,6 +59,7 @@ export default async (req: NowRequest, res: NowResponse) => {
             from: 'Contact Form' + ' ' + '<contactForm@mail.bckstudio.com>'
         };
         console.log("cp0");
+        console.log("NODE_ENV: " + process.env.NODE_ENV)
         // Allow OPTIONS for preflight checks
         if (req.method === "OPTIONS") {
             return res.status(200).send("");
@@ -67,10 +85,7 @@ export default async (req: NowRequest, res: NowResponse) => {
                         return res.status(req.body.testStatusCode).send("test returned")
                     }, 5000)
                 } catch (error) {
-                    Sentry.withScope(function(scope: { setLevel: (arg0: string) => void; }) {
-                        scope.setLevel("debug");
-                        Sentry.captureException(error);
-                    });
+                    errorHandler(error, "debug");
                 }
             }
         }
@@ -84,18 +99,15 @@ export default async (req: NowRequest, res: NowResponse) => {
                     // error producing function to test sentry implementation
                     notAFunction();
                 } catch (error) {
-                    Sentry.withScope(function(scope: { setLevel: (arg0: string) => void; }) {
-                        scope.setLevel("debug");
-                        Sentry.captureException(error);
-                    });
+                    errorHandler(error, "debug");
                 }
             }
             const splitEmail = req.body.email.split("@");
 
-            let attributes: AttributeTypes = splitEmail[1] === "example.com" ? testAttributes : liveAttributes;
-            attributes.bodyHeader = req.body.firstName + ' ' + req.body.lastName + ' <' + req.body.email + '> sent a message\n\n' + req.body.message;
+            let attributes: SendData = splitEmail[1] === "example.com" ? testAttributes : liveAttributes;
+            attributes.text = req.body.firstName + ' ' + req.body.lastName + ' <' + req.body.email + '> sent a message\n\n' + req.body.message;
 
-            // Add Reply-To header so that all replys go to the form submitter instead of the mailgun sender account
+            // Add Reply-To header so that all replies go to the form submitter instead of the mailgun sender account
             attributes['h:Reply-To'] = req.body.firstName + ' ' + req.body.lastName + ' <' + req.body.email + '>';
 
             return attributes;
@@ -106,34 +118,32 @@ export default async (req: NowRequest, res: NowResponse) => {
 
         const sendMail = async () => {
             try {
-
-                const mailgunInstance = mailgun({apiKey: process.env.MAILGUN_KEY, domain: process.env.MAILGUN_DOMAIN});
-                return await mailgunInstance.messages().send(data)
+                if (process.env.MAILGUN_KEY && process.env.MAILGUN_DOMAIN) {
+                    const mailgunInstance = Mailgun({
+                        apiKey: process.env.MAILGUN_KEY,
+                        domain: process.env.MAILGUN_DOMAIN
+                    });
+                    return await mailgunInstance.messages().send(data)
+                }
             } catch (error) {
-                Sentry.withScope(function(scope: { setLevel: (arg0: string) => void; }) {
-                    scope.setLevel("error");
-                    Sentry.captureException(error);
-                });
+                errorHandler(error, "error");
                 return res.status(502).send("undelivered with error: " + error);
             }
         };
-
-        return sendMail().then((body) => {
+        return sendMail().then((body: SendResponse | NowResponse | undefined) => {
             console.log('cp:4, resBody: ' + body);
-            console.log(body.message);
-            return res.status(200).send(body.message);
+            if (body) {
+                if ("message" in body) {
+                    console.log(body.message);
+                    return res.status(200).send(body.message);
+                }
+            }
         }).catch(error => {
-            Sentry.withScope(function(scope: { setLevel: (arg0: string) => void; }) {
-                scope.setLevel("error");
-                Sentry.captureException(error);
-            });
+            errorHandler(error, "error");
             return res.status(502).send("undelivered with error: " + error);
         });
     }catch (error) {
-        Sentry.withScope(function(scope: { setLevel: (arg0: string) => void; }) {
-            scope.setLevel("error");
-            Sentry.captureException(error);
-        });
+        errorHandler(error, "error");
         return res.status(502).send("undelivered with error: " + error);
     }
 }
