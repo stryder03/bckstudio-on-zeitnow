@@ -3,28 +3,17 @@
  */
 import {NowRequest, NowResponse} from "@vercel/node"
 import * as Sentry from "@sentry/node"
+import {Severity} from "@sentry/node"
 import Mailgun from "mailgun-js"
 
 type SendResponse = Mailgun.messages.SendResponse
-
-Sentry.init({dsn: process.env.SENTRY_DSN, enabled: process.env.NODE_ENV === "production"});
-
-// interface AttributeTypes extends Mailgun.MailgunRequest{
-//     "to": string,
-//     "from": string,
-//     "subject": string
-//     "h:Reply-To"?: string,
-//     "text"?: string,
-//     "bcc"?: string
-// }
-
 type SendData = Mailgun.messages.SendData
 
+Sentry.init({dsn: process.env.SENTRY_DSN, enabled: process.env.NODE_ENV === "production", environment: "api/contact-form"});
 
-const errorHandler = (error: ErrorEvent, errorType: string) => {
+const errorHandler = (error: ErrorEvent, errorType: Severity) => {
     if (process.env.NODE_ENV === "production") {
-        Sentry.withScope(function () {
-            // @ts-ignore
+        Sentry.withScope((scope) => {
             scope.setLevel(errorType);
             Sentry.captureException(error);
         })
@@ -85,7 +74,7 @@ export default async (req: NowRequest, res: NowResponse) => {
                         return res.status(req.body.testStatusCode).send("test returned")
                     }, 5000)
                 } catch (error) {
-                    errorHandler(error, "debug");
+                    errorHandler(error, Severity.Debug);
                 }
             }
         }
@@ -99,7 +88,7 @@ export default async (req: NowRequest, res: NowResponse) => {
                     // error producing function to test sentry implementation
                     notAFunction();
                 } catch (error) {
-                    errorHandler(error, "debug");
+                    errorHandler(error, Severity.Debug);
                 }
             }
             const splitEmail = req.body.email.split("@");
@@ -126,7 +115,7 @@ export default async (req: NowRequest, res: NowResponse) => {
                     return await mailgunInstance.messages().send(data)
                 }
             } catch (error) {
-                errorHandler(error, "error");
+                errorHandler(error, Severity.Error);
                 return res.status(502).send("undelivered with error: " + error);
             }
         };
@@ -139,11 +128,11 @@ export default async (req: NowRequest, res: NowResponse) => {
                 }
             }
         }).catch(error => {
-            errorHandler(error, "error");
+            errorHandler(error, Severity.Error);
             return res.status(502).send("undelivered with error: " + error);
         });
     }catch (error) {
-        errorHandler(error, "error");
+        errorHandler(error, Severity.Error);
         return res.status(502).send("undelivered with error: " + error);
     }
 }
