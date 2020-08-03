@@ -19,6 +19,7 @@ import GridItem from "../Grid/GridItem";
 import styles from "src/assets/jss/nextjs-material-kit/components/headerLinksStyle"
 import classNames from "classnames";
 import axios from "axios";
+import * as Sentry from "@sentry/react"
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -49,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Fade ref={ref} {...props} />;
 });
+
 export default function ContactForm(props) {
 
     const classes = useStyles();
@@ -56,6 +58,17 @@ export default function ContactForm(props) {
     const [open, setOpen] = React.useState(false);
     const [displayDialog, setDialog] = React.useState(<CircularProgress color={"primary"}/>);
 
+    const errorHandler = (error) => {
+        if (process.env.NEXT_PUBLIC_SENTRY_DSN){
+            Sentry.withScope(function() {
+                scope.setLevel("error");
+                Sentry.captureException(error);
+            })
+        }
+        else {
+            console.log(error)
+        }
+    }
     const handleClose = () => {
         setOpen(false);
     };
@@ -70,20 +83,19 @@ export default function ContactForm(props) {
         let submitSuccess;
         try {
 
-            submitSuccess = await axios.post("/api/contact-form", data)
+            submitSuccess = await axios.post("/api/contact-form", data);
+            if (submitSuccess.status === 200){
+                handleDialog(<Typography variant={"h6"} color={"primary"}>Thanks for reaching out, we will get in touch with you soon</Typography> );
+                reset();
+            }
+            else {
+                handleDialog(<Typography variant={"h6"} color={"primary"}>Something went wrong, we were notified about the error, but please try calling or sending a message on Facebook</Typography>);
+                reset();
+            }
         }
-        catch(err){
-            return err
+        catch(error){
+            errorHandler(error)
         }
-        if (submitSuccess){
-            handleDialog(<Typography variant={"h6"} color={"primary"}>Thanks for reaching out, we will get in touch with you soon</Typography> );
-            reset();
-        }
-        else {
-            handleDialog(<Typography variant={"h6"} color={"primary"}>Something went wrong, we were notified about the error, but please try calling or sending a message on Facebook</Typography>);
-            reset();
-        }
-
     };
     const formTitle = props.formTitle === undefined ? "Contact US" : props.formTitle;
 
