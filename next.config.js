@@ -8,18 +8,15 @@ const withSourceMaps = require('@zeit/next-source-maps')({
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 const {
-  NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
-  SENTRY_ORG,
-  SENTRY_PROJECT,
-  SENTRY_AUTH_TOKEN,
-  NODE_ENV,
+  NEXT_PUBLIC_SENTRY_DSN,
+    SENTRY_ORG,
+    SENTRY_PROJECT,
+    SENTRY_AUTH_TOKEN,
+    NODE_ENV,
     VERCEL_GITHUB_COMMIT_SHA,
+    DEPLOYMENT_ENV
 } = process.env
 
-const COMMIT_SHA =
-    VERCEL_GITHUB_COMMIT_SHA
-
-process.env.SENTRY_DSN = SENTRY_DSN
 module.exports = withPlugins([[withImages],[withSourceMaps]], {
   webpack(config, options) {
     config.resolve.modules.push(path.resolve("./"));
@@ -66,18 +63,22 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
     // This is an alternative to manually uploading the source maps
     // Note: This is disabled in development mode.
     if (
-        SENTRY_DSN &&
+        NEXT_PUBLIC_SENTRY_DSN &&
         SENTRY_ORG &&
         SENTRY_PROJECT &&
         SENTRY_AUTH_TOKEN &&
+        DEPLOYMENT_ENV &&
         NODE_ENV === 'production'
     ) {
       config.plugins.push(
           new SentryWebpackPlugin({
-            include: '.next',
-            ignore: ['node_modules'],
-            urlPrefix: '~/_next',
-            release: COMMIT_SHA,
+              include: '.next',
+              ignore: ['node_modules'],
+              urlPrefix: '~/_next',
+              release: VERCEL_GITHUB_COMMIT_SHA,
+              deploy: {
+                  env: DEPLOYMENT_ENV
+              }
           })
       )
     }

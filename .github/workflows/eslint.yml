@@ -2,8 +2,7 @@ name: ESLint
 on:
   push:
     branches-ignore:
-      - master
-      - staging
+      - bump-version
     paths-ignore:
       - 'package.json'
       - 'CHANGELOG.md'
