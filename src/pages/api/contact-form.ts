@@ -9,12 +9,12 @@ import Mailgun from "mailgun-js"
 type SendResponse = Mailgun.messages.SendResponse
 type SendData = Mailgun.messages.SendData
 
-Sentry.init({dsn: process.env.SENTRY_DSN, enabled: process.env.NODE_ENV === "production", environment: "api/contact-form"});
-console.log("NODE_ENV: " + process.env.NODE_ENV)
+if (process.env.NODE_ENV === "production") {
+    Sentry.init({dsn: process.env.SENTRY_DSN});
+}
+
 const errorHandler = (error: ErrorEvent, errorType: Severity) => {
     if (process.env.NODE_ENV === "production") {
-        console.log("Error: " + error)
-        console.log("ErrorType: " + errorType)
         Sentry.withScope((scope) => {
             scope.setLevel(errorType);
             Sentry.captureException(error);
