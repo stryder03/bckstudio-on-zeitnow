@@ -46,7 +46,7 @@
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.3.0",
     "react-scroll-parallax": "^2.3.4",
-    "react-slick": "^0.27.1",
+    "react-slick": "^0.27.2",
     "react-swipeable-views": "^0.13.9"
   },
   "devDependencies": {
