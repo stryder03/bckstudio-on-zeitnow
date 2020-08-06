@@ -32,7 +32,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react-hooks": "^4.0.8",
     "graphcms-image": "^1.1.0-beta4",
-    "graphql-request": "^3.0.0-next.4",
+    "graphql-request": "^3.0.0",
     "moment": "^2.27.0",
     "next": "^9.5.1",
     "next-compose-plugins": "^2.2.0",
