@@ -44,12 +44,13 @@ export default class MyApp extends App {
               />
               <title>Bozeman Community Kiln • BCKstudio.com</title>
               <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet"/>
+              <script async src={"https://chimpstatic.com/mcjs-connected/js/users/7c2ebc786b5f2387d9c8b05be/7e7fb5424ce4049d3d5720ef9.js"}/>
               <script
                   async
                   type="text/javascript"
                   id="mcjs"
                   dangerouslySetInnerHTML={{
-                      __html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7c2ebc786b5f2387d9c8b05be/7e7fb5424ce4049d3d5720ef9.js");`
+                      __html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)};`
                   }}
               />
           </Head>
