@@ -44,7 +44,7 @@
     "react": "^16.13.1",
     "react-datetime": "^2.16.3",
     "react-dom": "^16.13.1",
-    "react-hook-form": "^6.3.0",
+    "react-hook-form": "^6.3.1",
     "react-scroll-parallax": "^2.3.4",
     "react-slick": "^0.27.4",
     "react-swipeable-views": "^0.13.9"
