@@ -1,3 +1,22 @@
+# [1.8.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.3...v1.8.0) (2020-08-11)
+
+
+### Bug Fixes
+
+* remove empty file ([dabe4eb](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/dabe4eb5b334ac12f5236e1a185fce664d858acf))
+
+
+### Features
+
+* **mailchimp:** added mailchimp popup ([619a019](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/619a0198a1d158e4f1815d1d5ce3ba133b65b94c))
+* **mailchimp:** added mailchimp popup ([c1ec135](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/c1ec1357619e78d9aa33feec89c110c09b033fbf))
+* **mailchimp:** added mailchimp popup ([6ae4eb6](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/6ae4eb6d4691f484d5d043e27cfdbc62839c9b2d))
+* **mailchimp:** added mailchimp popup ([91df9e7](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/91df9e7a531dce6fc97a298760ee8d26a95d5a8e))
+* **mailchimp:** added mailchimp popup ([0321d9b](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/0321d9b4f954a4663ddf75992af3b49b760841fd))
+* **mailchimp:** added mailchimp popup ([98f6e75](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/98f6e75aebeb9df2652f3deac64e17e021899245))
+
+
+
 ## [1.7.3](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.2...v1.7.3) (2020-08-03)
 
 
@@ -31,16 +50,6 @@
 ### Features
 
 * **Sentry:** install sentry-vercel integration ([a64686a](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/a64686a0215322e4e13a25f93a174912940d0651))
-
-
-
-## [1.6.8](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.7...v1.6.8) (2020-07-29)
-
-
-### Bug Fixes
-
-* **responsiveness:** fixed class page responsive layout ([aa7e796](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/aa7e796edf8762dbdc4b36f45bd2daba6b657d6a))
-* **responsiveness:** fixed studio rental page responsive layout ([db98378](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/db9837852ddd1bb75c8b3cdb5292339ab8fbc9c4))
 
 
 
