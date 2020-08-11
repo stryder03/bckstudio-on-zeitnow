@@ -46,7 +46,7 @@ export default class MyApp extends App {
               <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet"/>
               <script async type="text/javascript"
                       id="mcjs"
-                      src={"https://chimpstatic.com/mcjs-connected/js/users/7c2ebc786b5f2387d9c8b05be/7e7fb5424ce4049d3d5720ef9.js"}/>
+                      src={"https://chimpstatic.com/mcjs-connected/js/users/7c2ebc786b5f2387d9c8b05be/8e56bc9869f759b03c0ce1ab9.js"}/>
           </Head>
           <ThemeProvider theme={theme}>
               <ParallaxProvider>
