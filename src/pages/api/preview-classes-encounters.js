@@ -1,5 +1,5 @@
 
-// route and params to call: /api/preview-classes-encounters?secret=7634b554961c40378a8769fe67194f4c
+// route and params to call: /api/preview?secret=7634b554961c40378a8769fe67194f4c&page=
 export default async (req, res) => {
     // Check the secret and next parameters
     // This secret should only be known to this API route and the CMS
@@ -7,12 +7,10 @@ export default async (req, res) => {
         return res.status(401).json({ message: "Invalid token" })
     }
     // Enable Preview Mode by setting the cookies
-
     res.setPreviewData({token: process.env.GRAPH_CMS_PREVIEW_TOKEN_SERVER}, {
-        maxAge: 10, // The preview mode cookies expire in 10 seconds
     });
 
     // Redirect to the classes-encounters page
-    res.writeHead(307, { Location: "/classes-encounters" });
+    res.writeHead(307, { Location: req.query.page });
     res.end()
 }
