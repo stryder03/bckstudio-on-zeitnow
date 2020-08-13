@@ -1,5 +1,8 @@
+/*
+ * Copyright (c) 2020. Bozeman Community Kiln
+ */
+
 import React from "react";
-import App from "next/app";
 import Router from "next/router";
 import ReactDOM from "react-dom";
 import Head from "next/head";
@@ -9,6 +12,8 @@ import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import * as Sentry from "@sentry/node";
+import {useUser} from "../utils/auth/useUser";
+import {BckAppProps} from "../index";
 
 if (process.env.NODE_ENV === "production") {
     Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN});
@@ -21,18 +26,21 @@ Router.events.on("routeChangeStart", (url) => {
         document.getElementById("page-transition")
     );
 });
+
 Router.events.on("routeChangeComplete", () => {
+    // @ts-ignore
     ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
     document.body.classList.remove("body-page-transition");
 });
 Router.events.on("routeChangeError", () => {
+    // @ts-ignore
     ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
     document.body.classList.remove("body-page-transition");
 });
 
-export default class MyApp extends App {
-  render() {
-    const { Component, pageProps, err } = this.props;
+export default function App(props: BckAppProps) {
+    const { Component, pageProps, err } = props;
+    const {user, logout} = useUser();
 
     return (
       <React.Fragment>
@@ -44,16 +52,12 @@ export default class MyApp extends App {
               />
               <title>Bozeman Community Kiln • BCKstudio.com</title>
               <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet"/>
-              <script async type="text/javascript"
-                      id="mcjs"
-                      src={"https://chimpstatic.com/mcjs-connected/js/users/7c2ebc786b5f2387d9c8b05be/8e56bc9869f759b03c0ce1ab9.js"}/>
           </Head>
           <ThemeProvider theme={theme}>
               <ParallaxProvider>
-                  <Component {...pageProps} err={err}/>
+                  <Component {...pageProps} err={err} user={user} logout={{logout}}/>
               </ParallaxProvider>
           </ThemeProvider>
       </React.Fragment>
     );
-  }
 }

@@ -10,26 +10,55 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import {Typography} from "@material-ui/core";
 import classNames from "classnames";
-import CustomButtons from "../components/CustomButtons/RegularButton";
-import Grid from "@material-ui/core/Grid";
+import PrimaryContainedButton from "../components/Buttons/PrimaryContainedButton";
+import Container from "@material-ui/core/Container";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     brandFont,
     container: {
         ...container,
         marginTop: "2.5rem",
         paddingBottom: "2.5rem",
     },
-    loginButton: {
-        backgroundColor: theme.palette.primary.main,
-        color: theme.palette.primary.contrastText,
-        marginRight: "-2.5rem"
+    center: {
+        width: "10%",
+        margin: "auto"
+    },
+    btnContainer: {
+        marginTop: "2.5rem",
+        paddingBottom: "2.5rem",
     }
 }));
 
-export default function login() {
-    const classes = useStyles();
-    const [infoText, setInfoText] = React.useState("")
+// const fetcher = (url, token) =>
+//     fetch(url, {
+//         method: 'GET',
+//         headers: new Headers({ 'Content-Type': 'application/json', token }),
+//         credentials: 'same-origin',
+//     }).then((res) => res.json())
+
+export default function login(props) {
+    const classes = useStyles(props);
+    const { user, logout } = props;
+
+    const isUser = !user ?
+        <React.Fragment>
+            <div className={classNames(classes.btnContainer, classes.center)}>
+                <PrimaryContainedButton href={'/auth'} center>
+                    Log In
+                </PrimaryContainedButton>
+            </div>
+        </React.Fragment>:
+        <React.Fragment>
+            <Typography variant={"body1"} align={"center"}>
+                Username: {user.email}
+            </Typography>
+            <div className={classNames(classes.btnContainer, classes.center)}>
+                <PrimaryContainedButton onClick={() => logout.logout()}>
+                    Log Out
+                </PrimaryContainedButton>
+            </div>
+        </React.Fragment>
 
     return (
         <div>
@@ -44,18 +73,9 @@ export default function login() {
                         Login to BCK
                     </Typography>
                 </BrandedHeader>
-                <Grid container justify="center" direction="column" alignItems={"center"} className={classes.container}>
-                    <Grid item>
-                        <Typography variant={"body2"}>
-                            {infoText}
-                        </Typography>
-                    </Grid>
-                    <Grid item>
-                        <CustomButtons onClick={() => setInfoText("This Feature will be available in the future. Check back soon!")}
-                                       className={classNames(classes.loginButton)}
-                        >Log In</CustomButtons>
-                    </Grid>
-                </Grid>
+                <Container className={classes.container}>
+                    {isUser}
+                </Container>
             </Layout>
         </div>
     );
