@@ -1,3 +1,18 @@
+# [1.10.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.9.1...v1.10.0) (2020-08-13)
+
+
+### Bug Fixes
+
+* **ReactGA:** check for undefined ([aec2a74](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/aec2a7430636cffd1018f841702473ac702bf2ae))
+* **ReactGA:** fix infinite render ([b4e4801](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/b4e48016efb1eb484a792c9baa6014ece1bb4122))
+
+
+### Features
+
+* **ReactGA:** converted to react-ga use ([eb2cc99](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/eb2cc995aa79c10cc10aa4b26289e324548db01b))
+
+
+
 ## [1.9.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.9.0...v1.9.1) (2020-08-13)
 
 
@@ -42,15 +57,6 @@
 ### Bug Fixes
 
 * **Sentry:** import from /node instead of /react ([c7db18e](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/c7db18e1cae717974230ba572a5a05ea45d996aa))
-
-
-
-## [1.7.2](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.1...v1.7.2) (2020-08-03)
-
-
-### Reverts
-
-* Revert "refactor(typescript): refactored contact-form api to typescript" ([6b8a915](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/6b8a9154436f4fd69624f7650d5da6fd858b6a53))
 
 
 
