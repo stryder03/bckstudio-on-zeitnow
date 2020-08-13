@@ -2,7 +2,7 @@
  * Copyright (c) 2020. Bozeman Community Kiln
  */
 
-import React from "react";
+import React, {useEffect} from "react";
 import Router from "next/router";
 import ReactDOM from "react-dom";
 import Head from "next/head";
@@ -14,6 +14,7 @@ import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import * as Sentry from "@sentry/node";
 import {useUser} from "../utils/auth/useUser";
 import {BckAppProps} from "../index";
+import {initGA, logPageView} from "src/utils/analytics/analytics"
 
 if (process.env.NODE_ENV === "production") {
     Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN});
@@ -38,9 +39,22 @@ Router.events.on("routeChangeError", () => {
     document.body.classList.remove("body-page-transition");
 });
 
+const usePageTracking = (userId: string | undefined) => {
+    useEffect(() => {
+        initGA(userId);
+    }, []);
+
+    useEffect(() => {
+        logPageView()
+    }, []);
+}
+
 export default function App(props: BckAppProps) {
     const { Component, pageProps, err } = props;
     const {user, logout} = useUser();
+
+    // @ts-ignore
+    usePageTracking(user.id)
 
     return (
       <React.Fragment>
