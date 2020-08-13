@@ -14,6 +14,7 @@ import AcuityScheduler from "../../pages-sections/Page-Sections/AcuityScheduler"
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import PrimaryContainedButton from "../Buttons/PrimaryContainedButton";
+import {logModalView} from "../../utils/analytics/analytics";
 
 const useStyles = makeStyles((theme) => ({
     ...styles,
@@ -60,7 +61,8 @@ export default function BookServiceDialog(props) {
     const handleClose = () => {
         setOpen(false);
     };
-    const handleToggle = () => {
+    const handleOpen = (serviceName) => {
+        logModalView(serviceName)
         setOpen(!open);
     };
     return (
@@ -69,7 +71,9 @@ export default function BookServiceDialog(props) {
                 aria-label={"book service"}
                 className={classNames(classes.navLink,classes.bookButton)}
                 id={"book-header"}
-                onClick={handleToggle}
+                onClick={() => {
+                    handleOpen(buttonText)
+                }}
                 size={"small"}
             >
                 <div className={classes.buttonText}>

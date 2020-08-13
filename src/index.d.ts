@@ -43,3 +43,8 @@ export interface FirebaseUser extends User{
     xa?: string,
 }
 
+export interface PreviewProps{
+    page?: string;
+    preview?: boolean;
+}
+

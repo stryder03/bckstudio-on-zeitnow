@@ -2,7 +2,7 @@
  * Copyright (c) 2020. Bozeman Community Kiln
  */
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Router from "next/router";
 import ReactDOM from "react-dom";
 import Head from "next/head";
@@ -14,6 +14,7 @@ import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import * as Sentry from "@sentry/node";
 import {useUser} from "../utils/auth/useUser";
 import {BckAppProps} from "../index";
+import {initGA, logPageView} from "src/utils/analytics/analytics"
 
 if (process.env.NODE_ENV === "production") {
     Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN});
@@ -38,9 +39,28 @@ Router.events.on("routeChangeError", () => {
     document.body.classList.remove("body-page-transition");
 });
 
+const usePageTracking = (userId: string | undefined, path: string, trackingId: string) => {
+    useEffect(() => {
+        initGA(trackingId, userId);
+    }, [userId, trackingId]);
+
+    useEffect(() => {
+        logPageView(path)
+    }, [path]);
+}
+
 export default function App(props: BckAppProps) {
     const { Component, pageProps, err } = props;
     const {user, logout} = useUser();
+    const [path, setPath] = useState();
+
+    useEffect(() => {
+        // @ts-ignore
+        path !== window.location.pathname ? setPath(window.location.pathname): "";
+    })
+
+    // @ts-ignore
+    usePageTracking(user ? user.id : undefined, path, process.env.NEXT_PUBLIC_GA_TRACKING_ID)
 
     return (
       <React.Fragment>
@@ -55,7 +75,7 @@ export default function App(props: BckAppProps) {
           </Head>
           <ThemeProvider theme={theme}>
               <ParallaxProvider>
-                  <Component {...pageProps} err={err} user={user} logout={{logout}}/>
+                  <Component {...pageProps} err={err} user={user} logout={async () => { await logout()}}/>
               </ParallaxProvider>
           </ThemeProvider>
       </React.Fragment>
