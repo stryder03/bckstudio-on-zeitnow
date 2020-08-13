@@ -1,3 +1,12 @@
+## [1.9.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.9.0...v1.9.1) (2020-08-13)
+
+
+### Bug Fixes
+
+* **api:** added preview warning and exit button ([daff06e](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/daff06e4d9b3290bec89a31eb65f9304baecfeb5))
+
+
+
 # [1.9.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.8.0...v1.9.0) (2020-08-13)
 
 
@@ -42,15 +51,6 @@
 ### Reverts
 
 * Revert "refactor(typescript): refactored contact-form api to typescript" ([6b8a915](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/6b8a9154436f4fd69624f7650d5da6fd858b6a53))
-
-
-
-## [1.7.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.0...v1.7.1) (2020-07-31)
-
-
-### Bug Fixes
-
-* **responsiveness:** footer responsiveness adjusted ([2cc6182](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/2cc61824bd9ebf25f09595828707702d4195f67a))
 
 
 
