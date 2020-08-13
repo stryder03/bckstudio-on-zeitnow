@@ -11,7 +11,7 @@ import Pricing from "../components/Pricing/Pricing";
 import Layout from "../pages-sections/Page-Sections/Layout";
 import {brandFont, clp_exclaim, dividerBar, mainElement, playBrand, title,} from "../assets/jss/nextjs-material-kit";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
-import {queryCMS} from "../Scripts/queryCMS";
+import {queryCMS} from "../utils/queryCMS";
 import Container from "@material-ui/core/Container";
 import gql from "graphql-tag";
 

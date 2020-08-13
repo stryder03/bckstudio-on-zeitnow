@@ -15,8 +15,9 @@ import {
 import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import ClassList from "../components/ClassList/ClassList";
-import {queryCMS} from "../Scripts/queryCMS";
+import {queryCMS} from "../utils/queryCMS";
 import gql from "graphql-tag"
+import Button from "@material-ui/core/Button";
 
 const style = (theme) => ({
     h1Container: {
@@ -90,6 +91,22 @@ const style = (theme) => ({
     iframeWrapper: {
         margin: "2.5rem"
     },
+    previewWrapper: {
+        position: "fixed",
+        width: "90%",
+        height: "7rem",
+        marginLeft: "5%",
+        marginTop: "4%",
+        zIndex: "10",
+        backgroundColor: "#ff4444",
+        "&:hover,&:focus": {
+            backgroundColor: "#ff4444",
+        }
+    },
+    previewIndicator: {
+        color: "#fff",
+        backgroundColor: "#ff4444",
+    },
     mainElement,
     brandFont
 });
@@ -143,22 +160,38 @@ const instructorQuery =
 
 
 export async function getStaticProps(context) {
-
+    const preview = context.preview ? context.preview : null;
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
-    const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
+    const token = preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
     const endPoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
     const classListQueryResult = await queryCMS(classCategories, token, endPoint);
     const defaultInstructor = await queryCMS(instructorQuery, token, endPoint);
 
     return {
-        props: { classListQueryResult, defaultInstructor }, // will be passed to the page component as props
+        props: { classListQueryResult, defaultInstructor, preview }, // will be passed to the page component as props
     }
 }
 
 export default function ClassesEncounters(props) {
     const classes = useStyles();
-    const { classListQueryResult, defaultInstructor } = props;
+    const { classListQueryResult, defaultInstructor, preview } = props;
+
+    const showPreview = () => {
+        return preview ?
+            <div className={classes.previewWrapper}>
+                <Button className={classes.previewIndicator} fullWidth href={"/api/preview?clear=true&page=classes-encounters"}>
+                    <Typography variant={"h2"} color={"inherit"} align={"center"}>
+                        PREVIEW MODE
+                    </Typography>
+                </Button>
+                <Typography variant={"body1"} color={"textPrimary"} align={"center"}>
+                    Click to exit
+                </Typography>
+            </div>:
+            null
+
+    };
 
     const classLists = (classList) => {
 
@@ -176,6 +209,7 @@ export default function ClassesEncounters(props) {
                 <meta name="description"
                       content="Join us for one of our classes to learn a variety of pottery techniques from local artists, or try our clay encounters, a one-time visit great for playing with clay."/>
             </Head>
+            {showPreview()}
             <Layout>
                 <BrandedHeader>
                     <Typography variant={"h1"} align={"center"} className={classNames(classes.brandFont)} gutterBottom>
