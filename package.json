@@ -50,7 +50,7 @@
     "react-firebaseui": "^4.1.0",
     "react-hook-form": "^6.3.2",
     "react-scroll-parallax": "^2.3.4",
-    "react-slick": "^0.27.6",
+    "react-slick": "^0.27.7",
     "react-swipeable-views": "^0.13.9",
     "vercel": "^19.2.0"
   },
