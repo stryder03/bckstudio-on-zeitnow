@@ -12,8 +12,8 @@ import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import * as Sentry from "@sentry/node";
-import '@stripe/stripe-js';
 import {useUser} from "../utils/auth/useUser";
+import {BckAppProps} from "../index";
 
 if (process.env.NODE_ENV === "production") {
     Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN});
@@ -38,8 +38,7 @@ Router.events.on("routeChangeError", () => {
     document.body.classList.remove("body-page-transition");
 });
 
-export default function App(props) {
-
+export default function App(props: BckAppProps) {
     const { Component, pageProps, err } = props;
     const {user, logout} = useUser();
 
@@ -56,10 +55,9 @@ export default function App(props) {
           </Head>
           <ThemeProvider theme={theme}>
               <ParallaxProvider>
-                  <Component {...pageProps} err={err} user={user} logout={logout()}/>
+                  <Component {...pageProps} err={err} user={user} logout={{logout}}/>
               </ParallaxProvider>
           </ThemeProvider>
       </React.Fragment>
     );
-  }
 }

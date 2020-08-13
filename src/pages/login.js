@@ -10,7 +10,6 @@ import Layout from "../pages-sections/Page-Sections/Layout";
 import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import {Typography} from "@material-ui/core";
 import classNames from "classnames";
-import {useUser} from 'src/utils/auth/useUser'
 import PrimaryContainedButton from "../components/Buttons/PrimaryContainedButton";
 import Container from "@material-ui/core/Container";
 
@@ -40,7 +39,7 @@ const useStyles = makeStyles(() => ({
 
 export default function login(props) {
     const classes = useStyles(props);
-    const { user, logout } = useUser();
+    const { user, logout } = props;
 
     const isUser = !user ?
         <React.Fragment>
@@ -55,7 +54,7 @@ export default function login(props) {
                 Username: {user.email}
             </Typography>
             <div className={classNames(classes.btnContainer, classes.center)}>
-                <PrimaryContainedButton onClick={() => logout()}>
+                <PrimaryContainedButton onClick={() => logout.logout()}>
                     Log Out
                 </PrimaryContainedButton>
             </div>
