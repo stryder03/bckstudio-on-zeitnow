@@ -55,8 +55,10 @@ export default function App(props: BckAppProps) {
     const [path, setPath] = useState();
 
     useEffect(() => {
-        // @ts-ignore
-        path !== window.location.pathname ? setPath(window.location.pathname): "";
+        if (path !== window.location.pathname) {
+            // @ts-ignore
+            setPath(window.location.pathname)
+        }
     })
 
     // @ts-ignore
