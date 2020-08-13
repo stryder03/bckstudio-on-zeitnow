@@ -14,6 +14,7 @@ import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import {queryCMS} from "../utils/queryCMS";
 import Container from "@material-ui/core/Container";
 import gql from "graphql-tag";
+import {ShowPreview} from "../components/ShowPreview/showPreview";
 
 const style = (theme) => ({
     whiteContainer:{
@@ -71,20 +72,21 @@ const membershipsQuery = gql`
 
 export async function getStaticProps(context) {
 
+    const preview = context.preview ? context.preview : null;
     const prodToken = process.env.NEXT_PUBLIC_GRAPHCMS_WEBCLIENT_API_TOKEN;
-    const token = context.preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
+    const token = preview ? (context.previewData.token + process.env.NEXT_PUBLIC_GRAPH_CMS_PREVIEW_TOKEN_CLIENT) : prodToken;
     const endPoint = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
     const membershipsQueryResult = await queryCMS(membershipsQuery, token, endPoint);
 
     return {
-        props: {membershipsQueryResult}, // will be passed to the page component as props
+        props: {membershipsQueryResult, preview}, // will be passed to the page component as props
     }
 }
 
 export default function MembershipPage(props) {
     const classes = useStyles();
-    const { membershipsQueryResult } = props
+    const { membershipsQueryResult, preview } = props
 
     const priceLists = (categoriesList, maxWidth) => {
         let result = [];
@@ -102,6 +104,7 @@ export default function MembershipPage(props) {
                           content="Come Create with us. Pottery membership options to meet your skill and need to work with clay. Use our professional level pottery tools and equipment and earn discounts on classes and more."/>
                 </Head>
             <div>
+                <ShowPreview preview={preview} page={"memberships"}/>
                 <Layout>
                     <BrandedHeader>
                         <Typography variant={"h1"} align={"center"} className={classNames(classes.brandFont)} gutterBottom>

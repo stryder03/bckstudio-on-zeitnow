@@ -17,7 +17,7 @@ import BrandedHeader from "../components/BrandedHeader/BrandedHeader";
 import ClassList from "../components/ClassList/ClassList";
 import {queryCMS} from "../utils/queryCMS";
 import gql from "graphql-tag"
-import Button from "@material-ui/core/Button";
+import {ShowPreview} from "../components/ShowPreview/showPreview";
 
 const style = (theme) => ({
     h1Container: {
@@ -91,22 +91,6 @@ const style = (theme) => ({
     iframeWrapper: {
         margin: "2.5rem"
     },
-    previewWrapper: {
-        position: "fixed",
-        width: "90%",
-        height: "7rem",
-        marginLeft: "5%",
-        marginTop: "4%",
-        zIndex: "10",
-        backgroundColor: "#ff4444",
-        "&:hover,&:focus": {
-            backgroundColor: "#ff4444",
-        }
-    },
-    previewIndicator: {
-        color: "#fff",
-        backgroundColor: "#ff4444",
-    },
     mainElement,
     brandFont
 });
@@ -177,22 +161,6 @@ export default function ClassesEncounters(props) {
     const classes = useStyles();
     const { classListQueryResult, defaultInstructor, preview } = props;
 
-    const showPreview = () => {
-        return preview ?
-            <div className={classes.previewWrapper}>
-                <Button className={classes.previewIndicator} fullWidth href={"/api/preview?clear=true&page=classes-encounters"}>
-                    <Typography variant={"h2"} color={"inherit"} align={"center"}>
-                        PREVIEW MODE
-                    </Typography>
-                </Button>
-                <Typography variant={"body1"} color={"textPrimary"} align={"center"}>
-                    Click to exit
-                </Typography>
-            </div>:
-            null
-
-    };
-
     const classLists = (classList) => {
 
         let result = [];
@@ -209,7 +177,7 @@ export default function ClassesEncounters(props) {
                 <meta name="description"
                       content="Join us for one of our classes to learn a variety of pottery techniques from local artists, or try our clay encounters, a one-time visit great for playing with clay."/>
             </Head>
-            {showPreview()}
+            <ShowPreview preview={preview} page={"classes-encounters"}/>
             <Layout>
                 <BrandedHeader>
                     <Typography variant={"h1"} align={"center"} className={classNames(classes.brandFont)} gutterBottom>
