@@ -1,5 +1,8 @@
 const withPlugins = require("next-compose-plugins");
 const withImages = require("next-images");
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/
+});
 const path = require("path");
 const withSourceMaps = require('@zeit/next-source-maps')({
   devtool: 'hidden-source-map'
@@ -17,7 +20,9 @@ const {
     DEPLOYMENT_ENV
 } = process.env
 
-module.exports = withPlugins([[withImages],[withSourceMaps]], {
+module.exports = withPlugins([[withImages],[withSourceMaps], [withMDX]({
+    pageExtensions: ['js', 'jsx',  'ts', 'tsx', 'md', 'mdx']
+})], {
   webpack(config, options) {
     config.resolve.modules.push(path.resolve("./"));
     config.node = {

@@ -31,12 +31,13 @@ export interface BckAppProps extends AppProps {
     children?: ReactNode;
     user?: BckUser;
     logout?: firebase.auth.Auth;
+    preview?: boolean;
 }
 
 export interface PricingProps extends BckAppProps{
-    tierCategory: Map,
+    tierCategory: Map<MembershipTier>,
     title: string,
-    maxWidth: "lg" | "sm"
+    maxWidth: "lg" | "sm",
 }
 
 export interface FirebaseUser extends User{
@@ -48,3 +49,59 @@ export interface PreviewProps{
     preview?: boolean;
 }
 
+export interface faq{
+    question: string
+    answer: {
+        html?: string
+        text?: string
+        markdown?: string
+        raw?: string
+    }
+}
+export interface faqPage{
+    listOfFaQs: [faq]
+}
+export interface faqQueryProp{
+    faqPage: faqPage
+}
+export interface FaqProps extends BckAppProps{
+    faqQueryResult: faqQueryProp
+}
+
+declare module '@mdx-js/react' {
+    import * as React from 'react'
+    type ComponentType =
+        | 'a'
+        | 'blockquote'
+        | 'code'
+        | 'delete'
+        | 'em'
+        | 'h1'
+        | 'h2'
+        | 'h3'
+        | 'h4'
+        | 'h5'
+        | 'h6'
+        | 'hr'
+        | 'img'
+        | 'inlineCode'
+        | 'li'
+        | 'ol'
+        | 'p'
+        | 'pre'
+        | 'strong'
+        | 'sup'
+        | 'table'
+        | 'td'
+        | 'thematicBreak'
+        | 'tr'
+        | 'ul'
+    export type Components = {
+        [key in ComponentType]?: React.ComponentType<{children: React.ReactNode}>
+    }
+    export interface MDXProviderProps {
+        children: React.ReactNode
+        components: Components
+    }
+    export class MDXProvider extends React.Component<MDXProviderProps> {}
+}
