@@ -54,7 +54,7 @@ export default function App(props: BckAppProps) {
     const {user, logout} = useUser();
 
     // @ts-ignore
-    usePageTracking(user.id)
+    usePageTracking(user ? user.id : undefined)
 
     return (
       <React.Fragment>
