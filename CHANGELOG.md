@@ -1,3 +1,13 @@
+# [1.9.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.8.0...v1.9.0) (2020-08-13)
+
+
+### Features
+
+* **Auth:** Firebase Auth working ([9bbbf0d](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/9bbbf0d99f548dad40914f6555cff6a94d68262b))
+* **Auth:** implement basic firebase auth ([c08271f](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/c08271f5b533c882fbc85f8df0a1a1bae3be80bd))
+
+
+
 # [1.8.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.3...v1.8.0) (2020-08-11)
 
 
@@ -41,15 +51,6 @@
 ### Bug Fixes
 
 * **responsiveness:** footer responsiveness adjusted ([2cc6182](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/2cc61824bd9ebf25f09595828707702d4195f67a))
-
-
-
-# [1.7.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.6.8...v1.7.0) (2020-07-30)
-
-
-### Features
-
-* **Sentry:** install sentry-vercel integration ([a64686a](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/a64686a0215322e4e13a25f93a174912940d0651))
 
 
 
