@@ -71,7 +71,9 @@ export default function BookServiceDialog(props) {
                 aria-label={"book service"}
                 className={classNames(classes.navLink,classes.bookButton)}
                 id={"book-header"}
-                onClick={handleOpen(buttonText)}
+                onClick={() => {
+                    handleOpen(buttonText)
+                }}
                 size={"small"}
             >
                 <div className={classes.buttonText}>
