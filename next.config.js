@@ -58,7 +58,7 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
     }
 
       if (process.env.WEBSITE_URL) {
-          require('src/utils/sitemap/generate-sitemap')
+          require('./src/utils/sitemap/generate-sitemap')
       }
 
     // When all the Sentry configuration env variables are available/configured
