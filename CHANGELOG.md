@@ -1,3 +1,14 @@
+# [1.11.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.10.0...v1.11.0) (2020-08-14)
+
+
+### Features
+
+* **FAQ:** created FAQ page tied to graphcms ([1cd71ee](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/1cd71ee9dd7818220a7fa903dec47900eaa9ec78))
+* **sitemap:** Sitemap and robots.txt auto generated ([33e3d31](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/33e3d31e76525f2215dc13a6a7208dd301ac9c7f))
+* **sitemap-robots:** auto generate sitemap and robots.txt for production ([13fb17a](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/13fb17a1d2ce19d360b40ec3a64c4d994b530fff))
+
+
+
 # [1.10.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.9.1...v1.10.0) (2020-08-13)
 
 
@@ -48,15 +59,6 @@
 * **mailchimp:** added mailchimp popup ([91df9e7](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/91df9e7a531dce6fc97a298760ee8d26a95d5a8e))
 * **mailchimp:** added mailchimp popup ([0321d9b](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/0321d9b4f954a4663ddf75992af3b49b760841fd))
 * **mailchimp:** added mailchimp popup ([98f6e75](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/98f6e75aebeb9df2652f3deac64e17e021899245))
-
-
-
-## [1.7.3](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.7.2...v1.7.3) (2020-08-03)
-
-
-### Bug Fixes
-
-* **Sentry:** import from /node instead of /react ([c7db18e](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/c7db18e1cae717974230ba572a5a05ea45d996aa))
 
 
 
