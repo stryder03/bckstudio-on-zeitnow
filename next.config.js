@@ -57,7 +57,7 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
       config.resolve.alias['@sentry/node'] = '@sentry/browser'
     }
 
-      if (config.isServer) {
+      if (process.env.WEBSITE_URL) {
           require('src/utils/sitemap/generate-sitemap')
       }
 
