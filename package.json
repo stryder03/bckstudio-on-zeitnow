@@ -51,7 +51,7 @@
     "react-ga": "^3.1.2",
     "react-hook-form": "^6.3.3",
     "react-scroll-parallax": "^2.3.4",
-    "react-slick": "^0.27.7",
+    "react-slick": "^0.27.8",
     "react-swipeable-views": "^0.13.9",
     "vercel": "^19.2.0"
   },
