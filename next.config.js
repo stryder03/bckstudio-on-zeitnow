@@ -1,8 +1,5 @@
 const withPlugins = require("next-compose-plugins");
 const withImages = require("next-images");
-const withMDX = require('@next/mdx')({
-    extension: /\.mdx?$/
-});
 const path = require("path");
 const withSourceMaps = require('@zeit/next-source-maps')({
   devtool: 'hidden-source-map'
@@ -20,17 +17,15 @@ const {
     DEPLOYMENT_ENV
 } = process.env
 
-module.exports = withPlugins([[withImages],[withSourceMaps], [withMDX({
-    pageExtensions: ['js', 'jsx',  'ts', 'tsx', 'md', 'mdx']
-})]], {
+module.exports = withPlugins([[withImages],[withSourceMaps]], {
   webpack(config, options) {
     config.resolve.modules.push(path.resolve("./"));
     config.node = {
-      fs: "empty",
-      tls: "empty",
-      net: "empty"
+        fs: "empty",
+        tls: "empty",
+        net: "empty",
     };
-    const { dir, isServer } = options
+    const { dir } = options
 
     config.module.rules.push(
         {
@@ -58,11 +53,11 @@ module.exports = withPlugins([[withImages],[withSourceMaps], [withMDX({
     //
     // So ask Webpack to replace @sentry/node imports with @sentry/browser when
     // building the browser's bundle
-    if (!isServer) {
+    if (!config.isServer) {
       config.resolve.alias['@sentry/node'] = '@sentry/browser'
     }
 
-      if (isServer) {
+      if (config.isServer) {
           require('src/utils/sitemap/generate-sitemap')
       }
 
