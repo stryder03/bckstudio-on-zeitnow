@@ -21,9 +21,9 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
   webpack(config, options) {
     config.resolve.modules.push(path.resolve("./"));
     config.node = {
-      fs: "empty",
-      tls: "empty",
-      net: "empty"
+        fs: "empty",
+        tls: "empty",
+        net: "empty",
     };
     const { dir } = options
 
@@ -53,9 +53,13 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
     //
     // So ask Webpack to replace @sentry/node imports with @sentry/browser when
     // building the browser's bundle
-    if (!options.isServer) {
+    if (!config.isServer) {
       config.resolve.alias['@sentry/node'] = '@sentry/browser'
     }
+
+      if (config.isServer) {
+          require('src/utils/sitemap/generate-sitemap')
+      }
 
     // When all the Sentry configuration env variables are available/configured
     // The Sentry webpack plugin gets pushed to the webpack plugins to build
@@ -77,7 +81,8 @@ module.exports = withPlugins([[withImages],[withSourceMaps]], {
               urlPrefix: '~/_next',
               release: VERCEL_GITHUB_COMMIT_SHA,
               deploy: {
-                  env: DEPLOYMENT_ENV
+                  env: DEPLOYMENT_ENV,
+
               }
           })
       )
