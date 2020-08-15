@@ -14,7 +14,7 @@ import {ParallaxProvider} from "react-scroll-parallax/cjs";
 import * as Sentry from "@sentry/node";
 import {useUser} from "../utils/auth/useUser";
 import {BckAppProps} from "../index";
-import {initGA, logPageView} from "src/utils/analytics/analytics"
+import {initGA, logPageView} from "src/utils/analytics/analytics";
 
 if (process.env.NODE_ENV === "production") {
     Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN});
@@ -52,17 +52,17 @@ const usePageTracking = (userId: string | undefined, path: string, trackingId: s
 export default function App(props: BckAppProps) {
     const { Component, pageProps, err } = props;
     const {user, logout} = useUser();
-    const [path, setPath] = useState();
+    const [path, setPath] = useState()
 
     useEffect(() => {
-        if (path !== window.location.pathname) {
+        if(path !== window.location.pathname) {
             // @ts-ignore
-            setPath(window.location.pathname)
+            setPath(window.location.pathname);
         }
     })
 
     // @ts-ignore
-    usePageTracking(user ? user.id : undefined, path, process.env.NEXT_PUBLIC_GA_TRACKING_ID)
+    usePageTracking(user ? user.id : undefined, path!, process.env.NEXT_PUBLIC_GA_TRACKING_ID!)
 
     return (
       <React.Fragment>
@@ -77,7 +77,7 @@ export default function App(props: BckAppProps) {
           </Head>
           <ThemeProvider theme={theme}>
               <ParallaxProvider>
-                  <Component {...pageProps} err={err} user={user} logout={async () => { await logout()}}/>
+                    <Component {...pageProps} err={err} user={user} logout={async () => { await logout()}}/>
               </ParallaxProvider>
           </ThemeProvider>
       </React.Fragment>

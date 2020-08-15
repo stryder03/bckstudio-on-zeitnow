@@ -16,8 +16,9 @@ import gql from "graphql-tag";
 import {queryCMS} from "../utils/queryCMS";
 import {ShowPreview} from "../components/ShowPreview/showPreview";
 import {ClassNameMap} from "@material-ui/styles";
+import MD from 'react-markdown'
 
-const useStyles = makeStyles((theme) => createStyles({
+const useStyles = makeStyles(() => createStyles({
     playBrand,
     brandFont,
     // @ts-ignore
@@ -33,6 +34,7 @@ const query = gql`{
                 html
                 markdown
             }
+            markdown
         }
     }
 }`;
@@ -69,17 +71,18 @@ export default function faq(props: FaqProps) {
                             Frequent <span className={classes.playBrand}>Questions</span>
                         </Typography>
                     </BrandedHeader>
-                    { faqQueryResult.faqPage.listOfFaQs.map((faq) =>(
-                        <Accordion>
+                    { faqQueryResult.faqPage.listOfFaQs.map((faq, key) =>(
+                        <Accordion key={key}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon/>}
-                                aria-controls="ashleah-elias-bio-content"
-                                id="ashleah-elias-bio-header"
+                                aria-controls="show-faq-answer"
                             >
-                                <h2 className={classNames(classes.cardTitle)}>{faq.question}</h2>
+                                <Typography variant={"h6"} className={classNames(classes.cardTitle)} component={"h2"}>{faq.question}</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Typography variant={"body1"} align={"left"} children={faq.answer.markdown}/>
+                                <Typography variant={"body2"}>
+                                    <MD source={faq.answer.markdown}/>
+                                </Typography>
                             </AccordionDetails>
                         </Accordion>
                     ))}

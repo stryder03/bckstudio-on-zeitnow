@@ -38,3 +38,5 @@ yarn-error.log*
 *.graphql
 .vercel
 /src/utils/Scripts/ScratchScripts/
+/public/robots.txt
+/public/sitemap.xml
