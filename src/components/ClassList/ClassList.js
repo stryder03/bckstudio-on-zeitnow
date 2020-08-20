@@ -60,6 +60,11 @@ const useStyles = makeStyles((theme) => ({
     priceList: {
         marginTop: "0"
     },
+    textBody: {
+        maxWidth: "50vw",
+        margin: "auto",
+        paddingBottom: "2.5rem"
+    },
 }));
 
 export default function ClassList(props) {
@@ -94,8 +99,11 @@ export default function ClassList(props) {
 
 
     return <React.Fragment>
-        <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders}>
+        <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders} id={title === "Encounters" ? "play" : ""} name={title === "Encounters" ? "play" : ""}>
             {title}
+        </Typography>
+        <Typography variant={"body1"} align={"center"} className={classes.textBody}>
+            {classList.description}
         </Typography>
             {classList.classes.map((clayClass, index) => (
                 <React.Fragment key={index}>

@@ -10,6 +10,7 @@ import {brandFont, playBrand} from "../../assets/jss/nextjs-material-kit";
 import Typography from "@material-ui/core/Typography";
 import {Hidden} from "@material-ui/core";
 import PrimaryContainedButton from "../../components/Buttons/PrimaryContainedButton";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   clp_exclaim: {
@@ -85,28 +86,36 @@ export default function CLPSection() {
               Join us for a clay encounter. We have a variety to choose from every month!
             </Typography>
             <Hidden mdUp>
-              <PrimaryContainedButton href={"classes-encounters/#play"}>
-                Come Play
-              </PrimaryContainedButton>
+              <Link href={"classes-encounters/#play"} passHref>
+                <PrimaryContainedButton>
+                  Come Play
+                </PrimaryContainedButton>
+              </Link>
             </Hidden>
           </GridItem>
           <Hidden smDown>
             <GridItem md={12}>
               <GridContainer justify={"center"} alignItems={"center"}>
                 <GridItem md={3}>
-                    <PrimaryContainedButton href={"/memberships"}>
+                  <Link href={"/memberships"} passHref>
+                    <PrimaryContainedButton >
                       Come Create
                     </PrimaryContainedButton>
+                  </Link>
                 </GridItem>
                 <GridItem md={3}>
-                  <PrimaryContainedButton href={"/classes-encounters"}>
-                    Come Learn
-                  </PrimaryContainedButton>
+                  <Link href={"/classes-encounters"} passHref>
+                    <PrimaryContainedButton>
+                      Come Learn
+                    </PrimaryContainedButton>
+                  </Link>
                 </GridItem>
                 <GridItem md={3}>
-                  <PrimaryContainedButton href={"classes-encounters/#play"}>
-                    Come Play
-                  </PrimaryContainedButton>
+                  <Link href={"classes-encounters#play"} passHref scroll={false}>
+                    <PrimaryContainedButton>
+                      Come Play
+                    </PrimaryContainedButton>
+                  </Link>
                 </GridItem>
               </GridContainer>
             </GridItem>
