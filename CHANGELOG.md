@@ -1,3 +1,12 @@
+# [1.13.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.12.0...v1.13.0) (2020-08-20)
+
+
+### Features
+
+* **GraphCMS:** Added support for Encounters type classes ([16f5a53](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/16f5a536885c4e319a23d811b4ef5c520e6430e5))
+
+
+
 # [1.12.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.11.0...v1.12.0) (2020-08-15)
 
 
@@ -45,16 +54,6 @@
 ### Bug Fixes
 
 * **api:** added preview warning and exit button ([daff06e](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/daff06e4d9b3290bec89a31eb65f9304baecfeb5))
-
-
-
-# [1.9.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.8.0...v1.9.0) (2020-08-13)
-
-
-### Features
-
-* **Auth:** Firebase Auth working ([9bbbf0d](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/9bbbf0d99f548dad40914f6555cff6a94d68262b))
-* **Auth:** implement basic firebase auth ([c08271f](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/c08271f5b533c882fbc85f8df0a1a1bae3be80bd))
 
 
 
