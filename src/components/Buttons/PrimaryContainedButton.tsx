@@ -31,10 +31,10 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const PrimaryContainedButton = (props: ButtonProps) => {
     const classes = useStyles(props);
-    const {size, ...rest} = props;
+    const {size, href, ...rest} = props;
 
     return (
-        <Button {...rest} className={classes.root} variant={"contained"} color={"primary"} size={size}>
+        <Button {...rest} className={classes.root} variant={"contained"} color={"primary"} size={size} href={href}>
         </Button>
     );
 };
