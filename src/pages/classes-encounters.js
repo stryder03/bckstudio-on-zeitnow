@@ -99,8 +99,8 @@ const useStyles = makeStyles(style);
 const classCategories = gql`{
     classCategories {
         categoryTitle
-        classes(where: {displayInClassesView: true}){
-            displayInClassesView
+        description
+        classes{
             className
             displayTitle
             instructor {
@@ -198,20 +198,6 @@ export default function ClassesEncounters(props) {
                     </div>
                 </BrandedHeader>
                 {classLists(classListQueryResult)}
-                <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders} id={"play"}
-                            name={"play"}>
-                    Encounters
-                </Typography>
-                <Typography variant={"body1"} align={"center"} className={classes.textBody}>
-                    Encounters are fun-centric events designed to bring our community together for a few hours and
-                    create something that can be taken home and enjoyed. We add new encounters weekly, so check back
-                    often!
-                </Typography>
-                <iframe
-                    src="https://app.acuityscheduling.com/schedule.php?owner=17880488&owner=17880488&appointmentType=category:Encounters"
-                    width="100%"
-                    height="800"
-                    frameBorder="0"/>
             </Layout>
         </div>
     );

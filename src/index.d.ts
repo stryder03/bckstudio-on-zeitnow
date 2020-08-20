@@ -8,7 +8,6 @@ import {AppProps} from "next/app"
 import {Event} from "@sentry/types"
 import {ReactNode} from "react";
 import firebase from "firebase/app"
-import {User} from "firebase";
 
 export interface BckUser{
     id: string,
@@ -40,7 +39,7 @@ export interface PricingProps extends BckAppProps{
     maxWidth: "lg" | "sm",
 }
 
-export interface FirebaseUser extends User{
+export interface FirebaseUser extends firebase.User{
     xa?: string,
 }
 
