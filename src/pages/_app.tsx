@@ -45,14 +45,16 @@ const usePageTracking = (userId: string | undefined, path: string, trackingId: s
     }, [userId, trackingId]);
 
     useEffect(() => {
-        logPageView(path)
+        if(path) {
+            logPageView(path)
+        }
     }, [path]);
 }
 
 export default function App(props: BckAppProps) {
     const { Component, pageProps, err } = props;
     const {user, logout} = useUser();
-    const [path, setPath] = useState(window.location.pathname)
+    const [path, setPath] = useState()
 
     useEffect(() => {
         if(path !== window.location.pathname) {
