@@ -14,7 +14,14 @@ import InstrBioDialog from "../BioDialog/InstrBioDialog";
 const useStyles = makeStyles((theme) => ({
     categoryHeaders: {
         color: theme.palette.primary.main,
-            marginTop: "2.5rem"
+        textAlign: "center",
+        paddingTop: "4vh"
+    },
+    titleContainer: {
+        backgroundColor: theme.palette.secondary.main,
+        height: "20vh",
+        borderRadius: "0.3rem"
+
     },
     classHeaders: {
         ...brandFont,
@@ -43,7 +50,8 @@ const useStyles = makeStyles((theme) => ({
         ...mainElement,
         ...dividerBar,
         marginTop: "2rem",
-        marginBottom: "2rem"
+        marginBottom: "2rem",
+        boxShadow: "0 0.5em 0.625em -0.313em rgba(0, 0, 0, 0.2)"
     },
     strike: {
         marginTop: "1rem",
@@ -69,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ClassList(props) {
     const classes = useStyles();
-    const { classList, title, defaultInstructor } = props;
+    const { classList, title, defaultInstructor, index } = props;
 
     const disableBookDialogButton = (clayClass, deviceSize) => {
 
@@ -97,21 +105,31 @@ export default function ClassList(props) {
         return clayClass.displayTitle
     };
 
+    const setBackgroundColor = () => {
+        if (index !== 0) {
+            return classes.titleContainer;
+        }
+        return null;
+    }
 
     return <React.Fragment>
-        <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders} id={title === "Encounters" ? "play" : ""} name={title === "Encounters" ? "play" : ""}>
-            {title}
-        </Typography>
-        <Typography variant={"body1"} align={"center"} className={classes.textBody}>
-            {classList.description}
-        </Typography>
+        <div className={setBackgroundColor()}>
+            <Typography variant={"h2"} align={"center"} className={classes.categoryHeaders} id={title === "Encounters" ? "play" : ""} name={title === "Encounters" ? "play" : ""}>
+                {title}
+            </Typography>
+            <Typography variant={"body1"} align={"center"} className={classes.textBody}>
+                {classList.description}
+            </Typography>
+        </div>
             {classList.classes.map((clayClass, index) => (
                 <React.Fragment key={index}>
+                    {index !== 0 ?  <div className={classes.raisedDivider}/> : null}
                     <GridContainer className={classes.container} alignItems={"center"}>
                         <GridItem xs={12} sm={12} md={3}>
                             <Typography variant={"h5"} align={"center"} className={classNames(classes.classHeaders)}>
                                 {getClassTitle(clayClass)}
                             </Typography>
+
                             <Typography variant={"subtitle1"} component={"p"} align={"center"} className={classes.classSubHeaders}>
                                 With: <br/><InstrBioDialog instr={clayClass.instructor} defaultInstructor={defaultInstructor}/><br/>
                             </Typography>
@@ -149,7 +167,6 @@ export default function ClassList(props) {
                             {disableBookDialogButton(clayClass, "small")}
                         </div>
                     </Hidden>
-                        <div className={classes.raisedDivider}/>
                 </React.Fragment>
             ))}
         </React.Fragment>
