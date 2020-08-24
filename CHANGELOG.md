@@ -1,3 +1,13 @@
+## [1.13.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.13.0...v1.13.1) (2020-08-22)
+
+
+### Bug Fixes
+
+* **Analytics:** pageview wont send if path undefined ([bf26fb6](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/bf26fb6f4a21f5a82aac76cb377bc85313691b3a))
+* **Analytics:** Removed 404 from sitemap, path now defaults to current url ([5364363](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/536436394c7f2fcc4323ed2260d18622d1f97e80))
+
+
+
 # [1.13.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.12.0...v1.13.0) (2020-08-20)
 
 
@@ -45,15 +55,6 @@
 ### Features
 
 * **ReactGA:** converted to react-ga use ([eb2cc99](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/eb2cc995aa79c10cc10aa4b26289e324548db01b))
-
-
-
-## [1.9.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.9.0...v1.9.1) (2020-08-13)
-
-
-### Bug Fixes
-
-* **api:** added preview warning and exit button ([daff06e](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/daff06e4d9b3290bec89a31eb65f9304baecfeb5))
 
 
 
