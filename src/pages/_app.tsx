@@ -45,7 +45,9 @@ const usePageTracking = (userId: string | undefined, path: string, trackingId: s
     }, [userId, trackingId]);
 
     useEffect(() => {
-        logPageView(path)
+        if(path) {
+            logPageView(path)
+        }
     }, [path]);
 }
 
@@ -62,7 +64,7 @@ export default function App(props: BckAppProps) {
     })
 
     // @ts-ignore
-    usePageTracking(user ? user.id : undefined, path!, process.env.NEXT_PUBLIC_GA_TRACKING_ID!)
+    usePageTracking(user ? user.id : undefined, path, process.env.NEXT_PUBLIC_GA_TRACKING_ID!)
 
     return (
       <React.Fragment>

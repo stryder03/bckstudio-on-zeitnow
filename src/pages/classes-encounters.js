@@ -164,8 +164,8 @@ export default function ClassesEncounters(props) {
     const classLists = (classList) => {
 
         let result = [];
-        classList.classCategories.map((category) => {
-            result.push(<ClassList classList={category} key={category.categoryTitle} title={category.categoryTitle} defaultInstructor={defaultInstructor}/>)
+        classList.classCategories.map((category, index) => {
+            result.push(<ClassList index={index} classList={category} key={category.categoryTitle} title={category.categoryTitle} defaultInstructor={defaultInstructor}/>)
         })
         return result
     };

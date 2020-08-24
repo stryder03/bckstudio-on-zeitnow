@@ -27,7 +27,7 @@ export default function ConfirmationPage() {
     return (
         <div>
             <Head>
-                <meta name="robots" content="noindex"/>
+                <meta name="robots" content="noindex, nofollow"/>
                 <title>Confirmation • Bozeman Community Kiln</title>
             </Head>
             <div>

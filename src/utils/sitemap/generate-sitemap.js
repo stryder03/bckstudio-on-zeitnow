@@ -21,6 +21,8 @@ async function generateSitemap() {
         '!src/pages/**/_*.tsx',
         '!src/pages/**/*.test',
         '!src/pages/api',
+        '!src/pages/404.js',
+        '!src/pages/paypal-confirmation'
     ])
     const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(addPage).join('\n')}
