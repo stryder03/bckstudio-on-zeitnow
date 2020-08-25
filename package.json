@@ -57,7 +57,7 @@
     "react-scroll-parallax": "^2.3.4",
     "react-slick": "^0.27.10",
     "react-swipeable-views": "^0.13.9",
-    "vercel": "^19.2.0"
+    "vercel": "^20.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
