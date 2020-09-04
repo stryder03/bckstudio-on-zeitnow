@@ -40,7 +40,7 @@ export default async (req: NowRequest, res: NowResponse) => {
 
         // address attributes for Live mode
         const liveAttributes: SendData = {
-            to: 'ashleah@bckstudio.com, heather@bckstudio.com',
+            to: 'studio@bckstudio.com',
             bcc: 'justin@bckstudio.com',
             subject: req.body.firstName + ' ' + req.body.lastName + ' sent CONTACT FORM (bckstudio.com)',
             // Message has to come from domain verified address
