@@ -11,7 +11,7 @@ import {ThemeProvider} from "@material-ui/styles";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
-import * as Sentry from "@sentry/node";
+import * as Sentry from "@sentry/node"
 import {useUser} from "../utils/auth/useUser";
 import {BckAppProps} from "../index";
 import {initGA, logPageView} from "src/utils/analytics/analytics";
