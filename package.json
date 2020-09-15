@@ -17,7 +17,7 @@
     "@material-ui/styles": "^4.10.0",
     "@mdx-js/loader": "^1.6.17",
     "@next/mdx": "^9.5.3",
-    "@sentry/react": "^5.22.3",
+    "@sentry/react": "^5.23.0",
     "@types/classnames": "^2.2.10",
     "@types/js-cookie": "^2.2.6",
     "@types/mailgun-js": "^0.22.10",
