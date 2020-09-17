@@ -44,7 +44,7 @@
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.1",
     "node-sass": "^4.14.1",
-    "nouislider": "^14.6.1",
+    "nouislider": "^14.6.2",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
