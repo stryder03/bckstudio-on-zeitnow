@@ -63,7 +63,7 @@
     "@babel/cli": "^7.11.5",
     "@babel/plugin-transform-flow-strip-types": "^7.10.4",
     "@sentry/node": "^5.25.0",
-    "@jest/globals": "^26.5.2",
+    "@jest/globals": "^26.5.3",
     "@sentry/webpack-plugin": "^1.13.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-graphql-tag": "^3.1.0",
