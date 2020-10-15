@@ -47,7 +47,7 @@
     "nouislider": "^14.6.2",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-datetime": "^3.0.4",
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
