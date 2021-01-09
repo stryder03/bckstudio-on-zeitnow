@@ -66,3 +66,7 @@ export interface faqQueryProp{
 export interface FaqProps extends BckAppProps{
     faqQueryResult: faqQueryProp
 }
+
+export interface MD {
+    source: faq
+}

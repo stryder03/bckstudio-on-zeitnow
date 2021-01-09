@@ -1,11 +1,11 @@
 import React from "react";
-import Document, {Head, Main, NextScript} from "next/document";
+import Document, {Head, Html, Main, NextScript} from "next/document";
 import {ServerStyleSheets} from "@material-ui/styles";
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
       <Head>
           <link rel="apple-touch-icon" sizes="180x180" href={require("../../public/apple-touch-icon.png")}/>
           <link rel="icon" type="image/png" sizes="32x32" href={require("../../public/favicon-32x32.png")}/>
@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
