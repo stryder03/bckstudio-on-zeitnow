@@ -56,6 +56,7 @@ export default function faq(props: FaqProps) {
     const classes: ClassNameMap = useStyles();
     const {faqQueryResult, preview} = props;
 
+
     return (
         <React.Fragment>
             <Head>
@@ -81,7 +82,9 @@ export default function faq(props: FaqProps) {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography variant={"body2"}>
-                                    <MD source={faq.answer.markdown}/>
+                                    { // @ts-ignore
+                                        <MD source={faq.answer.markdown}/>
+                                    }
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
