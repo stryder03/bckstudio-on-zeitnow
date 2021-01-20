@@ -60,7 +60,7 @@ export async function getStaticProps(context) {
 }
 
 export default function homePage(props) {
-    const {staffPictures, preview } = props
+    const {staffPictures} = props
     return (
         <div>
             <Head>
