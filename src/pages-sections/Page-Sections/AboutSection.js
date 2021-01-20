@@ -4,12 +4,11 @@ import classNames from "classnames";
 // @material-ui/core components
 import {makeStyles} from "@material-ui/core/styles";
 // core components
+import Image from "next/image";
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
 import Card from "../../components/Card/Card.js";
 import CardBody from "../../components/Card/CardBody";
-import ale from "../../assets/img/faces/ale_01.jpeg";
-import hbh from "../../assets/img/faces/hbh_01.jpeg";
 import hCones from "../../assets/img/bck/svg/bckHorizonalCones.svg";
 import Typography from "@material-ui/core/Typography";
 import {cardTitle, title} from "../../assets/jss/nextjs-material-kit";
@@ -71,9 +70,9 @@ const style = ({
 });
 const useStyles = makeStyles(style);
 
-
-export default function AboutSection() {
+export default function AboutSection(props) {
   const classes = useStyles();
+  const { staffPictures} = props
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
@@ -103,7 +102,7 @@ export default function AboutSection() {
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={ale} alt="Studio Director" className={imageClasses} />
+                <Image src={staffPictures.ashleah.instructor.staffPicture.url} width={staffPictures.ashleah.instructor.staffPicture.width} height={staffPictures.ashleah.instructor.staffPicture.height} alt={staffPictures.ashleah.instructor.staffPicture.altText} className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Ashleah Elias
@@ -149,7 +148,7 @@ export default function AboutSection() {
           <GridItem xs={12} sm={12} md={6}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={hbh} alt="Director of Operations" className={imageClasses} />
+                <Image src={staffPictures.heather.instructor.staffPicture.url} width={staffPictures.heather.instructor.staffPicture.width} height={staffPictures.heather.instructor.staffPicture.height} alt={staffPictures.heather.instructor.staffPicture.altText} className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Heather Hodapp
