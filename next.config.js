@@ -22,6 +22,10 @@ const {
 module.exports = withPlugins([[withImages],[withSourceMaps],[withMDX]], {
     // Allow mdx and md files to be pages
     pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
+    // Allowed domains for image optimization
+    images: {
+        domains: ['media.graphcms.com'],
+    },
     webpack(config, options) {
         config.resolve.modules.push(path.resolve("./"));
         config.node = {

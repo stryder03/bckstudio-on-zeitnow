@@ -107,6 +107,9 @@ const classCategories = gql`{
                 firstName
                 lastName
                 headshotImage {
+                    altText
+                    height
+                    width
                     url
                 }
                 bio {
