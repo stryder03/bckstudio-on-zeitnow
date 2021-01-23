@@ -13,7 +13,7 @@ import Image from "next/image";
 const useStyles = makeStyles(() => createStyles({
     ...styles,
     vertCones: {
-        marginTop: "50rem"
+        marginTop: "2rem"
     },
     horizCones: {
         marginTop: "2rem"
@@ -42,10 +42,14 @@ export default function BusinessInfo(props) {
                         Saturday 9:00AM - 6:30PM<br/>Closed Sunday &amp; Monday</Typography>
                 </GridItem>
                 <Hidden smDown>
-                    <Image src={vertCones} alt={"Vertical divider which shows temperature cones at various stages of drooping"} height={"160"} width={"12"} className={classes.vertCones}/>
+                    <div className={classes.vertCones}>
+                        <Image src={vertCones} alt={"Vertical divider which shows temperature cones at various stages of drooping"} height={"160"} width={"12"}/>
+                    </div>
                 </Hidden>
                 <Hidden mdUp>
-                    <Image src={horizCones} alt={"Horizontal divider which shows temperature cones at various stages of drooping"} height={"32"} width={"240"} className={classes.horizCones}/>
+                    <div className={classes.horizCones}>
+                        <Image src={horizCones} alt={"Horizontal divider which shows temperature cones at various stages of drooping"} height={"32"} width={"240"}/>
+                    </div>
                 </Hidden>
                 <GridItem xs={12} sm={12} md={3}>
                     <h2 className={classNames(classes.title, classes.centered)} align={"center"}>Location</h2>

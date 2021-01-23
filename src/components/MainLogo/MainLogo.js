@@ -4,6 +4,7 @@ import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import kilnLogo from "../../assets/img/bck/svg/bckHorizontalLogo.svg";
 import React from "react";
+import Image from "next/image";
 
 const style = {
     ...styles,
@@ -21,7 +22,7 @@ export default function MainLogo() {
             <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                     <Hidden smDown>
-                        <img src={kilnLogo} alt={"Bozeman Community Kiln"} height={"197px"}/>
+                        <Image src={kilnLogo} alt={"Bozeman Community Kiln"} height={"197"} width={"704"}/>
                     </Hidden>
                 </GridItem>
             </GridContainer>
