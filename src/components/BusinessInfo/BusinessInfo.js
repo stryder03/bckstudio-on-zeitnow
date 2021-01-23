@@ -8,11 +8,14 @@ import horizCones from "src/assets/img/bck/svg/bckHorizonalCones.svg";
 import styles from "src/assets/jss/nextjs-material-kit/components/businessInfoStyle";
 import {Hidden} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
+import Image from "next/image";
 
 const useStyles = makeStyles(() => createStyles({
     ...styles,
+    vertCones: {
+        marginTop: "2rem"
+    },
     horizCones: {
-        maxWidth: "15rem",
         marginTop: "2rem"
     },
     phone: {
@@ -39,10 +42,14 @@ export default function BusinessInfo(props) {
                         Saturday 9:00AM - 6:30PM<br/>Closed Sunday &amp; Monday</Typography>
                 </GridItem>
                 <Hidden smDown>
-                    <img src={vertCones} alt={""} className={classes.verticalCones}/>
+                    <div className={classes.vertCones}>
+                        <Image src={vertCones} alt={"Vertical divider which shows temperature cones at various stages of drooping"} height={"160"} width={"12"}/>
+                    </div>
                 </Hidden>
                 <Hidden mdUp>
-                    <img src={horizCones} alt={""} className={classes.horizCones}/>
+                    <div className={classes.horizCones}>
+                        <Image src={horizCones} alt={"Horizontal divider which shows temperature cones at various stages of drooping"} height={"32"} width={"240"}/>
+                    </div>
                 </Hidden>
                 <GridItem xs={12} sm={12} md={3}>
                     <h2 className={classNames(classes.title, classes.centered)} align={"center"}>Location</h2>
