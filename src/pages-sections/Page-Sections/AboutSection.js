@@ -72,7 +72,7 @@ const useStyles = makeStyles(style);
 
 export default function AboutSection(props) {
   const classes = useStyles();
-  const { staffPictures} = props
+  const { staffPictures } = props
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
