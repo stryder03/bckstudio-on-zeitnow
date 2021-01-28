@@ -1,3 +1,12 @@
+## [1.14.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.14.0...v1.14.1) (2021-01-28)
+
+
+### Bug Fixes
+
+* **MaterialUI:** ThemeProvider now comes from core, not style ([a0cb0ad](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/a0cb0ad4a87ac238b030c8c45a6567f123b8ded7))
+
+
+
 # [1.14.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.13.1...v1.14.0) (2021-01-20)
 
 
@@ -38,17 +47,6 @@
 ### Features
 
 * **Markdown:** Markdown support for cms content ([a2c30ae](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/a2c30ae6fff2d53c8db8b0f2207491d82f2758d4))
-
-
-
-# [1.11.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.10.0...v1.11.0) (2020-08-14)
-
-
-### Features
-
-* **FAQ:** created FAQ page tied to graphcms ([1cd71ee](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/1cd71ee9dd7818220a7fa903dec47900eaa9ec78))
-* **sitemap:** Sitemap and robots.txt auto generated ([33e3d31](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/33e3d31e76525f2215dc13a6a7208dd301ac9c7f))
-* **sitemap-robots:** auto generate sitemap and robots.txt for production ([13fb17a](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/13fb17a1d2ce19d360b40ec3a64c4d994b530fff))
 
 
 
