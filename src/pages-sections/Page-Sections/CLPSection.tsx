@@ -97,30 +97,24 @@ export default function CLPSection() {
             <GridItem md={12}>
               <GridContainer justify={"center"} alignItems={"center"}>
                 <GridItem md={3}>
-                  <Link href={"/memberships"} passHref>
-                    <PrimaryContainedButton >
-                      Come Create
-                    </PrimaryContainedButton>
-                  </Link>
+                  <PrimaryContainedButton href={"/memberships"} >
+                    Come Create
+                  </PrimaryContainedButton>
                 </GridItem>
                 <GridItem md={3}>
-                  <Link href={"/classes-encounters"} passHref>
-                    <PrimaryContainedButton>
-                      Come Learn
-                    </PrimaryContainedButton>
-                  </Link>
+                  <PrimaryContainedButton href={"/classes-encounters"}>
+                    Come Learn
+                  </PrimaryContainedButton>
                 </GridItem>
                 <GridItem md={3}>
-                  <Link href={"classes-encounters#play"} passHref scroll={false}>
-                    <PrimaryContainedButton>
-                      Come Play
-                    </PrimaryContainedButton>
-                  </Link>
+                  <PrimaryContainedButton href={"classes-encounters#play"}>
+                    Come Play
+                  </PrimaryContainedButton>
                 </GridItem>
               </GridContainer>
             </GridItem>
           </Hidden>
         </GridContainer>
-    </div>
+      </div>
   )
 }
