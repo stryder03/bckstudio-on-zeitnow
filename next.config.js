@@ -20,6 +20,7 @@ const {
 } = process.env
 
 module.exports = withPlugins([[withImages],[withSourceMaps],[withMDX]], {
+    productionBrowserSourceMaps: true,
     // Allow mdx and md files to be pages
     pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
     // Allowed domains for image optimization
