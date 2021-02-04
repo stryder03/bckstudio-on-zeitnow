@@ -1,3 +1,15 @@
+## [1.14.2](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.14.1...v1.14.2) (2021-02-04)
+
+
+### Bug Fixes
+
+* **auth:** removed auth ([4815040](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/4815040cf7c208b8d767454eeb5f4173791f173a))
+* **auth:** removed auth ([d5c0205](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/d5c0205ac6351a91e988ff04bca37610d2f0fc96))
+* **auth:** removed auth ([128d81d](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/128d81d8d1b24652efe696b8791de730b734de36))
+* **react:** revert react to v16 ([6e15528](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/6e155287302fd117a09610c73b103f1831d61043))
+
+
+
 ## [1.14.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.14.0...v1.14.1) (2021-01-28)
 
 
@@ -32,21 +44,6 @@
 ### Features
 
 * **GraphCMS:** Added support for Encounters type classes ([16f5a53](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/16f5a536885c4e319a23d811b4ef5c520e6430e5))
-
-
-
-# [1.12.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.11.0...v1.12.0) (2020-08-15)
-
-
-### Bug Fixes
-
-* **sitemap:** adjusted paths for sitemap generation ([db578aa](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/db578aa1d9816a27413a71d6cd77b91a3a7e2a37))
-* **sitemap:** adjusted paths for sitemap generation ([24216db](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/24216db401f5a3536235978a15f9f77cf31cce5f))
-
-
-### Features
-
-* **Markdown:** Markdown support for cms content ([a2c30ae](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/a2c30ae6fff2d53c8db8b0f2207491d82f2758d4))
 
 
 
