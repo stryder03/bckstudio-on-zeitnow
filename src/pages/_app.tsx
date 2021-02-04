@@ -7,7 +7,7 @@ import Router from "next/router";
 import ReactDOM from "react-dom";
 import Head from "next/head";
 import "../assets/scss/nextjs-material-kit.scss?v=1.0.0";
-import {ThemeProvider} from "@material-ui/core";
+import {ThemeProvider} from "@material-ui/core/styles";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import {ParallaxProvider} from "react-scroll-parallax/cjs";
