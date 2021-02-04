@@ -7,7 +7,6 @@ import Router from "next/router";
 import ReactDOM from "react-dom";
 import Head from "next/head";
 import "../assets/scss/nextjs-material-kit.scss?v=1.0.0";
-// import {ThemeProvider} from "@material-ui/styles";
 import {ThemeProvider} from "@material-ui/core";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
