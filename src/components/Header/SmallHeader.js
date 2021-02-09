@@ -23,7 +23,7 @@ function SmallHeader(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const { rightLinks, fixed, absolute, color } = props;
+  const { rightLinks, fixed, absolute, color, size } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes.absolute]: absolute,
@@ -43,7 +43,7 @@ function SmallHeader(props) {
             <Menu />
           </IconButton>
         <LogoButton href={"/"}/>
-        <BookServiceDialog className={classNames(classes.heroButton)} buttonText={"Book Now"}/>
+        <BookServiceDialog className={classNames(classes.heroButton)} buttonText={"Book Now"} size={size}/>
       </Toolbar>
         <Drawer
           variant="temporary"
