@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     color: theme.palette.primary.contrastText,
   },
   gridContainer: {
+    marginTop: "2.5rem",
     padding: "2.5rem 0"
   },
   upper: {
