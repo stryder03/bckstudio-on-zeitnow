@@ -54,7 +54,7 @@
     "vercel": "^21.2.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.17",
+    "@babel/cli": "^7.13.0",
     "@babel/plugin-transform-flow-strip-types": "^7.13.0",
     "@jest/globals": "^26.6.2",
     "@sentry/node": "^6.2.0",
