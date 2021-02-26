@@ -97,7 +97,7 @@ export default function Pricing(props) {
                                     <Button fullWidth={maxWidth !== "sm"}
                                             variant={tier.buttonVariant}
                                             color="primary"
-                                            href={"https://www.paypal.com/cgi-bin/webscr&cmd=_s-xclick&hosted_button_id="+tier.inputValue}
+                                            href={tier.inputValue}
                                             className={classNames(
                                                 tier.buttonVariant === "contained" ? classes.featuredPriceButton : classes.priceButton)}>
                                         {tier.buttonText}
