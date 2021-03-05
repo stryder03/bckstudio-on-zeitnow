@@ -56,7 +56,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function BookServiceDialog(props) {
     const classes = useStyles();
-    const { buttonText, src} = props;
+    const { buttonText, src, size} = props;
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         setOpen(false);
@@ -65,8 +65,11 @@ export default function BookServiceDialog(props) {
         logModalView(serviceName)
         setOpen(!open);
     };
-    return (
-        <div>
+    const button = () => {
+        if(size === "xs") {
+            return
+        }
+        return (
             <PrimaryContainedButton
                 aria-label={"book service"}
                 className={classNames(classes.navLink,classes.bookButton)}
@@ -80,6 +83,11 @@ export default function BookServiceDialog(props) {
                     <Typography variant={"body1"} className={classes.navText}>{buttonText}</Typography>
                 </div>
             </PrimaryContainedButton>
+        )
+    }
+    return (
+        <div>
+            {button()}
 
             <Dialog fullScreen open={open} onBackdropClick={handleClose} TransitionComponent={Transition}>
                 <DialogTitle className={classes.appBar}>

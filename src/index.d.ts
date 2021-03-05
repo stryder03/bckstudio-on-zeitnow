@@ -14,6 +14,23 @@ export interface BckUser{
     token: string | undefined,
     email: string | null
 }
+export interface CmsImage{
+    altText: string,
+    title: string,
+    height: number
+    width: number,
+    url: string,
+}
+
+export interface BioCard{
+    person: {
+        staffBio: string,
+        firstName: string,
+        lastName: string,
+        staffPicture: CmsImage,
+        staffTitle: string
+    }
+}
 
 export interface MembershipTier {
     title: string,
