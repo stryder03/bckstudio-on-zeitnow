@@ -45,7 +45,18 @@ export async function getStaticProps(context) {
 export default function homePage(props) {
     const {staff} = props
 
-    const shuffledStaff = shuffleArray(staff.instructors);
+    const shuffledStaff = () => {
+        const shuffle = shuffleArray(staff.instructors);
+        for (let i = 0; i < shuffle.length; i++) {
+            if (shuffle[i].staffTitle === "Studio Dog" && i !== shuffle.length-1){
+                const temp = shuffle[i];
+                shuffle[i] = shuffle[shuffle.length-1]
+                shuffle[shuffle.length-1] = temp
+            }
+        }
+        return shuffle;
+
+    }
     return (
         <div>
             <Head>
@@ -59,7 +70,7 @@ export default function homePage(props) {
                 <BrandedHeader>
                     <CLPSection/>
                 </BrandedHeader>
-                <AboutSection staff={shuffledStaff}/>
+                <AboutSection staff={shuffledStaff()}/>
             </Layout>
         </div>
     );

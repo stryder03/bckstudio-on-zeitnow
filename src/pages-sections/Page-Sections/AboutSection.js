@@ -103,8 +103,8 @@ export default function AboutSection(props) {
               that history with our visitors.
             </Typography>
           </GridItem>
-          {staff.map((person) => (
-              <GridItem xs={12} sm={12} md={6}>
+          {staff.map((person, index) => (
+              <GridItem xs={12} sm={12} md={6} key={index}>
                 <Card plain>
                   <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                     <Image src={person.staffPicture.url} width={width} height={height} alt={person.staffPicture.altText} title={person.staffPicture.title} className={imageClasses} />
@@ -127,7 +127,7 @@ export default function AboutSection(props) {
                         <h4 className={classNames(classes.cardTitle)}>Learn about {person.firstName}</h4>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Typography variant={"body1"} align={"right"}>
+                        <Typography variant={"body1"} align={"left"}>
                           {person.staffBio.text}
                         </Typography>
                       </AccordionDetails>
