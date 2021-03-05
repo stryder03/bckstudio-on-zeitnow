@@ -64,7 +64,7 @@ export default function HeaderSection(props) {
             </Hidden>
             <div className={classes.banner}>
                 <Hidden smDown>
-                    <Image src={heroImg1} width={"1442"} height={"450"}/>
+                    <Image src={heroImg1} width={"1442"} height={"450"} priority/>
                 </Hidden>
                 <Hidden mdDown>
                     <div className={classes.lgLogo}>
