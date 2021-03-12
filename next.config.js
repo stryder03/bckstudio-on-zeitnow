@@ -1,5 +1,4 @@
 const withPlugins = require("next-compose-plugins");
-const withImages = require("next-images");
 const path = require("path");
 const withSourceMaps = require('@zeit/next-source-maps')({
   devtool: 'hidden-source-map'
@@ -19,7 +18,8 @@ const {
     DEPLOYMENT_ENV
 } = process.env
 
-module.exports = withPlugins([[withImages],[withSourceMaps],[withMDX]], {
+module.exports = withPlugins([[withSourceMaps],[withMDX]], {
+    future: { webpack5: true },
     // Allow mdx and md files to be pages
     pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],
     // Allowed domains for image optimization
@@ -28,11 +28,6 @@ module.exports = withPlugins([[withImages],[withSourceMaps],[withMDX]], {
     },
     webpack(config, options) {
         config.resolve.modules.push(path.resolve("./"));
-        config.node = {
-            fs: "empty",
-            tls: "empty",
-            net: "empty",
-        };
         const { dir } = options
 
         config.module.rules.push(
@@ -45,7 +40,19 @@ module.exports = withPlugins([[withImages],[withSourceMaps],[withMDX]], {
                 loader: 'graphql-tag/loader'
               }
             ]
-          })
+          },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            emitFile: false,
+                        },
+                    },
+                ],
+            }
+            )
 
         // In `pages/_app.js`, Sentry is imported from @sentry/node. While
         // @sentry/browser will run in a Node.js environment, @sentry/node will use

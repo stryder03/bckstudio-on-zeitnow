@@ -9,8 +9,7 @@ import {Hidden, Typography} from "@material-ui/core";
 import GridContainer from "../components/Grid/GridContainer";
 import GridItem from "../components/Grid/GridItem";
 // Images
-import vCone from "src/assets/img/bck/svg/bckVerticalCones.svg"
-import hCone from "src/assets/img/bck/svg/bckHorizonalCones.svg"
+import Image from "next/image";
 
 import {
     brandFont,
@@ -67,12 +66,10 @@ const useStyles = makeStyles((theme) => createStyles({
 
     },
     verticalCones: {
-        height:"20rem",
         marginTop: "1rem",
         marginBottom: "1rem"
     },
     horizontalCones: {
-        width: "10rem",
         margin: "auto"
     },
     whiteHeader: {
@@ -99,6 +96,9 @@ const useStyles = makeStyles((theme) => createStyles({
 
 export default function StudiosPage(props) {
     const classes = useStyles(props);
+
+    const vCone = "https://media.graphcms.com/hfaJUnYBRIC8AySsGbkB"
+    const hCone = "https://media.graphcms.com/MFyMrP7IQisembYJM4k6"
     return (
             <div>
                 <Head>
@@ -125,10 +125,12 @@ export default function StudiosPage(props) {
                                         </Typography>
                                     </GridItem>
                                     <Hidden smDown>
-                                        <img src={vCone} alt={""} className={classes.verticalCones}/>
+                                        <Image src={vCone} alt={"Vertical Cones Divider"} width={"25px"} height={"320px"} className={classes.verticalCones}/>
                                     </Hidden>
                                     <Hidden mdUp>
-                                        <img src={hCone} alt={""} className={classes.horizontalCones}/>
+                                        <div className={classes.horizontalCones}>
+                                            <Image src={hCone} alt={"Horizontal Cones Divider"} width={"160px"} height={"11px"}/>
+                                        </div>
                                     </Hidden>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <ul>
@@ -164,10 +166,12 @@ export default function StudiosPage(props) {
                                         </Typography>
                                     </GridItem>
                                     <Hidden smDown>
-                                        <img src={vCone} alt={""} className={classes.verticalCones}/>
+                                        <Image src={vCone} alt={"Vertical Cones Divider"} width={"25px"} height={"320px"} className={classes.verticalCones}/>
                                     </Hidden>
                                     <Hidden mdUp>
-                                        <img src={hCone} alt={""} className={classes.horizontalCones}/>
+                                        <div className={classes.horizontalCones}>
+                                            <Image src={hCone} alt={"Horizontal Cones Divider"} width={"160px"} height={"11px"} className={classes.horizontalCones}/>
+                                        </div>
                                     </Hidden>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <ul>
@@ -204,10 +208,12 @@ export default function StudiosPage(props) {
                                         </Typography>
                                     </GridItem>
                                     <Hidden smDown>
-                                        <img src={vCone} alt={""} className={classes.verticalCones}/>
+                                        <Image src={vCone} alt={"Vertical Cones Divider"} width={"25px"} height={"320px"} className={classes.verticalCones}/>
                                     </Hidden>
                                     <Hidden mdUp>
-                                        <img src={hCone} alt={""} className={classes.horizontalCones}/>
+                                        <div className={classes.horizontalCones}>
+                                            <Image src={hCone} alt={"Horizontal Cones Divider"} width={"160px"} height={"11px"} className={classes.horizontalCones}/>
+                                        </div>
                                     </Hidden>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <Typography variant={"body1"}>

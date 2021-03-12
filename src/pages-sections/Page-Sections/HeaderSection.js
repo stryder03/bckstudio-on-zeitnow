@@ -1,7 +1,6 @@
 import React from "react";
 import LargeHeader from "../../components/Header/LargeHeader";
 import HeaderLinks from "../../components/Header/HeaderLinks";
-import heroImg1 from "src/assets/img/bck/bckHeroInverted.png";
 import MainLogo from "../../components/MainLogo/MainLogo";
 import {Hidden} from "@material-ui/core";
 import SmallHeader from "../../components/Header/SmallHeader";
@@ -24,7 +23,7 @@ const useStyles = makeStyles(() => createStyles({
 }))
 
 export default function HeaderSection(props) {
-    const { noParallax, ...rest } = props;
+    const { noParallax, ...rest} = props;
     const classes = useStyles();
 
     return (
@@ -64,7 +63,7 @@ export default function HeaderSection(props) {
             </Hidden>
             <div className={classes.banner}>
                 <Hidden smDown>
-                    <Image src={heroImg1} width={"1442"} height={"450"}/>
+                    <Image src={"https://media.graphcms.com/0dKLkonoS7Kw0RXSJhRV"} width={"1442"} height={"450"} priority/>
                 </Hidden>
                 <Hidden mdDown>
                     <div className={classes.lgLogo}>
@@ -76,7 +75,6 @@ export default function HeaderSection(props) {
                         <MainLogo/>
                     </div>
                 </Hidden>
-
             </div>
         </div>
     )
