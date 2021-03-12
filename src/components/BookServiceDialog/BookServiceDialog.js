@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
     },
     navText: {
         fontWeight: "700"
+    },
+    centered: {
+        margin: "auto"
     }
 }));
 
@@ -70,19 +73,21 @@ export default function BookServiceDialog(props) {
             return
         }
         return (
-            <PrimaryContainedButton
-                aria-label={"book service"}
-                className={classNames(classes.navLink,classes.bookButton)}
-                id={"book-header"}
-                onClick={() => {
-                    handleOpen(buttonText)
-                }}
-                size={"small"}
-            >
-                <div className={classes.buttonText}>
-                    <Typography variant={"body1"} className={classes.navText}>{buttonText}</Typography>
-                </div>
-            </PrimaryContainedButton>
+            <div className={classes.centered}>
+                <PrimaryContainedButton
+                    aria-label={"book service"}
+                    className={classNames(classes.navLink,classes.bookButton)}
+                    id={"book-header"}
+                    onClick={() => {
+                        handleOpen(buttonText)
+                    }}
+                    size={"small"}
+                >
+                    <div className={classes.buttonText}>
+                        <Typography variant={"body1"} className={classes.navText}>{buttonText}</Typography>
+                    </div>
+                </PrimaryContainedButton>
+            </div>
         )
     }
     return (

@@ -2,9 +2,8 @@ import classNames from "classnames";
 import Typography from "@material-ui/core/Typography";
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
-import fbIcon from "../../assets/img/bck/Asset-4.png";
-import igIcon from "../../assets/img/bck/Asset-5.png";
 import React from "react";
+import Image from "next/image";
 
 import style from "../../assets/jss/nextjs-material-kit/components/socialMediaInfoStyles";
 import {createStyles, makeStyles} from "@material-ui/core";
@@ -22,12 +21,12 @@ export default function SocialMediaInfo() {
             <GridContainer spacing={0} justify={"center"}>
                 <GridItem xs={2} sm={2} md={1}>
                     <a href={"https://www.facebook.com/BozemanCommunityKiln"} rel="noopener noreferrer" target={"_blank"}>
-                        <img src={fbIcon} alt={"Follow on Facebook"} className={classes.icon}/>
+                        <Image src={"https://media.graphcms.com/8KDmAb7aTjGw6RsxKkIa"} alt={"Follow on Facebook"} className={classes.icon} width={"40px"} height={"40px"}/>
                     </a>
                 </GridItem>
                 <GridItem xs={2} sm={2} md={1}>
                     <a href={"https://www.instagram.com/bckiln/"} rel="noopener noreferrer" target={"_blank"}>
-                        <img src={igIcon} alt={"Follow on Instagram"} className={classes.icon}/>
+                        <Image src={"https://media.graphcms.com/pOsoM4xoSNiGPWq5d1Jg"} alt={"Follow on Instagram"} className={classes.icon} width={"40px"} height={"40px"}/>
                     </a>
                 </GridItem>
             </GridContainer>

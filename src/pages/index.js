@@ -43,7 +43,7 @@ export async function getStaticProps(context) {
 }
 
 export default function homePage(props) {
-    const {staff} = props
+    const { staff } = props
 
     const shuffledStaff = () => {
         const shuffle = shuffleArray(staff.instructors);

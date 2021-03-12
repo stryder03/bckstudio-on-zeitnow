@@ -8,7 +8,13 @@ import {AppProps} from "next/app"
 import {Event} from "@sentry/types"
 import {ReactNode} from "react";
 import firebase from "firebase/app"
+import {ButtonProps} from "@material-ui/core";
 
+export interface LogoButtonProps extends ButtonProps{
+    width: string,
+    height: string,
+    src: string
+}
 export interface BckUser{
     id: string,
     token: string | undefined,

@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import { cardTitle, title } from "../../assets/jss/nextjs-material-kit";
 import Card from "../../components/Card/Card";
 import Image from "next/image";
-import hCones from "../../assets/img/bck/svg/bckHorizonalCones.svg";
 import CardBody from "../../components/Card/CardBody";
 import { Accordion, AccordionDetails, AccordionSummary } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -71,10 +70,11 @@ const useStyles = makeStyles(style);
 
 export default function AboutSection(props) {
   const classes = useStyles();
-  const { staff } = props
+  const { staff } = props;
 
-  const width = 258
-  const height = 336
+  const hCones = "https://media.graphcms.com/MFyMrP7IQisembYJM4k6";
+  const width = 258;
+  const height = 336;
 
   const imageClasses = classNames(
       classes.imgRaised,
@@ -115,7 +115,7 @@ export default function AboutSection(props) {
                     <small className={classes.smallTitle}>{person.staffTitle}</small>
                   </h4>
                   <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                    <img src={hCones} alt={""} className={coneImgClasses}/>
+                    <Image src={hCones} alt={"Horizontal Cones divider"} width={"275px"} height={"18px"} className={coneImgClasses}/>
                   </GridItem>
                   <CardBody>
                     <Accordion>

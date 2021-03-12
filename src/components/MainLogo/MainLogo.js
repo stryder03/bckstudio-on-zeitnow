@@ -2,7 +2,6 @@ import styles from "src/assets/jss/nextjs-material-kit/components/mainLogoStyle"
 import {Hidden, makeStyles} from "@material-ui/core";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
-import kilnLogo from "../../assets/img/bck/svg/bckHorizontalLogo.svg";
 import React from "react";
 import Image from "next/image";
 
@@ -22,7 +21,7 @@ export default function MainLogo() {
             <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                     <Hidden smDown>
-                        <Image src={kilnLogo} alt={"Bozeman Community Kiln"} height={"197"} width={"704"}/>
+                        <Image src={"https://media.graphcms.com/XMAKIRSSVyM1QPf2Y8hG"} alt={"Bozeman Community Kiln"} height={"197"} width={"704"}/>
                     </Hidden>
                 </GridItem>
             </GridContainer>
