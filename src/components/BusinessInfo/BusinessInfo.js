@@ -3,8 +3,6 @@ import classNames from "classnames";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
-import vertCones from "src/assets/img/bck/svg/bckVerticalCones.svg";
-import horizCones from "src/assets/img/bck/svg/bckHorizonalCones.svg";
 import styles from "src/assets/jss/nextjs-material-kit/components/businessInfoStyle";
 import {Hidden} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
@@ -43,12 +41,12 @@ export default function BusinessInfo(props) {
                 </GridItem>
                 <Hidden smDown>
                     <div className={classes.vertCones}>
-                        <Image src={vertCones} alt={"Vertical divider which shows temperature cones at various stages of drooping"} height={"160"} width={"12"}/>
+                        <Image src={"https://media.graphcms.com/hfaJUnYBRIC8AySsGbkB"} alt={"Vertical divider which shows temperature cones at various stages of drooping"} height={"160"} width={"12"}/>
                     </div>
                 </Hidden>
                 <Hidden mdUp>
                     <div className={classes.horizCones}>
-                        <Image src={horizCones} alt={"Horizontal divider which shows temperature cones at various stages of drooping"} height={"32"} width={"240"}/>
+                        <Image src={"https://media.graphcms.com/MFyMrP7IQisembYJM4k6"} alt={"Horizontal divider which shows temperature cones at various stages of drooping"} height={"32"} width={"240"}/>
                     </div>
                 </Hidden>
                 <GridItem xs={12} sm={12} md={3}>

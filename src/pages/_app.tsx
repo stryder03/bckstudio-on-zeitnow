@@ -2,16 +2,16 @@
  * Copyright (c) 2020. Bozeman Community Kiln
  */
 
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Router from "next/router";
 import ReactDOM from "react-dom";
 import Head from "next/head";
 import "../assets/scss/nextjs-material-kit.scss?v=1.0.0";
-import {ThemeProvider} from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../assets/theme";
 import PageChange from "../components/PageChange/PageChange";
 import * as Sentry from "@sentry/node"
-import {BckAppProps} from "../index";
+import { BckAppProps } from "../index";
 
 if (process.env.NODE_ENV === "production") {
     Sentry.init({dsn: process.env.NEXT_PUBLIC_SENTRY_DSN});
@@ -59,7 +59,7 @@ export default function App(props: BckAppProps) {
               <link href="https://fonts.googleapis.com/css2?family=Asap:wght@600;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather+Sans:wght@800&display=swap" rel="stylesheet"/>
           </Head>
           <ThemeProvider theme={theme}>
-              <Component {...pageProps} err={err}/>
+              <Component {...pageProps} err={err} />
           </ThemeProvider>
       </React.Fragment>
     );

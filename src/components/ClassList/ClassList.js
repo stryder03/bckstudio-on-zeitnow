@@ -2,13 +2,12 @@ import {Hidden, Typography} from "@material-ui/core";
 import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import classNames from "classnames";
-import vCone from "../../assets/img/bck/svg/bckVerticalCones.svg";
-import hCone from "../../assets/img/bck/svg/bckHorizonalCones.svg";
 import BookServiceDialog from "../BookServiceDialog/BookServiceDialog";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {brandFont, dividerBar, mainElement} from "../../assets/jss/nextjs-material-kit";
 import InstrBioDialog from "../BioDialog/InstrBioDialog";
+import Image from "next/image";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -31,20 +30,14 @@ const useStyles = makeStyles((theme) => ({
         color: "#606060",
     },
     verticalCones: {
-        height:"20rem",
         marginTop: "1rem",
         marginBottom: "1rem"
     },
     horizontalCones: {
-        width: "10rem",
         margin: "auto"
     },
     bookButton: {
         marginLeft: "30%"
-    },
-    smallButton: {
-        width: "40%",
-        margin: "auto"
     },
     raisedDivider: {
         ...mainElement,
@@ -73,11 +66,17 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         paddingBottom: "2.5rem"
     },
+    button: {
+        margin: "15%"
+    }
 }));
 
 export default function ClassList(props) {
     const classes = useStyles();
     const { classList, title, defaultInstructor, index } = props;
+
+    const vCone = "https://media.graphcms.com/hfaJUnYBRIC8AySsGbkB"
+    const hCone = "https://media.graphcms.com/MFyMrP7IQisembYJM4k6"
 
     const disableBookDialogButton = (clayClass, deviceSize) => {
 
@@ -140,11 +139,12 @@ export default function ClassList(props) {
                             ))}
                         </GridItem>
                         <Hidden smDown>
-                            <img src={vCone} alt={""} className={classes.verticalCones}/>
+                            <Image src={vCone} alt={"Vertical Cones Divider"} width={"25px"} height={"320px"} className={classes.verticalCones}/>
                         </Hidden>
                         <Hidden mdUp>
-                            <img src={hCone} alt={""} className={classes.horizontalCones}/>
-                        </Hidden>
+                            <div className={classes.horizontalCones}>
+                                <Image src={hCone} alt={"Horizontal Cones Divider"} width={"160px"} height={"11px"} className={classes.horizontalCones}/>
+                            </div>                        </Hidden>
                         <GridItem xs={12} sm={12} md={6}>
                             <ul>
                                 {clayClass.classDescriptionList.map( (line, k) => (
@@ -163,7 +163,7 @@ export default function ClassList(props) {
                         </GridItem>
                     </GridContainer>
                     <Hidden lgUp>
-                        <div className={classNames(classes.smallButton)}>
+                        <div className={classes.button}>
                             {disableBookDialogButton(clayClass, "small")}
                         </div>
                     </Hidden>

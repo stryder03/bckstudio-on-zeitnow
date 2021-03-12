@@ -3,27 +3,20 @@
  */
 
 import React from "react";
-import Button, {ButtonProps} from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
 // @ts-ignore
-import logo from "src/assets/img/bck/svg/bckHorizontalLogo.svg"
 import {createStyles, makeStyles} from "@material-ui/core/styles";
-import classNames from "classnames";
+import Image from "next/image";
+import { LogoButtonProps } from "../../index";
 
-const useStyles = makeStyles(() => createStyles({
-    navLogoSm: {
-        height: "2.5rem",
-    },
-    hidden: {
-        display: "none"
-    }
-}))
-const LogoButton = (props: ButtonProps) =>
+const LogoButton = (props: LogoButtonProps) =>
 {
-    const classes = useStyles(props);
-    const {id, hidden, ...rest} = props
+    const {id, hidden, height, width, src, ...rest} = props
     return (
-        <Button {...rest}>
-            <img id={id} src={logo} className={classNames(classes.navLogoSm)} alt={"Bozeman Community Kiln Home"} hidden={hidden}/>
+        <Button hidden={hidden}  {...rest}>
+            <div id={id} hidden={hidden}>
+                <Image src={src} alt={"Bozeman Community Kiln Home"} height={height} width={width}/>
+            </div>
         </Button>
     );
 };

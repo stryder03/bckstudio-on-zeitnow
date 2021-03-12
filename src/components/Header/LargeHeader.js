@@ -67,7 +67,7 @@ function LargeHeader(props) {
   });
 
 
-  const logoButton = (hidden, id) => <LogoButton id={id} href={"/"} hidden={hidden}/>;
+  const logoButton = (hidden, id) => <LogoButton id={id} href={"/"} hidden={hidden} width={"143px"} height={"40px"} src={"https://media.graphcms.com/XMAKIRSSVyM1QPf2Y8hG"}/>;
   return (
       <div>
     <AppBar className={appBarClasses}>
