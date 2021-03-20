@@ -73,15 +73,6 @@ export default function HeaderLinks() {
                   </Link>
               </ListItem>
               <ListItem className={classes.listItem} color={primaryColor}>
-                  <Link href={"/studios"} passHref>
-                      <Button
-                          color="transparent"
-                          className={classes.navLink}
-                      ><Typography variant={"body1"} className={classes.navText}>Studio Rentals</Typography>
-                      </Button>
-                  </Link>
-              </ListItem>
-              <ListItem className={classes.listItem} color={primaryColor}>
                   <Link href={"/contact"} passHref>
                       <Button
                           color="transparent"
