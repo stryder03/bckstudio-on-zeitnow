@@ -16,7 +16,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.3",
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^10.0.9",
+    "@next/mdx": "^10.1.1",
     "@sentry/react": "^6.2.3",
     "@types/classnames": "^2.2.11",
     "@types/mailgun-js": "^0.22.11",
