@@ -104,10 +104,10 @@ export default function ContactForm(props) {
                 { formTitle }
             </Typography>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <TextField id={"firstName"} name={"firstName"} margin={"normal"} fullWidth label={"First Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register({required: true, maxLength: 80})}/>
-                <TextField id={"lastName"} name={"lastName"} margin={"normal"} fullWidth label={"Last Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register({required: true, maxLength: 100})}/>
-                <TextField id={"email"} label={"Email"} name={"email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register({required: true, pattern: /^\S+@\S+$/i})}/>
-                <TextField id={"message"}  name={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} required placeholder="How can we help?" variant={"outlined"} color={"primary"} inputRef={register({required: true, max: 10, min: 5})}/>
+                <TextField id={"firstName"} margin={"normal"} fullWidth label={"First Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register("firstName", {required: true, maxLength: 80})}/>
+                <TextField id={"lastName"} margin={"normal"} fullWidth label={"Last Name"} required variant={"outlined"} color={"primary"} className={classes.textField} inputRef={register("lastName", {required: true, maxLength: 100})}/>
+                <TextField id={"email"} label={"Email"} margin={"normal"} fullWidth required type={"email"} variant={"outlined"} color={"primary"} inputRef={register("email", {required: true, pattern: /^\S+@\S+$/i})}/>
+                <TextField id={"message"} margin={"normal"} label={"Message"} multiline fullWidth rowsMax={10} rows={5} required placeholder="How can we help?" variant={"outlined"} color={"primary"} inputRef={register("message", {required: true, max: 10, min: 5})}/>
                 <br/>
                 <br/>
                 <Button id={"submitForm"} variant={"contained"} color={"secondary"} className={classNames(classes.textArea)} type={"submit"}>Send Message</Button>
