@@ -54,8 +54,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 function Input({ control, name, rules, label, rowsMax= 1, rows = 1, multiline, placeholder=""}) {
     const {
         field: { ref, ...inputProps },
-        fieldState: { invalid, isTouched, isDirty },
-        formState: { touchedFields, dirtyFields }
     } = useController({
         name,
         control,
