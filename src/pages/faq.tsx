@@ -69,7 +69,7 @@ export default function faq(props: FaqProps) {
                 <div>
                     <BrandedHeader>
                         <Typography variant={"h1"} align={"center"} className={classes.brandFont}>
-                            Frequent <span className={classes.playBrand}>Questions</span>
+                            Frequently Asked <span className={classes.playBrand}>Questions</span>
                         </Typography>
                     </BrandedHeader>
                     { faqQueryResult.faqPage.listOfFaQs.map((faq, key) =>(
