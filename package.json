@@ -48,7 +48,7 @@
     "react-markdown": "^6.0.0",
     "react-scroll-parallax": "^2.3.5",
     "react-swipeable-views": "^0.13.9",
-    "sass": "^1.32.8",
+    "sass": "^1.32.10",
     "vercel": "^21.3.2"
   },
   "devDependencies": {
