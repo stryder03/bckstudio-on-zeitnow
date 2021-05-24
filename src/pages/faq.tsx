@@ -83,7 +83,7 @@ export default function faq(props: FaqProps) {
                             <AccordionDetails>
                                 <Typography variant={"body2"}>
                                     { // @ts-ignore
-                                        <MD source={faq.answer.markdown}/>
+                                        <MD source={faq.answer.text}/>
                                     }
                                 </Typography>
                             </AccordionDetails>
