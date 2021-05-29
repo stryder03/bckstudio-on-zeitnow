@@ -3,9 +3,7 @@ const path = require("path");
 const withSourceMaps = require('@zeit/next-source-maps')({
   devtool: 'hidden-source-map'
 });
-const withMDX = require('@next/mdx')({
-    extension: /\.mdx?$/
-})
+
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 const {
@@ -18,7 +16,7 @@ const {
     DEPLOYMENT_ENV
 } = process.env
 
-module.exports = withPlugins([[withSourceMaps],[withMDX]], {
+module.exports = withPlugins([[withSourceMaps]], {
     future: { webpack5: true },
     // Allow mdx and md files to be pages
     pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 'md'],

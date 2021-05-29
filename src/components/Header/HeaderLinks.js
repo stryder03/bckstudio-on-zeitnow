@@ -82,11 +82,11 @@ export default function HeaderLinks() {
                   </Link>
               </ListItem>
               <ListItem className={classes.listItem} color={"#F00"}>
-                  <Link href={"/covid19"} passHref>
+                  <Link href={"/faq"} passHref>
                       <Button
                           color="transparent"
                           className={classes.navLink}
-                      ><Typography variant={"body1"} className={classes.navText}>COVID Updates</Typography>
+                      ><Typography variant={"body1"} className={classes.navText}>FAQ</Typography>
                       </Button>
                   </Link>
               </ListItem>
