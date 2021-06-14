@@ -16,7 +16,7 @@ import gql from "graphql-tag";
 import {queryCMS} from "../utils/queryCMS";
 import {ShowPreview} from "../components/ShowPreview/showPreview";
 import {ClassNameMap} from "@material-ui/styles";
-import MD from 'react-markdown'
+
 
 const useStyles = makeStyles(() => createStyles({
     playBrand,
@@ -56,7 +56,6 @@ export default function faq(props: FaqProps) {
     const classes: ClassNameMap = useStyles();
     const {faqQueryResult, preview} = props;
 
-
     return (
         <React.Fragment>
             <Head>
@@ -69,7 +68,7 @@ export default function faq(props: FaqProps) {
                 <div>
                     <BrandedHeader>
                         <Typography variant={"h1"} align={"center"} className={classes.brandFont}>
-                            Frequently Asked <span className={classes.playBrand}>Questions</span>
+                            Frequent <span className={classes.playBrand}>Questions</span>
                         </Typography>
                     </BrandedHeader>
                     { faqQueryResult.faqPage.listOfFaQs.map((faq, key) =>(
@@ -81,11 +80,7 @@ export default function faq(props: FaqProps) {
                                 <Typography variant={"h6"} className={classNames(classes.cardTitle)} component={"h2"}>{faq.question}</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Typography variant={"body2"}>
-                                    { // @ts-ignore
-                                        <MD source={faq.answer.text}/>
-                                    }
-                                </Typography>
+                                <Typography variant={"body2"} dangerouslySetInnerHTML={{ __html: faq.answer.html!}}/>
                             </AccordionDetails>
                         </Accordion>
                     ))}
@@ -94,4 +89,3 @@ export default function faq(props: FaqProps) {
         </React.Fragment>
     )
 }
-

@@ -73,7 +73,7 @@ export default function ContactForm(props) {
     const errorHandler = (error) => {
         if (process.env.NEXT_PUBLIC_SENTRY_DSN){
             Sentry.withScope(function(scope) {
-                scope.setLevel("error");
+                scope.setLevel(error);
                 Sentry.captureException(error);
             })
         }
