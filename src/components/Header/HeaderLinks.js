@@ -90,15 +90,6 @@ export default function HeaderLinks() {
                       </Button>
                   </Link>
               </ListItem>
-              <ListItem className={classes.listItem} color={"#F00"}>
-                  <Link href={"/faq"} passHref>
-                      <Button
-                          color="transparent"
-                          className={classes.navLink}
-                      ><Typography variant={"body1"} className={classes.navText}>FAQ</Typography>
-                      </Button>
-                  </Link>
-              </ListItem>
               <Hidden mdDown>
                   <ListItem className={classes.listItem}>
                       <BookServiceDialog buttonText={"Book Now"} className={classNames(classes.navLink)}/>
