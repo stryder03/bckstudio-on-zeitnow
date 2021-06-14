@@ -86,7 +86,7 @@ export default function HeaderLinks() {
                       <Button
                           color="transparent"
                           className={classes.navLink}
-                      ><Typography variant={"body1"} className={classes.navText}>FAQ</Typography>
+                      ><Typography variant={"body1"} className={classes.navText}>FAQ Page</Typography>
                       </Button>
                   </Link>
               </ListItem>
