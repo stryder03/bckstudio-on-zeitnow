@@ -1,3 +1,17 @@
+# [1.16.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.15.0...v1.16.0) (2021-04-10)
+
+
+### Bug Fixes
+
+* **react-hook-forms:** v7 now working ([2f64c2c](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/2f64c2c81ef9d7214f297dd63c9f291645815050))
+
+
+### Features
+
+* **react-hook-forms:** BREAKING update to v7 ([31d922c](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/31d922c9383d11e9ae080fbb7778e186ff06b613))
+
+
+
 # [1.15.0](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.14.2...v1.15.0) (2021-03-05)
 
 
@@ -35,16 +49,6 @@
 ### Features
 
 * **next/image:** Converted images to next/image format, load images from cms ([9ede052](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/9ede05243804cd8829baecf9f3472d955c9478b0))
-
-
-
-## [1.13.1](https://github.com/justin-elias/bckstudio-on-zeitnow/compare/v1.13.0...v1.13.1) (2020-08-22)
-
-
-### Bug Fixes
-
-* **Analytics:** pageview wont send if path undefined ([bf26fb6](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/bf26fb6f4a21f5a82aac76cb377bc85313691b3a))
-* **Analytics:** Removed 404 from sitemap, path now defaults to current url ([5364363](https://github.com/justin-elias/bckstudio-on-zeitnow/commit/536436394c7f2fcc4323ed2260d18622d1f97e80))
 
 
 
