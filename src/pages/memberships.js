@@ -100,6 +100,7 @@ export default function MembershipPage(props) {
         <div>
                 <Head>
                     <title>Memberships • Bozeman Community Kiln</title>
+                    <link rel="canonical" href="https://bckstudio.com/memberships/"/>
                     <meta name="description"
                           content="Come Create with us. Pottery membership options to meet your skill and need to work with clay. Use our professional level pottery tools and equipment and earn discounts on classes and more."/>
                 </Head>

@@ -61,6 +61,7 @@ export default function homePage(props) {
         <div>
             <Head>
                 <title>Pottery Classes & Studio • Bozeman Community Kiln</title>
+                <link rel="canonical" href="https://bckstudio.com/"/>
                 <meta name="description"
                       content="Whether you are interested in a first clay encounter, looking for the perfect pottery
                       class, or need your own ceramic studio space, Bozeman Community Kiln is here."

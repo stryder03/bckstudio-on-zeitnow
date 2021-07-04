@@ -45,6 +45,7 @@ export default function ContactPage() {
         <div>
             <Head>
                 <title>CONTACT US • Bozeman Community Kiln</title>
+                <link rel="canonical" href="https://bckstudio.com/contact/"/>
                 <meta name="description"
                       content="Let's connect! Reach your community pottery studio via phone or email from our contact page or visit us in Belgrade next to Stockman Bank."/>
             </Head>
