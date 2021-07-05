@@ -2,7 +2,7 @@ const fs = require('fs')
 const globby = require('globby')
 
 function addPage(page) {
-    const path = page.replace('src/pages', '').replace('.jsx', '').replace('.mdx', '').replace('.js', '').replace('.tsx', '').replace('.ts', '').replace('.md', '')
+    const path = page.replace('src/pages', '/').replace('.jsx', '/').replace('.mdx', '/').replace('.js', '/').replace('.tsx', '/').replace('.ts', '/').replace('.md', '/')
     const route = path === '/index' ? '' : path
 
     return `  <url>
@@ -22,7 +22,7 @@ async function generateSitemap() {
         '!src/pages/**/*.test',
         '!src/pages/api',
         '!src/pages/404.js',
-        '!src/pages/paypal-confirmation'
+        '!src/pages/paypal-confirmation.js'
     ])
     const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(addPage).join('\n')}

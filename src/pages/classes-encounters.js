@@ -177,6 +177,7 @@ export default function ClassesEncounters(props) {
         <div>
             <Head>
                 <title>Clay Classes & Encounters • Bozeman Community Kiln</title>
+                <link rel="canonical" href="https://bckstudio.com/classes-encounters/"/>
                 <meta name="description"
                       content="Join us for one of our classes to learn a variety of pottery techniques from local artists, or try our clay encounters, a one-time visit great for playing with clay."/>
             </Head>

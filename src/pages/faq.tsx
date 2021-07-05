@@ -60,6 +60,7 @@ export default function faq(props: FaqProps) {
         <React.Fragment>
             <Head>
                 <title>FAQ • Bozeman Community Kiln</title>
+                <link rel="canonical" href="https://bckstudio.com/faq/"/>
                 <meta name="description"
                       content="Pottery Studios can be confusing places when you first walk in. Here are the most common questions our Bozeman area community asks."/>
             </Head>
